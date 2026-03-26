@@ -1321,6 +1321,7 @@ MM_PARSER_MAP: dict[
     "input_audio": lambda part: _InputAudioParser(part).get("input_audio", None),
     "refusal": lambda part: _RefusalParser(part).get("refusal", None),
     "video_url": lambda part: _VideoParser(part).get("video_url", {}).get("url", None),
+    "video": lambda part: part.get("video", None),
 }
 
 
