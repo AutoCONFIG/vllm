@@ -216,7 +216,7 @@ class CustomChatCompletionContentSimpleAudioParam(TypedDict, total=False):
 
 
 class CustomChatCompletionContentSimpleVideoParam(TypedDict, total=False):
-    """A simpler version of the param that only accepts a plain audio_url.
+    """A simpler version of param that only accepts a plain audio_url.
 
     Example:
     {
@@ -225,6 +225,56 @@ class CustomChatCompletionContentSimpleVideoParam(TypedDict, total=False):
     """
 
     video_url: str | None
+    uuid: str | None
+    """
+    User-provided UUID of a media. User must guarantee that it is properly
+    generated and unique for different medias medias.
+    """
+
+
+class ChatCompletionContentPartVideoListParam(TypedDict, total=False):
+    """
+    Video content part with a list of image URLs (pre-extracted video frames).
+
+    This format is used when a video is provided as a sequence of image frames
+    extracted from the original video. The fps parameter indicates the frame rate
+    of the original video, helping the model understand the timing between frames.
+
+    Example:
+    {
+        "type": "video",
+        "video": ["https://example.com/frame1.jpg",
+                  "https://example.com/frame2.jpg",
+                  "https://example.com/frame3.jpg"],
+        "fps": 2
+    }
+    """
+
+    video: Required[list[str]]
+    """
+    List of image URLs representing video frames, extracted from the original video.
+    Each URL should be a valid image URL or base64 data URL.
+    """
+    type: Required[Literal["video"]]
+    """The type of content part."""
+
+    fps: int | None
+    """
+    Frame rate of the original video.
+    This indicates how many frames per second were extracted from the original video,
+    helping the model understand the timing and duration between frames.
+    """
+
+    total_pixels: int | None
+    """
+    Optional total pixels constraint for video processing.
+    """
+
+    min_pixels: int | None
+    """
+    Optional minimum pixels constraint for video processing.
+    """
+
     uuid: str | None
     """
     User-provided UUID of a media. User must guarantee that it is properly
@@ -247,7 +297,7 @@ class CustomThinkCompletionContentParam(TypedDict, total=False):
     """The thinking content."""
 
     closed: bool
-    """Whether the thinking is closed."""
+    """Whether thinking is closed."""
 
     type: Required[Literal["thinking"]]
     """The thinking type."""
@@ -265,6 +315,7 @@ ChatCompletionContentPartParam: TypeAlias = (
     | ChatCompletionContentPartAudioEmbedsParam
     | CustomChatCompletionContentSimpleAudioParam
     | CustomChatCompletionContentSimpleVideoParam
+    | ChatCompletionContentPartVideoListParam
     | str
     | CustomThinkCompletionContentParam
 )
@@ -1372,6 +1423,7 @@ def _parse_chat_message_content_mm_part(
 PART_TYPES_TO_SKIP_NONE_CONTENT = (
     "text",
     "refusal",
+    "video",
 )
 
 
@@ -1486,6 +1538,18 @@ def _parse_chat_message_content_part(
         str_content = cast(str, content)
         mm_parser.parse_video(str_content, uuid)
         modality = "video"
+    elif part_type == "video":
+        # Handle video as list of image URLs (pre-extracted video frames)
+        video_images = cast(list[str], content)
+        if video_images and len(video_images) > 0:
+            # Convert list of image URLs to base64 JPEG sequence format
+            # Format: data:video/jpeg;base64,frame1,frame2,...
+            video_data_url = f"data:video/jpeg;base64,{','.join(video_images)}"
+            mm_parser.parse_video(video_data_url, uuid)
+            modality = "video"
+        else:
+            logger.warning("Video list is empty, skipping")
+            return None
     else:
         raise NotImplementedError(f"Unknown part type: {part_type}")
 
