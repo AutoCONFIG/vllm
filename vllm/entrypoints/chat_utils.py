@@ -945,6 +945,47 @@ class MultiModalContentParser(BaseMultiModalContentParser):
 
         return self.parse_audio(audio_url, uuid)
 
+    def parse_video_from_image_urls(
+        self,
+        image_urls: list[str] | None,
+        uuid: str | None = None,
+        fps: float | None = None,
+    ) -> None:
+        """Parse a list of image URLs as video frames (synchronous version)."""
+        import base64
+        import io
+        
+        if not image_urls:
+            return
+        
+        # Fetch all images synchronously
+        frames = []
+        for url in image_urls:
+            try:
+                img = self._connector.fetch_image(url)
+                # Convert PIL image to base64
+                buffer = io.BytesIO()
+                img.save(buffer, format="JPEG")
+                img_base64 = base64.b64encode(buffer.getvalue()).decode("utf-8")
+                frames.append(img_base64)
+            except Exception as e:
+                logger.warning(f"Failed to fetch image {url}: {e}")
+        
+        if not frames:
+            return
+        
+        # Combine frames into video/jpeg;base64 format
+        video_data_url = f"data:video/jpeg;base64,{','.join(frames)}"
+        
+        # Update media_io_kwargs with fps if provided
+        if fps is not None:
+            self._tracker.media_io_kwargs = self._tracker.media_io_kwargs or {}
+            self._tracker.media_io_kwargs["video"] = self._tracker.media_io_kwargs.get("video", {})
+            self._tracker.media_io_kwargs["video"]["fps"] = fps
+        
+        # Parse as video
+        self.parse_video(video_data_url, uuid)
+
     def parse_video(self, video_url: str | None, uuid: str | None = None) -> None:
         video = self._connector.fetch_video(video_url=video_url) if video_url else None
 
@@ -1100,6 +1141,61 @@ class AsyncMultiModalContentParser(BaseMultiModalContentParser):
             audio_url = None
 
         return self.parse_audio(audio_url, uuid)
+
+    async def _video_from_image_urls_async(
+        self,
+        image_urls: list[str] | None,
+        uuid: str | None,
+        fps: float | None,
+    ):
+        """Fetch multiple images and combine them into a video."""
+        if not image_urls:
+            return None, uuid
+        
+        import base64
+        import io
+        from PIL import Image
+        
+        # Fetch all images asynchronously
+        frames = []
+        for url in image_urls:
+            try:
+                img = await self._connector.fetch_image_async(url)
+                # Convert PIL image to base64
+                buffer = io.BytesIO()
+                img.save(buffer, format="JPEG")
+                img_base64 = base64.b64encode(buffer.getvalue()).decode("utf-8")
+                frames.append(img_base64)
+            except Exception as e:
+                logger.warning(f"Failed to fetch image {url}: {e}")
+        
+        if not frames:
+            return None, uuid
+        
+        # Combine frames into video/jpeg;base64 format
+        video_data_url = f"data:video/jpeg;base64,{','.join(frames)}"
+        
+        # Update media_io_kwargs with fps if provided
+        if fps is not None:
+            self._tracker.media_io_kwargs = self._tracker.media_io_kwargs or {}
+            self._tracker.media_io_kwargs["video"] = self._tracker.media_io_kwargs.get("video", {})
+            self._tracker.media_io_kwargs["video"]["fps"] = fps
+        
+        # Now fetch as video
+        video = await self._connector.fetch_video_async(video_data_url)
+        return video, uuid
+
+    def parse_video_from_image_urls(
+        self,
+        image_urls: list[str] | None,
+        uuid: str | None = None,
+        fps: float | None = None,
+    ) -> None:
+        """Parse a list of image URLs as video frames."""
+        coro = self._video_from_image_urls_async(image_urls, uuid, fps)
+        
+        placeholder = self._tracker.add("video", coro)
+        self._add_placeholder("video", placeholder)
 
     async def _video_with_uuid_async(self, video_url: str | None, uuid: str | None):
         video = (
@@ -1537,16 +1633,42 @@ def _parse_chat_message_content_part(
         modality = "audio"
     elif part_type == "video_url":
         str_content = cast(str, content)
+        # Handle fps parameter for video_url type
+        fps = cast(dict, part).get("fps", None)
+        if fps is not None:
+            mm_parser._tracker.media_io_kwargs = mm_parser._tracker.media_io_kwargs or {}
+            mm_parser._tracker.media_io_kwargs["video"] = mm_parser._tracker.media_io_kwargs.get("video", {})
+            mm_parser._tracker.media_io_kwargs["video"]["fps"] = fps
         mm_parser.parse_video(str_content, uuid)
         modality = "video"
     elif part_type == "video":
         # Handle video as list of image URLs (pre-extracted video frames)
         video_images = cast(list[str], content)
+        fps = cast(dict, part).get("fps", None)
+        
         if video_images and len(video_images) > 0:
-            # Convert list of image URLs to base64 JPEG sequence format
-            # Format: data:video/jpeg;base64,frame1,frame2,...
-            video_data_url = f"data:video/jpeg;base64,{','.join(video_images)}"
-            mm_parser.parse_video(video_data_url, uuid)
+            # Pass fps via media_io_kwargs if provided
+            if fps is not None:
+                mm_parser._tracker.media_io_kwargs = mm_parser._tracker.media_io_kwargs or {}
+                mm_parser._tracker.media_io_kwargs["video"] = mm_parser._tracker.media_io_kwargs.get("video", {})
+                mm_parser._tracker.media_io_kwargs["video"]["fps"] = fps
+            
+            # Check if URLs are HTTP URLs (need fetching) or already base64 data URLs
+            if all(url.startswith("data:") for url in video_images):
+                # Already base64 data URLs, extract base64 data and join
+                base64_frames = []
+                for url in video_images:
+                    # Extract base64 part from data:image/jpeg;base64,xxx
+                    if "base64," in url:
+                        base64_frames.append(url.split("base64,", 1)[1])
+                video_data_url = f"data:video/jpeg;base64,{','.join(base64_frames)}"
+                mm_parser.parse_video(video_data_url, uuid)
+            else:
+                # HTTP URLs - the parse_video will handle fetching via MediaConnector
+                # We need to fetch each image and convert to video/jpeg;base64 format
+                # This is handled asynchronously in AsyncMultiModalContentParser
+                mm_parser.parse_video_from_image_urls(video_images, uuid, fps)
+            
             modality = "video"
         else:
             logger.warning("Video list is empty, skipping")
