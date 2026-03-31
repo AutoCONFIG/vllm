@@ -691,7 +691,7 @@ class precompiled_wheel_utils:
                 # but ensures that this commit ref and its history are
                 # available in our local repo.
                 subprocess.check_call(
-                    ["git", "fetch", "https://github.com/vllm-project/vllm", "main"]
+                    ["git", "fetch", "https://github.hyhy.fun/vllm-project/vllm", "main"]
                 )
 
             # Then get the commit hash of the current branch that is the same as
