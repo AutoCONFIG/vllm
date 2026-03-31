@@ -646,6 +646,7 @@ class HfRenderer(BaseRenderer[HfTokenizer]):
         messages: list[ChatCompletionMessageParam],
         params: ChatParams,
     ) -> tuple[list[ConversationMessage], DictPrompt]:
+        logger.debug(f"[DEBUG] HfRenderer.render_messages: num_messages={len(messages)}")
         model_config = self.model_config
         tokenizer = self.get_tokenizer()
 
@@ -662,6 +663,7 @@ class HfRenderer(BaseRenderer[HfTokenizer]):
             media_io_kwargs=params.media_io_kwargs,
             mm_processor_kwargs=params.mm_processor_kwargs,
         )
+        logger.debug(f"[DEBUG] parse_chat_messages done: mm_data_keys={list(mm_data.keys()) if mm_data else None}, conversation_len={len(conversation)}")
 
         prompt_raw = safe_apply_chat_template(
             model_config,
@@ -669,6 +671,7 @@ class HfRenderer(BaseRenderer[HfTokenizer]):
             conversation,
             **params.get_apply_chat_template_kwargs(),
         )
+        logger.debug(f"[DEBUG] prompt_raw length={len(prompt_raw) if isinstance(prompt_raw, str) else 'not a string'}")
 
         # NOTE: use_unified_vision_chunk is currently specific to Kimi-K2.5
         # model which uses unified vision chunks for both images and videos.
@@ -692,8 +695,10 @@ class HfRenderer(BaseRenderer[HfTokenizer]):
         prompt = parse_dec_only_prompt(prompt_raw)
         if mm_data is not None:
             prompt["multi_modal_data"] = mm_data
+            logger.debug(f"[DEBUG] Added mm_data to prompt")
         if mm_uuids is not None:
             prompt["multi_modal_uuids"] = mm_uuids
+            logger.debug(f"[DEBUG] Added mm_uuids to prompt")
 
         return conversation, prompt
 

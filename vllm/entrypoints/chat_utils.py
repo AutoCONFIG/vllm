@@ -575,6 +575,7 @@ class BaseMultiModalItemTracker(ABC, Generic[_T]):
         An optional uuid can be added which serves as a unique identifier of the
         media.
         """
+        logger.debug(f"[DEBUG] MultiModalItemTracker.add: modality={modality}, item_type={type(item).__name__}")
         input_modality = modality.replace("_embeds", "")
         original_modality = modality
         use_vision_chunk = (
@@ -593,6 +594,8 @@ class BaseMultiModalItemTracker(ABC, Generic[_T]):
         else:
             num_items = len(self._items_by_modality[original_modality]) + 1
 
+        logger.debug(f"[DEBUG] num_items={num_items}, input_modality={input_modality}, original_modality={original_modality}")
+
         mm_config = self.model_config.multimodal_config
         if (
             mm_config is not None
@@ -609,10 +612,14 @@ class BaseMultiModalItemTracker(ABC, Generic[_T]):
         if use_vision_chunk:
             self._items_by_modality[input_modality].append(item)  # type: ignore
             self._modality_order["vision_chunk"].append(original_modality)
+            logger.debug(f"[DEBUG] Added item to vision_chunk: total={len(self._items_by_modality[input_modality])}")
         else:
             self._items_by_modality[original_modality].append(item)
+            logger.debug(f"[DEBUG] Added item to {original_modality}: total={len(self._items_by_modality[original_modality])}")
 
-        return self.model_cls.get_placeholder_str(modality, num_items)
+        placeholder = self.model_cls.get_placeholder_str(modality, num_items)
+        logger.debug(f"[DEBUG] Returning placeholder: {placeholder}")
+        return placeholder
 
     @abstractmethod
     def create_parser(
@@ -688,6 +695,7 @@ def _resolve_items(
     mm_processor: BaseMultiModalProcessor,
     modality_order: dict[str, list[str]],
 ) -> tuple[MultiModalDataDict, MultiModalUUIDDict]:
+    logger.debug(f"[DEBUG] _resolve_items: modalities={list(items_by_modality.keys())}")
     if "image" in items_by_modality and "image_embeds" in items_by_modality:
         raise ValueError("Mixing raw image and embedding inputs is not allowed")
     if "audio" in items_by_modality and "audio_embeds" in items_by_modality:
@@ -702,9 +710,11 @@ def _resolve_items(
             mm_processor,
         )
         mm_uuids["image"] = [uuid for data, uuid in items_by_modality["image_embeds"]]
+        logger.debug(f"[DEBUG] Resolved image_embeds: {len(mm_uuids['image'])} items")
     if "image" in items_by_modality:
         mm_data["image"] = [data for data, uuid in items_by_modality["image"]]
         mm_uuids["image"] = [uuid for data, uuid in items_by_modality["image"]]
+        logger.debug(f"[DEBUG] Resolved image: {len(mm_uuids['image'])} items, first_item_type={type(mm_data['image'][0]).__name__ if mm_data['image'] else None}")
     if "audio_embeds" in items_by_modality:
         mm_data["audio"] = _get_embeds_data(
             "audio",
@@ -718,6 +728,7 @@ def _resolve_items(
     if "video" in items_by_modality:
         mm_data["video"] = [data for data, uuid in items_by_modality["video"]]
         mm_uuids["video"] = [uuid for data, uuid in items_by_modality["video"]]
+        logger.debug(f"[DEBUG] Resolved video: {len(mm_uuids['video'])} items")
     if "vision_chunk" in items_by_modality:
         # Process vision_chunk items - extract from (data, modality) tuples
         # and convert to VisionChunk types with proper UUID handling
@@ -728,7 +739,9 @@ def _resolve_items(
         )
         mm_data["vision_chunk"] = processed_chunks
         mm_uuids["vision_chunk"] = vision_chunk_uuids
+        logger.debug(f"[DEBUG] Resolved vision_chunk: {len(vision_chunk_uuids)} items")
 
+    logger.debug(f"[DEBUG] _resolve_items done: mm_data_keys={list(mm_data.keys())}, mm_uuids_keys={list(mm_uuids.keys())}")
     return mm_data, mm_uuids
 
 
@@ -736,12 +749,16 @@ class MultiModalItemTracker(BaseMultiModalItemTracker[tuple[object, str | None]]
     def resolve_items(
         self,
     ) -> tuple[MultiModalDataDict | None, MultiModalUUIDDict | None]:
+        logger.debug(f"[DEBUG] MultiModalItemTracker.resolve_items: items_by_modality={dict((k, len(v)) for k, v in self._items_by_modality.items())}")
         if not self._items_by_modality:
+            logger.debug("[DEBUG] No items to resolve")
             return None, None
 
-        return _resolve_items(
+        result = _resolve_items(
             dict(self._items_by_modality), self.mm_processor, self._modality_order
         )
+        logger.debug(f"[DEBUG] resolve_items result: mm_data_keys={list(result[0].keys()) if result[0] else None}, mm_uuids_keys={list(result[1].keys()) if result[1] else None}")
+        return result
 
     def create_parser(
         self, mm_processor_kwargs: dict[str, Any] | None = None
@@ -755,7 +772,9 @@ class AsyncMultiModalItemTracker(
     async def resolve_items(
         self,
     ) -> tuple[MultiModalDataDict | None, MultiModalUUIDDict | None]:
+        logger.debug(f"[DEBUG] AsyncMultiModalItemTracker.resolve_items: items_by_modality={dict((k, len(v)) for k, v in self._items_by_modality.items())}")
         if not self._items_by_modality:
+            logger.debug("[DEBUG] No items to resolve (async)")
             return None, None
 
         resolved_items_by_modality = {
@@ -860,9 +879,12 @@ class MultiModalContentParser(BaseMultiModalContentParser):
         return self._tracker.model_config
 
     def parse_image(self, image_url: str | None, uuid: str | None = None) -> None:
+        logger.debug(f"[DEBUG] parse_image called: url={image_url[:100] if image_url else None}..., uuid={uuid}")
         image = self._connector.fetch_image(image_url) if image_url else None
+        logger.debug(f"[DEBUG] fetch_image result: image={'PIL.Image' if image else None}, size={image.size if image else None}")
 
         placeholder = self._tracker.add("image", (image, uuid))
+        logger.debug(f"[DEBUG] Added image to tracker, placeholder={placeholder}")
         self._add_placeholder("image", placeholder)
 
     def parse_image_embeds(
@@ -987,9 +1009,12 @@ class MultiModalContentParser(BaseMultiModalContentParser):
         self.parse_video(video_data_url, uuid)
 
     def parse_video(self, video_url: str | None, uuid: str | None = None) -> None:
+        logger.debug(f"[DEBUG] parse_video called: url={video_url[:100] if video_url else None}..., uuid={uuid}")
         video = self._connector.fetch_video(video_url=video_url) if video_url else None
+        logger.debug(f"[DEBUG] fetch_video result: video={'NDArray' if video else None}")
 
         placeholder = self._tracker.add("video", (video, uuid))
+        logger.debug(f"[DEBUG] Added video to tracker, placeholder={placeholder}")
         self._add_placeholder("video", placeholder)
 
         # Extract audio from video if use_audio_in_video is True
@@ -1025,15 +1050,19 @@ class AsyncMultiModalContentParser(BaseMultiModalContentParser):
         return self._tracker.model_config
 
     async def _image_with_uuid_async(self, image_url: str | None, uuid: str | None):
+        logger.debug(f"[DEBUG] _image_with_uuid_async: url={image_url[:100] if image_url else None}..., uuid={uuid}")
         image = (
             await self._connector.fetch_image_async(image_url) if image_url else None
         )
+        logger.debug(f"[DEBUG] fetch_image_async result: image={'PIL.Image' if image else None}, size={image.size if image else None}")
         return image, uuid
 
     def parse_image(self, image_url: str | None, uuid: str | None = None) -> None:
+        logger.debug(f"[DEBUG] AsyncMultiModalContentParser.parse_image called: url={image_url[:100] if image_url else None}..., uuid={uuid}")
         coro = self._image_with_uuid_async(image_url, uuid)
 
         placeholder = self._tracker.add("image", coro)
+        logger.debug(f"[DEBUG] Added image to tracker (async), placeholder={placeholder}")
         self._add_placeholder("image", placeholder)
 
     def parse_image_embeds(
@@ -1576,6 +1605,8 @@ def _parse_chat_message_content_part(
     handled by mm_parser, and texts will be returned as strings to be joined
     with multimodal placeholders.
     """
+    logger.debug(f"[DEBUG] _parse_chat_message_content_part: part={part if isinstance(part, str) else {k: v for k, v in part.items() if k != 'image_url' and k != 'video_url'} if isinstance(part, dict) else part}")
+    
     if isinstance(part, str):  # Handle plain text parts
         if wrap_dicts:
             return {"type": "text", "text": part}
@@ -1613,8 +1644,10 @@ def _parse_chat_message_content_part(
         modality = "image"
     elif part_type in ("image_url", "input_image"):
         str_content = cast(str, content)
+        logger.debug(f"[DEBUG] Processing image_url: content={str_content[:100]}..., uuid={uuid}")
         mm_parser.parse_image(str_content, uuid)
         modality = "image"
+        logger.debug(f"[DEBUG] image_url processed, modality={modality}")
     elif part_type == "image_embeds":
         content = cast(str | dict[str, str], content) if content is not None else None
         mm_parser.parse_image_embeds(content, uuid)
@@ -1633,18 +1666,22 @@ def _parse_chat_message_content_part(
         modality = "audio"
     elif part_type == "video_url":
         str_content = cast(str, content)
+        logger.debug(f"[DEBUG] Processing video_url: content={str_content[:100]}..., uuid={uuid}")
         # Handle fps parameter for video_url type
         fps = cast(dict, part).get("fps", None)
         if fps is not None:
             mm_parser._tracker.media_io_kwargs = mm_parser._tracker.media_io_kwargs or {}
             mm_parser._tracker.media_io_kwargs["video"] = mm_parser._tracker.media_io_kwargs.get("video", {})
             mm_parser._tracker.media_io_kwargs["video"]["fps"] = fps
+            logger.debug(f"[DEBUG] Set fps={fps} in media_io_kwargs")
         mm_parser.parse_video(str_content, uuid)
         modality = "video"
+        logger.debug(f"[DEBUG] video_url processed, modality={modality}")
     elif part_type == "video":
         # Handle video as list of image URLs (pre-extracted video frames)
         video_images = cast(list[str], content)
         fps = cast(dict, part).get("fps", None)
+        logger.debug(f"[DEBUG] Processing video (image list): num_images={len(video_images)}, fps={fps}, uuid={uuid}")
         
         if video_images and len(video_images) > 0:
             # Pass fps via media_io_kwargs if provided
@@ -1775,10 +1812,12 @@ def parse_chat_messages(
     MultiModalDataDict | None,
     MultiModalUUIDDict | None,
 ]:
+    logger.debug(f"[DEBUG] parse_chat_messages: num_messages={len(messages)}, content_format={content_format}")
     conversation: list[ConversationMessage] = []
     mm_tracker = MultiModalItemTracker(model_config, media_io_kwargs=media_io_kwargs)
 
-    for msg in messages:
+    for idx, msg in enumerate(messages):
+        logger.debug(f"[DEBUG] Processing message {idx}: role={msg.get('role')}")
         sub_messages = _parse_chat_message_content(
             msg,
             mm_tracker,
@@ -1796,6 +1835,7 @@ def parse_chat_messages(
     _postprocess_messages(conversation)
 
     mm_data, mm_uuids = mm_tracker.resolve_items()
+    logger.debug(f"[DEBUG] parse_chat_messages done: mm_data={list(mm_data.keys()) if mm_data else None}, conversation_len={len(conversation)}")
 
     return conversation, mm_data, mm_uuids
 
