@@ -14,7 +14,7 @@ from vllm.v1.attention.backends.mamba2_attn import compute_varlen_chunk_metadata
 
 # Added by the IBM Team, 2024
 
-# Adapted from https://github.com/state-spaces/mamba/blob/v2.2.4/mamba_ssm/modules/ssd_minimal.py
+# Adapted from https://github.hyhy.fun/state-spaces/mamba/blob/v2.2.4/mamba_ssm/modules/ssd_minimal.py
 
 
 # this is the segsum implementation taken from above

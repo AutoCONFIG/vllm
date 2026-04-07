@@ -125,7 +125,7 @@ def apply_grammar_bitmask(
     # CPU case, use list for indices.
     indices = None if skip_out_indices else out_indices
     # Handle dtype conversion for CPU (older xgrammar CPU kernels require float32)
-    # See: https://github.com/vllm-project/vllm/issues/31901
+    # See: https://github.hyhy.fun/vllm-project/vllm/issues/31901
     if logits.dtype != torch.float32:
         # Convert to float32, apply bitmask, then convert back
         logits_fp32 = logits.to(torch.float32)
@@ -322,7 +322,7 @@ def convert_lark_to_ebnf(grammar_str: str) -> str:
     Convert a Lark grammar string to EBNF format.
 
     EBNF reference:
-    https://github.com/ggerganov/llama.cpp/blob/master/grammars/README.md
+    https://github.hyhy.fun/ggerganov/llama.cpp/blob/master/grammars/README.md
     Lark grammar reference:
     https://lark-parser.readthedocs.io/en/latest/grammar.html
 

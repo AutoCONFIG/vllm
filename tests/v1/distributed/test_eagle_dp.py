@@ -26,7 +26,7 @@ else:
 @pytest.mark.xfail(
     current_platform.is_rocm(),
     reason="Test may fail on ROCm until batch invariance is enabled."
-    "See: https://github.com/vllm-project/vllm/issues/27433",
+    "See: https://github.hyhy.fun/vllm-project/vllm/issues/27433",
     strict=False,
 )
 async def test_run_eagle_dp(monkeypatch: pytest.MonkeyPatch, attn_backend: str):
@@ -40,7 +40,7 @@ async def test_run_eagle_dp(monkeypatch: pytest.MonkeyPatch, attn_backend: str):
         #
         # TODO[ROCm]: Test is passing on ROCm CI but may break in future.
         # Enable batch invariance for ROCm when possible. See:
-        # https://github.com/vllm-project/vllm/issues/27433
+        # https://github.hyhy.fun/vllm-project/vllm/issues/27433
 
         monkeypatch.setenv("VLLM_BATCH_INVARIANT", "1")
 
@@ -70,7 +70,7 @@ async def test_run_eagle_dp(monkeypatch: pytest.MonkeyPatch, attn_backend: str):
 
     prompt = "This is a test of data parallel with eagle"
     # This test might be flaky, see
-    # https://github.com/vllm-project/vllm/issues/31913
+    # https://github.hyhy.fun/vllm-project/vllm/issues/31913
     num_expected_tokens = 20
     sampling_params = SamplingParams(
         max_tokens=num_expected_tokens,

@@ -35,7 +35,7 @@ def _generate_optimal_warmup_m_values(
 ) -> list[int]:
     """
     Generate M values that cover all possible DeepGEMM kernel configurations.
-    Reference: https://github.com/deepseek-ai/DeepGEMM/blob/79f48ee15a82dd5fad5cd9beaa393c1f755e6b55/csrc/jit_kernels/heuristics/common.hpp
+    Reference: https://github.hyhy.fun/deepseek-ai/DeepGEMM/blob/79f48ee15a82dd5fad5cd9beaa393c1f755e6b55/csrc/jit_kernels/heuristics/common.hpp
 
     Args:
         max_tokens: Maximum number of tokens to warmup for

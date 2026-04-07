@@ -556,7 +556,7 @@ class ServingScores(OpenAIServing):
         tooling, since this is a common standard for reranking APIs
 
         See example client implementations at
-        https://github.com/infiniflow/ragflow/blob/main/rag/llm/rerank_model.py
+        https://github.hyhy.fun/infiniflow/ragflow/blob/main/rag/llm/rerank_model.py
         numerous clients use this standard.
         """
         error_check_ret = await self._check_model(request)

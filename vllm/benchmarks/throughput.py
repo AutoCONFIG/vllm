@@ -667,7 +667,7 @@ def validate_args(args):
         args.distributed_executor_backend != "external_launcher" or args.async_engine
     ):
         # --data-parallel is not supported fully.
-        # Old issue: https://github.com/vllm-project/vllm/issues/16222
+        # Old issue: https://github.hyhy.fun/vllm-project/vllm/issues/16222
         # Currently we only support data parallel with external launcher
         # mode (i.e., launch with toruchrun).
         raise ValueError(

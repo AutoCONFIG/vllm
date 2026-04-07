@@ -229,7 +229,7 @@ async def async_request_deepspeed_mii(
 
         # NOTE: DeepSpeed-MII doesn't support streaming as of Jan 28 2024,
         # will use 0 as placeholder.
-        # See https://github.com/microsoft/DeepSpeed-MII/pull/311
+        # See https://github.hyhy.fun/microsoft/DeepSpeed-MII/pull/311
         output.ttft = 0
 
         st = time.perf_counter()

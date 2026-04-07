@@ -139,7 +139,7 @@ class Glm4MoE(nn.Module):
             )
         # NOTE In the transformers implementation, the gate isn't an nn.Linear,
         # so we cannot use ReplicatedLinear here.
-        # See: https://github.com/huggingface/transformers/blob/v4.55.1/src/transformers/models/glm4_moe/modeling_glm4_moe.py#L260
+        # See: https://github.hyhy.fun/huggingface/transformers/blob/v4.55.1/src/transformers/models/glm4_moe/modeling_glm4_moe.py#L260
         self.gate = nn.Linear(
             config.hidden_size,
             config.n_routed_experts,

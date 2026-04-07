@@ -1,6 +1,6 @@
 # SPDX-License-Identifier: Apache-2.0
 # SPDX-FileCopyrightText: Copyright contributors to the vLLM project
-# Adapted from https://github.com/vllm-project/vllm/blob/main/vllm/model_executor/layers/quantization/modelopt.py
+# Adapted from https://github.hyhy.fun/vllm-project/vllm/blob/main/vllm/model_executor/layers/quantization/modelopt.py
 
 from typing import Any
 

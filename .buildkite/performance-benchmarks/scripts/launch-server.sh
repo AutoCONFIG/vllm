@@ -47,7 +47,7 @@ launch_trt_server() {
   # clone tensorrt backend
   cd /
   rm -rf tensorrtllm_backend
-  git clone https://github.com/triton-inference-server/tensorrtllm_backend.git
+  git clone https://github.hyhy.fun/triton-inference-server/tensorrtllm_backend.git
   git lfs install
   cd tensorrtllm_backend
   git checkout "$trt_llm_version"

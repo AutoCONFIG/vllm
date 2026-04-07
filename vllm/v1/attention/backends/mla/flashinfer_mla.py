@@ -248,5 +248,5 @@ class FlashInferMLAImpl(MLACommonImpl[MLACommonMetadata]):
         o = o.view(-1, o.shape[-2], o.shape[-1])
 
         # TODO: Return LSE pending support from Flashinfer API:
-        # https://github.com/flashinfer-ai/flashinfer/pull/1566
+        # https://github.hyhy.fun/flashinfer-ai/flashinfer/pull/1566
         return o, None

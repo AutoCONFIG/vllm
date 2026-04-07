@@ -1,4 +1,4 @@
-// copied from https://github.com/ggerganov/llama.cpp/blob/b2899/ggml-common.h
+// copied from https://github.hyhy.fun/ggerganov/llama.cpp/blob/b2899/ggml-common.h
 #define QK_K 256
 #define K_QUANTS_PER_ITERATION 2
 #define WARP_SIZE_GGUF 32

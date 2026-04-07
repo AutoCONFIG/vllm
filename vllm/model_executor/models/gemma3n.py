@@ -462,7 +462,7 @@ class Gemma3nDecoderLayer(nn.Module):
         )
         self.mlp = Gemma3nMLP(
             hidden_size=config.hidden_size,
-            # NOTE: Matformer https://github.com/huggingface/transformers/blob/a52478253bbe522a420e88ea3940d4d98a935300/src/transformers/models/gemma3n/modular_gemma3n.py#L258 # noqa: E501
+            # NOTE: Matformer https://github.hyhy.fun/huggingface/transformers/blob/a52478253bbe522a420e88ea3940d4d98a935300/src/transformers/models/gemma3n/modular_gemma3n.py#L258 # noqa: E501
             intermediate_size=config.intermediate_size[extract_layer_index(prefix)],
             hidden_activation=config.hidden_activation,
             quant_config=quant_config,
@@ -930,7 +930,7 @@ class Gemma3nTextModel(nn.Module, SupportsQuant):
         # to weakref, causing memory to be prematurely freed
         # when there are multiple compilation units
         # Keep .clone() until fix in
-        # https://github.com/vllm-project/vllm/pull/22282
+        # https://github.hyhy.fun/vllm-project/vllm/pull/22282
         hidden_states = self_decoder_hidden_states.clone()
 
         # Copy inputs for cudagraph

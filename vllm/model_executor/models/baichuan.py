@@ -455,7 +455,7 @@ class BaiChuanBaseForCausalLM(nn.Module, SupportsLoRA, SupportsPP, SupportsQuant
         # https://huggingface.co/baichuan-inc/Baichuan2-7B-Chat/blob/84603cde5ebffb6084e476cfaeceaf0b8b91fe54/modeling_baichuan.py#L508
         # Distinguish between Baichuan and Baichuan2 by checking the
         # vocab size. This is suggested by
-        # https://github.com/vllm-project/vllm/pull/1022#discussion_r1325652704
+        # https://github.hyhy.fun/vllm-project/vllm/pull/1022#discussion_r1325652704
         is_baichuan2 = self.config.vocab_size == 125696
         if is_baichuan2:
             loaded_weight = torch.nn.functional.normalize(loaded_weight)

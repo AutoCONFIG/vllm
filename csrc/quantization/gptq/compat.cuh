@@ -1,5 +1,5 @@
 /*
-Copied from https://github.com/turboderp/exllamav2
+Copied from https://github.hyhy.fun/turboderp/exllamav2
 */
 
 #ifndef _compat_cuh

@@ -4,7 +4,7 @@
 set -ex
 
 # FlashInfer configuration
-FLASHINFER_GIT_REPO="https://github.com/flashinfer-ai/flashinfer.git"
+FLASHINFER_GIT_REPO="https://github.hyhy.fun/flashinfer-ai/flashinfer.git"
 BUILD_WHEEL="${BUILD_WHEEL:-true}"
 
 if [[ -z "${FLASHINFER_GIT_REF}" ]]; then

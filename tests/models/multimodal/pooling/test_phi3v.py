@@ -63,7 +63,7 @@ def _run_test(
 
         all_outputs = []
         for inputs in all_inputs:
-            # Based on: https://github.com/TIGER-AI-Lab/VLM2Vec/blob/db3b951bccabba220c1f53ab46a734e50dd2fc08/src/model.py
+            # Based on: https://github.hyhy.fun/TIGER-AI-Lab/VLM2Vec/blob/db3b951bccabba220c1f53ab46a734e50dd2fc08/src/model.py
             outputs = hf_model.model(
                 **hf_model.wrap_device(inputs),
                 return_dict=True,

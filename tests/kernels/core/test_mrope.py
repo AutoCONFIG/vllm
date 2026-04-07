@@ -38,7 +38,7 @@ def generate_test_data(
 
 class MRoPETestInfo(NamedTuple):
     model_name: str
-    # https://github.com/pytorch/pytorch/blob/main/torch/testing/_comparison.py#L1317
+    # https://github.hyhy.fun/pytorch/pytorch/blob/main/torch/testing/_comparison.py#L1317
     atol: float = 1e-2
     rtol: float = 1.6e-2
     marks: list[pytest.MarkDecorator] = []

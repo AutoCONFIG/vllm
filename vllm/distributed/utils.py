@@ -3,7 +3,7 @@
 
 # Copyright 2023 The vLLM team.
 # Adapted from
-# https://github.com/NVIDIA/Megatron-LM/blob/main/megatron/core/tensor_parallel/utils.py
+# https://github.hyhy.fun/NVIDIA/Megatron-LM/blob/main/megatron/core/tensor_parallel/utils.py
 # Copyright (c) 2022, NVIDIA CORPORATION. All rights reserved.
 import dataclasses
 import functools

@@ -260,7 +260,7 @@ class Fp8LinearMethod(LinearMethodBase):
 
     Limitations:
     1. Only support float8_e4m3fn data type due to the limitation of
-       torch._scaled_mm (https://github.com/pytorch/pytorch/blob/2e48b39603411a41c5025efbe52f89560b827825/aten/src/ATen/native/cuda/Blas.cpp#L854-L856)
+       torch._scaled_mm (https://github.hyhy.fun/pytorch/pytorch/blob/2e48b39603411a41c5025efbe52f89560b827825/aten/src/ATen/native/cuda/Blas.cpp#L854-L856)
 
     Args:
         quant_config: The quantization config.

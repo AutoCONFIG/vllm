@@ -40,7 +40,7 @@ class XgrammarBackend(StructuredOutputBackend):
 
         if is_mistral_tokenizer(self.tokenizer):
             # NOTE: ideally, xgrammar should handle this accordingly.
-            # refer to https://github.com/mlc-ai/xgrammar/blob/d77c0a0173ef14779c918e3be7966ba852f7910f/python/xgrammar/tokenizer_info.py#L98
+            # refer to https://github.hyhy.fun/mlc-ai/xgrammar/blob/d77c0a0173ef14779c918e3be7966ba852f7910f/python/xgrammar/tokenizer_info.py#L98
             stop_token_ids = [self.tokenizer.eos_token_id]
 
             # not self.tokenizer.vocab_size as self.tokenizer.vocab
@@ -48,7 +48,7 @@ class XgrammarBackend(StructuredOutputBackend):
             self.vocab_size = len(self.tokenizer.vocab)
             tokenizer_info = xgr.TokenizerInfo(  # type: ignore
                 encoded_vocab=self.tokenizer.vocab,
-                # NOTE: https://github.com/mlc-ai/xgrammar/blob/5e141f6ff1ca02bc31f9e512e68b61f2a8ae88e5/tests/python/test_tokenizer_info.py#L43 # noqa: E501
+                # NOTE: https://github.hyhy.fun/mlc-ai/xgrammar/blob/5e141f6ff1ca02bc31f9e512e68b61f2a8ae88e5/tests/python/test_tokenizer_info.py#L43 # noqa: E501
                 vocab_type=xgr.VocabType.RAW
                 if self.tokenizer.is_tekken
                 else xgr.VocabType.BYTE_FALLBACK,
@@ -199,7 +199,7 @@ class XgrammarGrammar(StructuredOutputGrammar):
         self.matcher.reset()
 
 
-# cf https://github.com/mlc-ai/xgrammar/blob/a32ac892676d2eedc0327416105b9b06edfb94b2/cpp/json_schema_converter.cc
+# cf https://github.hyhy.fun/mlc-ai/xgrammar/blob/a32ac892676d2eedc0327416105b9b06edfb94b2/cpp/json_schema_converter.cc
 STRING_SUPPORTED_FORMATS = {
     "email",
     "date",

@@ -2,7 +2,7 @@
 # SPDX-FileCopyrightText: Copyright contributors to the vLLM project
 
 # Adapted from
-# https://github.com/huggingface/transformers/blob/main/src/transformers/models/Glm4v/modeling_Glm4v.py
+# https://github.hyhy.fun/huggingface/transformers/blob/main/src/transformers/models/Glm4v/modeling_Glm4v.py
 # Copyright 2025 The vLLM team.
 # Copyright 2025 The ZhipuAI Team.
 # Copyright 2025 The HuggingFace Inc. team.
@@ -862,7 +862,7 @@ class Glm4vProcessingInfo(BaseProcessingInfo):
             preprocessed_size = ImageSize(width=image_width, height=image_height)
 
         # NOTE: Frames are padded to be divisible by `temporal_patch_size`
-        # https://github.com/huggingface/transformers/blob/v4.48.3/src/transformers/models/qwen2_vl/image_processing_qwen2_vl.py#L294
+        # https://github.hyhy.fun/huggingface/transformers/blob/v4.48.3/src/transformers/models/qwen2_vl/image_processing_qwen2_vl.py#L294
         padded_num_frames = num_frames + num_frames % temporal_patch_size
 
         grid_t = max(padded_num_frames // temporal_patch_size, 1)
@@ -890,7 +890,7 @@ class Glm4vProcessingInfo(BaseProcessingInfo):
         # makes smart_resize constrain 16*H*W <= max_pixels, vastly
         # underestimating the spatial budget for a single image and
         # causing encoder cache overflow for large images
-        # (see https://github.com/vllm-project/vllm/issues/34040).
+        # (see https://github.hyhy.fun/vllm-project/vllm/issues/34040).
         max_image_size, _ = self._get_vision_info(
             image_width=9999999,
             image_height=9999999,

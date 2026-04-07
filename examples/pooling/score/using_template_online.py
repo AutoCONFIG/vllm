@@ -12,8 +12,8 @@ supported reranking models using the commands below.
 note:
     Some reranking models require special configuration overrides to work correctly
     with vLLM's score API.
-    Reference: https://github.com/vllm-project/vllm/blob/main/examples/pooling/score/qwen3_reranker_online.py
-    Reference: https://github.com/vllm-project/vllm/blob/main/examples/pooling/score/convert_model_to_seq_cls.py
+    Reference: https://github.hyhy.fun/vllm-project/vllm/blob/main/examples/pooling/score/qwen3_reranker_online.py
+    Reference: https://github.hyhy.fun/vllm-project/vllm/blob/main/examples/pooling/score/convert_model_to_seq_cls.py
 
 run:
     vllm serve BAAI/bge-reranker-v2-gemma --hf_overrides '{"architectures": ["GemmaForSequenceClassification"],"classifier_from_token": ["Yes"],"method": "no_post_processing"}' --chat-template examples/pooling/score/template/bge-reranker-v2-gemma.jinja

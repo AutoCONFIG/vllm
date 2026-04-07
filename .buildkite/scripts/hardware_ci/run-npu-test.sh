@@ -5,7 +5,7 @@
 set -ex
 
 # Base ubuntu image with basic ascend development libraries and python installed
-VLLM_ASCEND_REPO="https://github.com/vllm-project/vllm-ascend.git"
+VLLM_ASCEND_REPO="https://github.hyhy.fun/vllm-project/vllm-ascend.git"
 CONFIG_FILE_REMOTE_PATH="tests/e2e/vllm_interface/vllm_test.cfg"
 TEST_RUN_CONFIG_FILE="vllm_test.cfg"
 VLLM_ASCEND_TMP_DIR=
@@ -103,9 +103,9 @@ RUN --mount=type=cache,target=/root/.cache/pip \
 
 # Install vllm-ascend
 WORKDIR /workspace
-ARG VLLM_ASCEND_REPO=https://github.com/vllm-project/vllm-ascend.git
+ARG VLLM_ASCEND_REPO=https://github.hyhy.fun/vllm-project/vllm-ascend.git
 ARG VLLM_ASCEND_TAG=main
-RUN git config --global url."https://gh-proxy.test.osinfra.cn/https://github.com/".insteadOf "https://github.com/" && \
+RUN git config --global url."https://gh-proxy.test.osinfra.cn/https://github.hyhy.fun/".insteadOf "https://github.hyhy.fun/" && \
     git clone --depth 1 \$VLLM_ASCEND_REPO --branch \$VLLM_ASCEND_TAG /workspace/vllm-ascend
 
 # Install vllm dependencies in advance. Effect: As long as common.txt remains unchanged, the docker cache layer will be valid.

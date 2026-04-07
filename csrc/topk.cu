@@ -1,7 +1,7 @@
 // Portions of this file are adapted from SGLang PR:
-// https://github.com/sgl-project/sglang/pull/11194
+// https://github.hyhy.fun/sgl-project/sglang/pull/11194
 // and
-// https://github.com/sgl-project/sglang/pull/17747
+// https://github.hyhy.fun/sgl-project/sglang/pull/17747
 
 #include "cuda_compat.h"
 #include "dispatch_utils.h"
@@ -62,7 +62,7 @@ __device__ void naive_topk_cuda(const float* __restrict__ logits,
 }
 
 // Adapted from:
-// https://github.com/sgl-project/sglang/blob/v0.5.8/sgl-kernel/csrc/elementwise/topk.cu#L87
+// https://github.hyhy.fun/sgl-project/sglang/blob/v0.5.8/sgl-kernel/csrc/elementwise/topk.cu#L87
 // by: DarkSharpness
 // which at the same time is an optimized topk kernel copied from tilelang
 // kernel

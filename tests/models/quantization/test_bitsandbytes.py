@@ -144,7 +144,7 @@ def test_load_pp_4bit_bnb_model(model_name, description) -> None:
     Version(TRANSFORMERS_VERSION) >= Version("5.0.0"),
     reason="Need to add support for quantizing MoE experts with bnb"
     " in transformers v5. See"
-    " https://github.com/bitsandbytes-foundation/bitsandbytes/issues/1849",
+    " https://github.hyhy.fun/bitsandbytes-foundation/bitsandbytes/issues/1849",
 )
 @pytest.mark.skipif(
     not is_quant_method_supported("bitsandbytes"),
@@ -202,7 +202,7 @@ def test_4bit_bnb_embedding_model(
     # The example_prompts has ending "\n", for example:
     # "Write a short story about a robot that dreams for the first time.\n"
     # sentence_transformers will strip the input texts, see:
-    # https://github.com/UKPLab/sentence-transformers/blob/v3.1.1/sentence_transformers/models/Transformer.py#L159
+    # https://github.hyhy.fun/UKPLab/sentence-transformers/blob/v3.1.1/sentence_transformers/models/Transformer.py#L159
     # This makes the input_ids different between hf_model and vllm_model.
     # So we need to strip the input texts to avoid test failing.
     example_prompts = [str(s).strip() for s in example_prompts]

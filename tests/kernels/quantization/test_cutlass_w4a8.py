@@ -193,7 +193,7 @@ def mm_test_helper(
     schedule: str | None = None,
 ):
     # CUTLASS upstream uses fp8 with fastaccum as reference
-    # https://github.com/NVIDIA/cutlass/blob/main/examples/55_hopper_mixed_dtype_gemm/55_hopper_int4_fp8_gemm.cu#L406
+    # https://github.hyhy.fun/NVIDIA/cutlass/blob/main/examples/55_hopper_mixed_dtype_gemm/55_hopper_int4_fp8_gemm.cu#L406
     output_ref = torch._scaled_mm(
         tensors.a_ref.to(types.act_type),
         tensors.w_ref.to(types.act_type).t().contiguous().t(),  # col major

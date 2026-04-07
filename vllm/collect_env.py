@@ -2,7 +2,7 @@
 # SPDX-FileCopyrightText: Copyright contributors to the vLLM project
 
 # ruff: noqa
-# code borrowed from https://github.com/pytorch/pytorch/blob/main/torch/utils/collect_env.py
+# code borrowed from https://github.hyhy.fun/pytorch/pytorch/blob/main/torch/utils/collect_env.py
 
 import datetime
 import locale

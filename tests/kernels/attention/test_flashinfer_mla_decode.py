@@ -65,7 +65,7 @@ def test_flashinfer_mla_decode(dtype: torch.dtype, bs: int, block_size: int):
     seq_lens_tensor = torch.tensor(seq_lens, dtype=torch.int32)
 
     # Generate block tables with random but unique block IDs
-    # From https://github.com/flashinfer-ai/flashinfer/pull/1222
+    # From https://github.hyhy.fun/flashinfer-ai/flashinfer/pull/1222
     blocks_per_seq = (seq_lens_tensor + block_size - 1) // block_size
     max_num_blocks_per_seq = max(blocks_per_seq.max().item(), 4)
     total_blocks_needed = sum(blocks_per_seq)

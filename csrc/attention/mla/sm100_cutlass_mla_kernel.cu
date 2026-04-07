@@ -15,7 +15,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
 /*
- * Taken from SGLANG PR https://github.com/sgl-project/sglang/pull/6929
+ * Taken from SGLANG PR https://github.hyhy.fun/sgl-project/sglang/pull/6929
  * by Alcanderian JieXin Liang
  */
 #include "core/registration.h"
@@ -171,7 +171,7 @@ typename T::Fmha::Arguments args_from_options(
        stride_LSE},
       hw_info,
       // TODO(trevor-m): Change split_kv back to -1 when
-      // https://github.com/NVIDIA/cutlass/issues/2274 is fixed. Split_kv=1 will
+      // https://github.hyhy.fun/NVIDIA/cutlass/issues/2274 is fixed. Split_kv=1 will
       // perform worse with larger context length and smaller batch sizes.
       static_cast<int>(num_kv_splits), // split_kv
       nullptr,       // is_var_split_kv

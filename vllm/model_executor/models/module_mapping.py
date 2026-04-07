@@ -2,7 +2,7 @@
 # SPDX-FileCopyrightText: Copyright contributors to the vLLM project
 
 # Adapted from
-#  https://github.com/modelscope/ms-swift/blob/v2.4.2/swift/utils/module_mapping.py
+#  https://github.hyhy.fun/modelscope/ms-swift/blob/v2.4.2/swift/utils/module_mapping.py
 
 from dataclasses import dataclass, field
 

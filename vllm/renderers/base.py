@@ -95,7 +95,7 @@ class BaseRenderer(ABC, Generic[_T]):
             # own Rust tokenizer backend.  Without this, concurrent access
             # from AsyncMicrobatchTokenizer and call_hf_processor causes
             # "RuntimeError: Already borrowed" from the Rust RefCell.
-            # See: https://github.com/huggingface/tokenizers/issues/537
+            # See: https://github.hyhy.fun/huggingface/tokenizers/issues/537
             mm_tokenizer = copy.deepcopy(tokenizer)
 
             with set_default_torch_num_threads():

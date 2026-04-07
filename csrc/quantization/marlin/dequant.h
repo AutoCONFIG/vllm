@@ -100,9 +100,9 @@ __device__ inline void dequant(int q, scalar_t2* frag_b);
 // B-fragment of 4 fp16 values. We mostly follow the strategy in the link below,
 // with some small changes:
 // - FP16:
-// https://github.com/NVIDIA/FasterTransformer/blob/release/v5.3_tag/src/fastertransformer/cutlass_extensions/include/cutlass_extensions/interleaved_numeric_conversion.h#L215-L287
+// https://github.hyhy.fun/NVIDIA/FasterTransformer/blob/release/v5.3_tag/src/fastertransformer/cutlass_extensions/include/cutlass_extensions/interleaved_numeric_conversion.h#L215-L287
 // - BF16:
-// https://github.com/NVIDIA/FasterTransformer/blob/release/v5.3_tag/src/fastertransformer/cutlass_extensions/include/cutlass_extensions/interleaved_numeric_conversion.h#L327-L385
+// https://github.hyhy.fun/NVIDIA/FasterTransformer/blob/release/v5.3_tag/src/fastertransformer/cutlass_extensions/include/cutlass_extensions/interleaved_numeric_conversion.h#L327-L385
 //
 template <>
 __device__ inline void dequant<half2, vllm::kU4B8.id(), true>(int q,
@@ -219,9 +219,9 @@ __device__ inline void dequant<nv_bfloat162, vllm::kU4.id(), false>(
 // Fast Int8ToFp16/Int8ToBf16: Efficiently dequantize 8bit int values to fp16 or
 // bf16 Reference:
 // - FP16:
-// https://github.com/NVIDIA/FasterTransformer/blob/release/v5.3_tag/src/fastertransformer/cutlass_extensions/include/cutlass_extensions/interleaved_numeric_conversion.h#L53-L85
+// https://github.hyhy.fun/NVIDIA/FasterTransformer/blob/release/v5.3_tag/src/fastertransformer/cutlass_extensions/include/cutlass_extensions/interleaved_numeric_conversion.h#L53-L85
 // - BF16:
-// https://github.com/NVIDIA/FasterTransformer/blob/release/v5.3_tag/src/fastertransformer/cutlass_extensions/include/cutlass_extensions/interleaved_numeric_conversion.h#L125-L175
+// https://github.hyhy.fun/NVIDIA/FasterTransformer/blob/release/v5.3_tag/src/fastertransformer/cutlass_extensions/include/cutlass_extensions/interleaved_numeric_conversion.h#L125-L175
 //
 template <>
 __device__ inline void dequant<half2, vllm::kU8B128.id(), true>(int q,
@@ -570,7 +570,7 @@ template <>
 __device__ inline void sub_zp_and_dequant<int32_t, vllm::kU4.id(), true>(
     int q, int32_t* frag_b, int zp) {
   // INT4 with zp -> INT8
-  // see https://github.com/vllm-project/vllm/pull/24722
+  // see https://github.hyhy.fun/vllm-project/vllm/pull/24722
   int repeated_zp = 0x01010101 * zp;
   int MASK = 0x80808080;
 
@@ -584,7 +584,7 @@ __device__ inline void sub_zp_and_dequant<__nv_fp8x4_e4m3, vllm::kU4.id(),
                                           true>(int q, __nv_fp8x4_e4m3* frag_b,
                                                 int zp) {
   // INT4 with zp -> FP8
-  // see https://github.com/vllm-project/vllm/pull/24722
+  // see https://github.hyhy.fun/vllm-project/vllm/pull/24722
   uint32_t u_q = *reinterpret_cast<uint32_t*>(&q);
   uint32_t u_zp = *reinterpret_cast<uint32_t*>(&zp);
   uint32_t u_zp1 = u_zp + 1;

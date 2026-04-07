@@ -40,7 +40,7 @@ class ResidualBlock(nn.Module):
 
 class Medusa(nn.Module):
     """This class implements the Medusa draft model from the paper: https://arxiv.org/abs/2401.10774
-    Reference implementation: https://github.com/FasterDecoding/Medusa
+    Reference implementation: https://github.hyhy.fun/FasterDecoding/Medusa
 
     Differences from reference implementation:
     1. Currently this only supports generating proposals from top-1 tokens.

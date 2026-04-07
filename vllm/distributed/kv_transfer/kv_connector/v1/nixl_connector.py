@@ -101,7 +101,7 @@ logger = init_logger(__name__)
 try:
     if "UCX_RCACHE_MAX_UNRELEASED" not in os.environ:
         # avoid a memory leak in UCX when using NIXL on some models
-        # see: https://github.com/vllm-project/vllm/issues/24264
+        # see: https://github.hyhy.fun/vllm-project/vllm/issues/24264
         if "nixl" in sys.modules or "rixl" in sys.modules:
             logger.warning(
                 "NIXL was already imported, we can't reset UCX_RCACHE_MAX_UNRELEASED. "

@@ -15,7 +15,7 @@ from ...utils import build_model_context
 
 @pytest.mark.skipif(
     Version(TRANSFORMERS_VERSION) < Version("5.2.0"),
-    reason="See https://github.com/huggingface/transformers/pull/43948",
+    reason="See https://github.hyhy.fun/huggingface/transformers/pull/43948",
 )
 @pytest.mark.parametrize("model_id", ["HuggingFaceTB/SmolVLM2-2.2B-Instruct"])
 @pytest.mark.parametrize(

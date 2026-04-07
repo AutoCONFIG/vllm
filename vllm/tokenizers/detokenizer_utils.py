@@ -18,7 +18,7 @@ def _convert_tokens_to_string_with_added_encoders(
     spaces_between_special_tokens: bool,
 ) -> str:
     # Adapted from
-    # https://github.com/huggingface/transformers/blob/v4.28.0/src/transformers/tokenization_utils.py#L921
+    # https://github.hyhy.fun/huggingface/transformers/blob/v4.28.0/src/transformers/tokenization_utils.py#L921
     # NOTE(woosuk): The following code is slow because it runs a for loop over
     # the output_tokens. In Python, running a for loop over a list can be slow
     # even when the loop body is very simple.
@@ -105,7 +105,7 @@ def convert_ids_list_to_tokens(
 
 
 # Based on
-# https://github.com/huggingface/text-generation-inference/blob/v0.9.4/server/text_generation_server/models/model.py#L62C9-L62C15
+# https://github.hyhy.fun/huggingface/text-generation-inference/blob/v0.9.4/server/text_generation_server/models/model.py#L62C9-L62C15
 # under Apache 2.0 license
 def detokenize_incrementally(
     tokenizer: TokenizerLike,

@@ -180,7 +180,7 @@ class TrtLlmFp8ExpertsModular(TrtLlmFp8ExpertsBase, mk.FusedMoEExpertsModular):
         # `trtllm_fp8_block_scale_routed_moe` has a bug and does not write to the
         # output tensor in-place so we need to manually copy the result to the
         # output tensor
-        # https://github.com/flashinfer-ai/flashinfer/issues/2703
+        # https://github.hyhy.fun/flashinfer-ai/flashinfer/issues/2703
         result = flashinfer.fused_moe.trtllm_fp8_block_scale_routed_moe(
             topk_ids=packed_topk_ids,
             routing_bias=None,
@@ -263,7 +263,7 @@ class TrtLlmFp8ExpertsMonolithic(TrtLlmFp8ExpertsBase, mk.FusedMoEExpertsMonolit
         """
         if router_logits_dtype == torch.float32:
             # Only DeepSeekV3 routing handles float32 logits
-            # https://github.com/flashinfer-ai/flashinfer/issues/2469
+            # https://github.hyhy.fun/flashinfer-ai/flashinfer/issues/2469
             return routing_method == RoutingMethodType.DeepSeekV3
         return True
 
@@ -278,7 +278,7 @@ class TrtLlmFp8ExpertsMonolithic(TrtLlmFp8ExpertsBase, mk.FusedMoEExpertsMonolit
         internal routing for these methods produces output uncorrelated
         with the modular kernel's output and with Triton kernel's output
         for Qwen3.5-35B-A3B-FP8.
-        See: https://github.com/vllm-project/vllm/issues/37591
+        See: https://github.hyhy.fun/vllm-project/vllm/issues/37591
         """
         # NOTE(dbari): TopK routing could also be enabled, but need to validate models
         # NOTE(dbari): Default is not implemented and should not be enabled until it is

@@ -117,7 +117,7 @@ class HybridAttentionMambaModelConfig(VerifyAndUpdateConfig):
 
         # Disable calculate_kv_scales for hybrid models: uninitialized
         # recurrent state corrupts scales during the calibration pass.
-        # See issue: https://github.com/vllm-project/vllm/issues/37554
+        # See issue: https://github.hyhy.fun/vllm-project/vllm/issues/37554
         if cache_config.calculate_kv_scales:
             logger.warning(
                 "Disabling calculate_kv_scales for hybrid model '%s'. "
@@ -521,7 +521,7 @@ class NomicBertModelConfig(VerifyAndUpdateConfig):
                     "Nomic context extension is disabled. "
                     "Changing max_model_len from %s to %s. "
                     "To enable context extension, see: "
-                    "https://github.com/vllm-project/vllm/tree/main/examples/offline_inference/context_extension.py",
+                    "https://github.hyhy.fun/vllm-project/vllm/tree/main/examples/offline_inference/context_extension.py",
                     max_model_len_before,
                     model_config.max_model_len,
                 )
@@ -596,7 +596,7 @@ class Qwen3ForSequenceClassificationConfig(VerifyAndUpdateConfig):
         tokens = getattr(config, "classifier_from_token", None)
         assert tokens is not None and len(tokens) == 2, (
             "Try loading the original Qwen3 Reranker?, see: "
-            "https://github.com/vllm-project/vllm/tree/main/examples/pooling/score/qwen3_reranker_offline.py"
+            "https://github.hyhy.fun/vllm-project/vllm/tree/main/examples/pooling/score/qwen3_reranker_offline.py"
         )
         text_config = config.get_text_config()
         text_config.method = "from_2_way_softmax"

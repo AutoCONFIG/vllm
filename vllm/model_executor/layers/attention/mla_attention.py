@@ -21,7 +21,7 @@ prefill or decode by the scheduler, but this is something we should probably
 tune.
 
 Main reference: DeepseekV2 paper, and FlashInfer Implementation
-(https://arxiv.org/abs/2405.04434 and https://github.com/flashinfer-ai/flashinfer/pull/551).
+(https://arxiv.org/abs/2405.04434 and https://github.hyhy.fun/flashinfer-ai/flashinfer/pull/551).
 
 Deepseek's MLA attention works the following way:
 * Use a single latent vector to represent the per-token entry of the KV cache.

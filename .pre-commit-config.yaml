@@ -6,36 +6,36 @@ default_stages:
   - manual # Run in CI
 exclude: 'vllm/third_party/.*'
 repos:
-- repo: https://github.com/astral-sh/ruff-pre-commit
+- repo: https://github.hyhy.fun/astral-sh/ruff-pre-commit
   rev: v0.14.0
   hooks:
   - id: ruff-check
     args: [--output-format, github, --fix]
   - id: ruff-format
-- repo: https://github.com/crate-ci/typos
+- repo: https://github.hyhy.fun/crate-ci/typos
   rev: v1.43.5
   hooks:
   - id: typos
     args: [--force-exclude]
-- repo: https://github.com/pre-commit/mirrors-clang-format
+- repo: https://github.hyhy.fun/pre-commit/mirrors-clang-format
   rev: v21.1.2
   hooks:
   - id: clang-format
     exclude: 'csrc/(moe/topk_softmax_kernels.cu|quantization/gguf/(ggml-common.h|dequantize.cuh|vecdotq.cuh|mmq.cuh|mmvq.cuh))|vllm/third_party/.*'
     types_or: [c++, cuda]
     args: [--style=file, --verbose]
-- repo: https://github.com/DavidAnson/markdownlint-cli2
+- repo: https://github.hyhy.fun/DavidAnson/markdownlint-cli2
   rev: v0.21.0
   hooks:
   - id: markdownlint-cli2
     language_version: lts
     args: [--fix]
     exclude: ^CLAUDE\.md$
-- repo: https://github.com/rhysd/actionlint
+- repo: https://github.hyhy.fun/rhysd/actionlint
   rev: v1.7.7
   hooks:
   - id: actionlint
-- repo: https://github.com/astral-sh/uv-pre-commit
+- repo: https://github.hyhy.fun/astral-sh/uv-pre-commit
   rev: 0.9.1
   hooks:
     - id: pip-compile
@@ -57,22 +57,22 @@ repos:
       types_or: [python, pyi]
       require_serial: true
       additional_dependencies: ["mypy[faster-cache]==1.19.1", regex, types-cachetools, types-setuptools, types-PyYAML, types-requests, types-torch, pydantic]
-  - id: mypy-3.10 # TODO: Use https://github.com/pre-commit/mirrors-mypy when mypy setup is less awkward
+  - id: mypy-3.10 # TODO: Use https://github.hyhy.fun/pre-commit/mirrors-mypy when mypy setup is less awkward
     name: Run mypy for Python 3.10
     entry: python tools/pre_commit/mypy.py 1 "3.10"
     <<: *mypy_common
     stages: [manual] # Only run in CI
-  - id: mypy-3.11 # TODO: Use https://github.com/pre-commit/mirrors-mypy when mypy setup is less awkward
+  - id: mypy-3.11 # TODO: Use https://github.hyhy.fun/pre-commit/mirrors-mypy when mypy setup is less awkward
     name: Run mypy for Python 3.11
     entry: python tools/pre_commit/mypy.py 1 "3.11"
     <<: *mypy_common
     stages: [manual] # Only run in CI
-  - id: mypy-3.12 # TODO: Use https://github.com/pre-commit/mirrors-mypy when mypy setup is less awkward
+  - id: mypy-3.12 # TODO: Use https://github.hyhy.fun/pre-commit/mirrors-mypy when mypy setup is less awkward
     name: Run mypy for Python 3.12
     entry: python tools/pre_commit/mypy.py 1 "3.12"
     <<: *mypy_common
     stages: [manual] # Only run in CI
-  - id: mypy-3.13 # TODO: Use https://github.com/pre-commit/mirrors-mypy when mypy setup is less awkward
+  - id: mypy-3.13 # TODO: Use https://github.hyhy.fun/pre-commit/mirrors-mypy when mypy setup is less awkward
     name: Run mypy for Python 3.13
     entry: python tools/pre_commit/mypy.py 1 "3.13"
     <<: *mypy_common

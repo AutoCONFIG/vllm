@@ -5,7 +5,7 @@
 set -e
 
 # Default values
-DEEPGEMM_GIT_REPO="https://github.com/deepseek-ai/DeepGEMM.git"
+DEEPGEMM_GIT_REPO="https://github.hyhy.fun/deepseek-ai/DeepGEMM.git"
 DEEPGEMM_GIT_REF="477618cd51baffca09c4b0b87e97c03fe827ef03"
 WHEEL_DIR=""
 
@@ -91,7 +91,7 @@ pushd "$INSTALL_DIR/deepgemm"
 git checkout "$DEEPGEMM_GIT_REF"
 
 # Clean previous build artifacts
-# (Based on https://github.com/deepseek-ai/DeepGEMM/blob/main/install.sh)
+# (Based on https://github.hyhy.fun/deepseek-ai/DeepGEMM/blob/main/install.sh)
 rm -rf -- build dist *.egg-info 2>/dev/null || true
 
 # Build wheel

@@ -548,7 +548,7 @@ def current_stream() -> torch.cuda.Stream:
         # On CUDA, we capture and replay cudagraph on the same stream,
         # so we need to avoid using the default stream as well. The default
         # stream cannot be used for cudagraph capture, see
-        # https://github.com/pytorch/pytorch/blob/42ad9edfb754743fdae3276ade43de000beb4f60/aten/src/ATen/cuda/CUDAGraph.cpp#L77
+        # https://github.hyhy.fun/pytorch/pytorch/blob/42ad9edfb754743fdae3276ade43de000beb4f60/aten/src/ATen/cuda/CUDAGraph.cpp#L77
         # for more details. Therefore, we create a dedicated stream per process.
         if current_platform.is_rocm() or current_platform.is_cuda():
             # torch.cuda.set_stream here is the alias of _pathed_set_stream
@@ -596,7 +596,7 @@ def _cuda_device_count_stateless(cuda_visible_devices: str | None = None) -> int
     # LRU Cache purposes.
 
     # Code below is based on
-    # https://github.com/pytorch/pytorch/blob/
+    # https://github.hyhy.fun/pytorch/pytorch/blob/
     # c1cd946818442aca8c7f812b16d187ce1586c3bc/
     # torch/cuda/__init__.py#L831C1-L831C17
     import torch.cuda
@@ -629,7 +629,7 @@ def cuda_device_count_stateless() -> int:
     value."""
 
     # This can be removed and simply replaced with torch.cuda.get_device_count
-    # after https://github.com/pytorch/pytorch/pull/122815 is released.
+    # after https://github.hyhy.fun/pytorch/pytorch/pull/122815 is released.
     return _cuda_device_count_stateless(envs.CUDA_VISIBLE_DEVICES)
 
 

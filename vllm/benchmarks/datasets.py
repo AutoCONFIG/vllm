@@ -1016,7 +1016,7 @@ class RandomMultiModalDataset(RandomDataset):
         Create synthetic images and videos and
         apply process_image/process_video respectively.
         This follows the OpenAI API chat completions
-        https://github.com/openai/openai-python
+        https://github.hyhy.fun/openai/openai-python
         """
 
         if self.map_config_to_modality(mm_item_config) == "image":
@@ -2307,7 +2307,7 @@ class CustomMMDataset(CustomDataset):
 
 class SpecBench(CustomDataset):
     """
-    Implements the SpecBench dataset: https://github.com/hemingkx/Spec-Bench
+    Implements the SpecBench dataset: https://github.hyhy.fun/hemingkx/Spec-Bench
     Download the dataset using:
     wget https://raw.githubusercontent.com/hemingkx/Spec-Bench/refs/heads/main/data/spec_bench/question.jsonl
     """  # noqa: E501
@@ -2891,7 +2891,7 @@ class MTBenchDataset(HuggingFaceDataset):
 
     We create a single turn dataset for MT-Bench.
     This is similar to Spec decoding benchmark setup in vLLM
-    https://github.com/vllm-project/vllm/blob/9d98ab5ec/examples/offline_inference/eagle.py#L14-L18
+    https://github.hyhy.fun/vllm-project/vllm/blob/9d98ab5ec/examples/offline_inference/eagle.py#L14-L18
     """  # noqa: E501
 
     DEFAULT_OUTPUT_LEN = 256  # avg len used in SD bench in vLLM
@@ -2949,7 +2949,7 @@ class MTBenchDataset(HuggingFaceDataset):
 class BlazeditDataset(HuggingFaceDataset):
     """
     Blazedit Dataset.
-    https://github.com/ise-uiuc/blazedit
+    https://github.hyhy.fun/ise-uiuc/blazedit
 
     5k char version: vdaita/edit_5k_char
     10k char version: vdaita/edit_10k_char
@@ -2992,7 +2992,7 @@ class BlazeditDataset(HuggingFaceDataset):
                 continue
 
             # template copied from
-            # https://github.com/ise-uiuc/blazedit/blob/7765137e656fd62de877422d2e4cf8de51228054/dataset/create_refined_dataset.py#L94-L105 # noqa: E501
+            # https://github.hyhy.fun/ise-uiuc/blazedit/blob/7765137e656fd62de877422d2e4cf8de51228054/dataset/create_refined_dataset.py#L94-L105 # noqa: E501
             prompt = f"""Given a code file, please apply the change requests and generate the new file.
 
 Original file:
@@ -3480,7 +3480,7 @@ class PrefixRepetitionRandomDataset(BenchmarkDataset):
 class MMStarDataset(HuggingFaceDataset):
     """
     Lin-Chen/MMStar: https://huggingface.co/datasets/Lin-Chen/MMStar
-    refer to: https://github.com/sgl-project/SpecForge/pull/106
+    refer to: https://github.hyhy.fun/sgl-project/SpecForge/pull/106
     """
 
     DEFAULT_OUTPUT_LEN = 128

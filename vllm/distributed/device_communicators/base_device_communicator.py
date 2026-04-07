@@ -186,7 +186,7 @@ class DeviceCommunicatorBase:
         input_size = input_.size()
         # NOTE: we have to use concat-style all-gather here,
         # stack-style all-gather has compatibility issues with
-        # torch.compile . see https://github.com/pytorch/pytorch/issues/138795
+        # torch.compile . see https://github.hyhy.fun/pytorch/pytorch/issues/138795
         output_size = (input_size[0] * self.world_size,) + input_size[1:]
         # Allocate output tensor.
         output_tensor = torch.empty(

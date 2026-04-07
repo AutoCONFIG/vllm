@@ -276,7 +276,7 @@ class Gemma2Model(nn.Module):
         # Normalize the embedding by sqrt(hidden_size)
         # The normalizer's data type should be downcasted to the model's
         # data type such as bfloat16, not float32.
-        # See https://github.com/huggingface/transformers/pull/29402
+        # See https://github.hyhy.fun/huggingface/transformers/pull/29402
         normalizer = self.config.hidden_size**0.5
         self.register_buffer("normalizer", torch.tensor(normalizer), persistent=False)
         self.make_empty_intermediate_tensors = make_empty_intermediate_tensors_factory(

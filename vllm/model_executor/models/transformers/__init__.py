@@ -122,6 +122,6 @@ def __getattr__(name: str):
         raise AttributeError(
             "The Transformers modeling backend does not currently have a class to "
             f"handle the requested model type: {name}. Please open an issue at "
-            "https://github.com/vllm-project/vllm/issues/new"
+            "https://github.hyhy.fun/vllm-project/vllm/issues/new"
         )
     return globals()[name]

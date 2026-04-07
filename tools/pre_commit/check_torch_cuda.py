@@ -26,7 +26,7 @@ def scan_file(path: str) -> int:
                 f"{path}:{line_num}: "
                 "\033[91merror:\033[0m "  # red color
                 "Found torch.cuda API call. Please refer RFC "
-                "https://github.com/vllm-project/vllm/issues/30679, use "
+                "https://github.hyhy.fun/vllm-project/vllm/issues/30679, use "
                 "torch.accelerator API instead."
             )
             return 1

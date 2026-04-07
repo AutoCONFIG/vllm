@@ -1,6 +1,6 @@
 /*
-Adapted from https://github.com/turboderp/exllamav2 and
-https://github.com/qwopqwop200/GPTQ-for-LLaMa
+Adapted from https://github.hyhy.fun/turboderp/exllamav2 and
+https://github.hyhy.fun/qwopqwop200/GPTQ-for-LLaMa
 */
 
 #include <cstdint>

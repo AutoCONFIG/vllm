@@ -327,7 +327,7 @@ class Gemma3Model(nn.Module):
         # Normalize the embedding by sqrt(hidden_size)
         # The normalizer's data type should be downcasted to the model's
         # data type such as bfloat16, not float32.
-        # See https://github.com/huggingface/transformers/pull/29402
+        # See https://github.hyhy.fun/huggingface/transformers/pull/29402
         normalizer = self.config.hidden_size**0.5
         self.register_buffer("normalizer", torch.tensor(normalizer), persistent=False)
         self.make_empty_intermediate_tensors = make_empty_intermediate_tensors_factory(
@@ -384,7 +384,7 @@ class Gemma3Model(nn.Module):
         loaded_params: set[str] = set()
         for name, loaded_weight in weights:
             # Revert +1 during llama.cpp conversion
-            # see: https://github.com/ggml-org/llama.cpp/blob/be7c3034108473beda214fd1d7c98fd6a7a3bdf5/convert_hf_to_gguf.py#L3397-L3400
+            # see: https://github.hyhy.fun/ggml-org/llama.cpp/blob/be7c3034108473beda214fd1d7c98fd6a7a3bdf5/convert_hf_to_gguf.py#L3397-L3400
             if (
                 self.quant_config
                 and self.quant_config.get_name() == "gguf"

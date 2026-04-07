@@ -971,7 +971,7 @@ def maybe_register_config_serialize_by_value() -> None:
     i.e. the class definition is serialized along with its data so that the
     class module does not need to be importable on the receiving end.
 
-    See: https://github.com/cloudpipe/cloudpickle?tab=readme-ov-file#overriding-pickles-serialization-mechanism-for-importable-constructs
+    See: https://github.hyhy.fun/cloudpipe/cloudpickle?tab=readme-ov-file#overriding-pickles-serialization-mechanism-for-importable-constructs
     """  # noqa
     try:
         import transformers_modules

@@ -136,7 +136,7 @@ def test_contexted_kv_attention(
     # Need this, otherwise when we capture the graph the process
     # for GPU 1 would run on both GPU0 and GPU1 and things would hang
     #
-    # see also similar issue: https://github.com/Dao-AILab/flash-attention/issues/523
+    # see also similar issue: https://github.hyhy.fun/Dao-AILab/flash-attention/issues/523
     torch.accelerator.set_device_index(device)
 
     MAX_SEQ_LEN = 1024
@@ -357,7 +357,7 @@ def test_contexted_kv_attention_alibi(
     # Need this, otherwise when we capture the graph the process
     # for GPU 1 would run on both GPU0 and GPU1 and things would hang
     #
-    # see also similar issue: https://github.com/Dao-AILab/flash-attention/issues/523
+    # see also similar issue: https://github.hyhy.fun/Dao-AILab/flash-attention/issues/523
     torch.accelerator.set_device_index(device)
 
     def _get_alibi_slopes(total_num_heads: int) -> torch.Tensor:

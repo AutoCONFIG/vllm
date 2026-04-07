@@ -2,7 +2,7 @@
 # SPDX-FileCopyrightText: Copyright contributors to the vLLM project
 
 # Adapted from
-# https://github.com/huggingface/transformers/blob/v4.28.0/src/transformers/models/gpt_neox/modeling_gpt_neox.py
+# https://github.hyhy.fun/huggingface/transformers/blob/v4.28.0/src/transformers/models/gpt_neox/modeling_gpt_neox.py
 # Copyright 2023 The vLLM team.
 # Copyright 2022 EleutherAI The HuggingFace Inc. team. All rights reserved.
 #

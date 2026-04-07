@@ -346,8 +346,8 @@ for i, (output, pause_idx) in enumerate(results):
 # compare outputs from the weight-synced engine against a fresh V2 instance.
 # On NVIDIA, batch invariance is fully supported, so we require 100% exact
 # token match. On ROCm, batch invariance is not yet fully implemented
-# (see https://github.com/vllm-project/vllm/issues/27433 and
-# https://github.com/vllm-project/vllm/issues/33123), so residual
+# (see https://github.hyhy.fun/vllm-project/vllm/issues/27433 and
+# https://github.hyhy.fun/vllm-project/vllm/issues/33123), so residual
 # non-determinism (e.g. GEMM accumulation order, missing kernel overrides)
 # can cause single-token divergences that don't indicate a weight-sync
 # failure. We relax the pass rate to 90% on ROCm to accommodate this; a

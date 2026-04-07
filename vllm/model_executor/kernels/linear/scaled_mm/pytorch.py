@@ -41,7 +41,7 @@ class TorchFP8ScaledMMLinearKernel(FP8ScaledMMLinearKernel):
         #
         # The perf gain is still relevant as of 16/1/2026
         # torch version == 2.9.0. More details in the link below:
-        # https://github.com/vllm-project/vllm/issues/32269
+        # https://github.hyhy.fun/vllm-project/vllm/issues/32269
         vllm_config = get_current_vllm_config().compilation_config
         pad_output = vllm_config.mode < CompilationMode.VLLM_COMPILE
         return 17 if pad_output else None
@@ -129,7 +129,7 @@ class RowWiseTorchFP8ScaledMMLinearKernel(TorchFP8ScaledMMLinearKernel):
         #  Note:
         #  For now it has only been validated on ROCm platform.
         #  fp8 rowwise scaling in torch._scaled_mm is introduced in
-        #  https://github.com/pytorch/pytorch/pull/144432 using
+        #  https://github.hyhy.fun/pytorch/pytorch/pull/144432 using
         #  hipBLASLt and ROCm 6.3, which only exists in torch 2.7 and above.
         #
         #  For CUDA platform please validate if the torch._scaled_mm supports

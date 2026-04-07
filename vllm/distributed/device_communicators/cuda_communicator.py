@@ -109,7 +109,7 @@ class CudaCommunicator(DeviceCommunicatorBase):
             if current_platform.is_rocm():
                 # Initialize a custom quick all-reduce implementation for AMD.
                 # Quick reduce is designed as a complement to custom allreduce.
-                # Based on quickreduce (https://github.com/mk1-project/quickreduce).
+                # Based on quickreduce (https://github.hyhy.fun/mk1-project/quickreduce).
                 # If it's a rocm, 'use_custom_allreduce==True' means it must
                 # currently be an MI300 series.
                 self.qr_comm = QuickAllReduce(group=self.cpu_group, device=self.device)

@@ -124,7 +124,7 @@ def get_flash_attn_version(
 
         # FA4 on SM100 (Blackwell) has TMEM capacity limits that restrict
         # supported head dimensions.
-        # See: https://github.com/Dao-AILab/flash-attention/issues/1959
+        # See: https://github.hyhy.fun/Dao-AILab/flash-attention/issues/1959
         # Exception: hdim 192 is supported for MLA's diff-headdim case
         # (qk=192, v=128), added upstream in commits 1a15733e/1b36ab19.
         if (

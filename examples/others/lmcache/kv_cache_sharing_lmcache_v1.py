@@ -9,7 +9,7 @@ KV cache is transferred in the following manner:
 (2) LMCache server -> vLLM instance 2 (KV cache reuse/retrieve).
 
 Note that lmcache needs to be installed to run this example.
-Learn more about LMCache in https://github.com/LMCache/LMCache.
+Learn more about LMCache in https://github.hyhy.fun/LMCache/LMCache.
 """
 
 import os

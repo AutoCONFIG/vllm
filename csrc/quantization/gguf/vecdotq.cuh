@@ -1,5 +1,5 @@
-// copied and adapted from https://github.com/ggerganov/llama.cpp/blob/b2899/ggml-cuda/vecdotq.cuh
-// and https://github.com/ggerganov/llama.cpp/blob/b2899/ggml-cuda/mmq.cu
+// copied and adapted from https://github.hyhy.fun/ggerganov/llama.cpp/blob/b2899/ggml-cuda/vecdotq.cuh
+// and https://github.hyhy.fun/ggerganov/llama.cpp/blob/b2899/ggml-cuda/mmq.cu
 static __device__ __forceinline__ int get_int_b2(const void * x, const int & i32) {
     const uint16_t * x16 = (const uint16_t *) x; // assume at least 2 byte alignment
 

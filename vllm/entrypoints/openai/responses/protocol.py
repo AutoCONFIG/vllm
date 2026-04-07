@@ -2,7 +2,7 @@
 # SPDX-FileCopyrightText: Copyright contributors to the vLLM project
 
 # Adapted from
-# https://github.com/lm-sys/FastChat/blob/168ccc29d3f7edc50823016105c024fe2282732a/fastchat/protocol/openai_api_protocol.py
+# https://github.hyhy.fun/lm-sys/FastChat/blob/168ccc29d3f7edc50823016105c024fe2282732a/fastchat/protocol/openai_api_protocol.py
 import time
 from typing import Any, Literal, TypeAlias
 
@@ -521,13 +521,13 @@ class ResponsesResponse(OpenAIBaseModel):
 
     # NOTE: openAI harmony doesn't serialize TextContent properly,
     # TODO: this fixes for TextContent, but need to verify for tools etc
-    # https://github.com/openai/harmony/issues/78
+    # https://github.hyhy.fun/openai/harmony/issues/78
     @field_serializer("output_messages", when_used="json")
     def serialize_output_messages(self, msgs, _info):
         return serialize_messages(msgs)
 
     # NOTE: openAI harmony doesn't serialize TextContent properly, this fixes it
-    # https://github.com/openai/harmony/issues/78
+    # https://github.hyhy.fun/openai/harmony/issues/78
     @field_serializer("input_messages", when_used="json")
     def serialize_input_messages(self, msgs, _info):
         return serialize_messages(msgs)
@@ -585,7 +585,7 @@ class ResponsesResponse(OpenAIBaseModel):
 
 
 # TODO: this code can be removed once
-# https://github.com/openai/openai-python/issues/2634 has been resolved
+# https://github.hyhy.fun/openai/openai-python/issues/2634 has been resolved
 class ResponseReasoningPartDoneEvent(OpenAIBaseModel):
     content_index: int
     """The index of the content part that is done."""
@@ -607,7 +607,7 @@ class ResponseReasoningPartDoneEvent(OpenAIBaseModel):
 
 
 # TODO: this code can be removed once
-# https://github.com/openai/openai-python/issues/2634 has been resolved
+# https://github.hyhy.fun/openai/openai-python/issues/2634 has been resolved
 class ResponseReasoningPartAddedEvent(OpenAIBaseModel):
     content_index: int
     """The index of the content part that is done."""

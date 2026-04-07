@@ -71,8 +71,8 @@ def get_hf_overrides(model: str) -> dict[str, Any]:
     note:
         Some reranking models require special configuration overrides to work
         correctly with vLLM's score API.
-        Reference: https://github.com/vllm-project/vllm/blob/main/examples/pooling/score/qwen3_reranker_offline.py
-        Reference: https://github.com/vllm-project/vllm/blob/main/examples/pooling/score/convert_model_to_seq_cls.py
+        Reference: https://github.hyhy.fun/vllm-project/vllm/blob/main/examples/pooling/score/qwen3_reranker_offline.py
+        Reference: https://github.hyhy.fun/vllm-project/vllm/blob/main/examples/pooling/score/convert_model_to_seq_cls.py
     """
 
     model_name_to_hf_overrides_map = {

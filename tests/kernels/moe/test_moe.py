@@ -737,7 +737,7 @@ def test_mixtral_moe(
             # Transformers v5
             vllm_moe.experts.w13_weight.data[:] = hf_moe.experts.gate_up_proj.data
             vllm_moe.experts.w2_weight.data[:] = hf_moe.experts.down_proj.data
-            # TODO: remove this line after https://github.com/huggingface/transformers/pull/43622
+            # TODO: remove this line after https://github.hyhy.fun/huggingface/transformers/pull/43622
             hf_moe.experts.config._experts_implementation = "eager"
 
         # Generate input batch of dimensions [batch_size, seq_len, hidden_dim]
@@ -784,7 +784,7 @@ def test_mixtral_moe(
 
     if use_rocm_aiter:
         # The values of rtol and atol are set based on the tests in ROCM AITER package.
-        # https://github.com/ROCm/aiter/blob/dfed377f4be7da96ca2d75ac0761f569676f7240/op_tests/test_moe.py#L174
+        # https://github.hyhy.fun/ROCm/aiter/blob/dfed377f4be7da96ca2d75ac0761f569676f7240/op_tests/test_moe.py#L174
         torch.testing.assert_close(
             hf_states.flatten(0, 1), vllm_states, rtol=0.01, atol=100
         )

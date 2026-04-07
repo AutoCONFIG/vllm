@@ -426,7 +426,7 @@ class BitsAndBytesModelLoader(BaseModelLoader):
                     )
 
                 # remove the following after the issue is fixed:
-                # https://github.com/bitsandbytes-foundation/bitsandbytes/issues/1342
+                # https://github.hyhy.fun/bitsandbytes-foundation/bitsandbytes/issues/1342
                 if loaded_weight.is_contiguous() is False:
                     loaded_weight = loaded_weight.contiguous()
 
@@ -596,7 +596,7 @@ class BitsAndBytesModelLoader(BaseModelLoader):
             if not (isinstance(quant_state, QuantState) and quant_state.nested):
                 return
 
-            # Copied from: https://github.com/bitsandbytes-foundation/bitsandbytes/blob/0.45.3/bitsandbytes/functional.py#L1352-#L1356
+            # Copied from: https://github.hyhy.fun/bitsandbytes-foundation/bitsandbytes/blob/0.45.3/bitsandbytes/functional.py#L1352-#L1356
             absmax = dequantize_blockwise(quant_state.absmax, quant_state.state2)
             absmax += quant_state.offset
 

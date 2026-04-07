@@ -84,7 +84,7 @@ def test_mxfp4_loading_and_execution_moe(vllm_runner, model_case: ModelCase):
         load_format="dummy",
         compilation_config={"cudagraph_capture_sizes": [16]},
     ) as llm:
-        # Disabled as check_model is broken: https://github.com/vllm-project/vllm/pull/18465#issuecomment-3329880562
+        # Disabled as check_model is broken: https://github.hyhy.fun/vllm-project/vllm/pull/18465#issuecomment-3329880562
         # def check_model(model):
         #     from vllm.model_executor.layers.quantization.quark.quark import (  # noqa: E501
         #         QuarkLinearMethod)

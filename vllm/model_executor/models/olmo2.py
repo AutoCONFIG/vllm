@@ -2,7 +2,7 @@
 # SPDX-FileCopyrightText: Copyright contributors to the vLLM project
 
 # Adapted from
-# https://github.com/huggingface/transformers/blob/main/src/transformers/models/olmo2/modeling_olmo2.py
+# https://github.hyhy.fun/huggingface/transformers/blob/main/src/transformers/models/olmo2/modeling_olmo2.py
 # Copyright 2024 The vLLM team.
 # Copyright 2024 EleutherAI and the HuggingFace Inc. team. All rights reserved.
 #

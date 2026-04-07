@@ -28,7 +28,7 @@ SSM_MODELS = [
     "state-spaces/mamba-130m-hf",
     "tiiuae/falcon-mamba-tiny-dev",
     # mamba2-codestral in transformers is broken pending:
-    # https://github.com/huggingface/transformers/pull/40861
+    # https://github.hyhy.fun/huggingface/transformers/pull/40861
     # "yujiepan/mamba2-codestral-v0.1-tiny-random",
 ]
 
@@ -581,7 +581,7 @@ def test_apc_multiple_prompts_all_cached_outputs(
     )
     vllm_runner_kwargs["mamba_ssm_cache_dtype"] = "float32"
     # Reduce the effects of batch variance on ROCm since batch invariance is not
-    # yet supported. See: https://github.com/vllm-project/vllm/issues/27433
+    # yet supported. See: https://github.hyhy.fun/vllm-project/vllm/issues/27433
     if current_platform.is_rocm():
         vllm_runner_kwargs["max_num_seqs"] = 4
 

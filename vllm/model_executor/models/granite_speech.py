@@ -2,7 +2,7 @@
 # SPDX-FileCopyrightText: Copyright contributors to the vLLM project
 
 # Adapted from
-# https://github.com/huggingface/transformers/blob/v4.28.0/src/transformers/models/llama/modeling_llama.py
+# https://github.hyhy.fun/huggingface/transformers/blob/v4.28.0/src/transformers/models/llama/modeling_llama.py
 # Copyright 2025 The vLLM team.
 # Copyright 2022 EleutherAI and the HuggingFace Inc. team. All rights reserved.
 #
@@ -292,7 +292,7 @@ class GraniteSpeechEncoderProjector(nn.Module):
         return query_proj
 
 
-# Encoder - conformer is adapted from: https://github.com/lucidrains/conformer.git
+# Encoder - conformer is adapted from: https://github.hyhy.fun/lucidrains/conformer.git
 # NOTE - it would be nice to see if we can align this with other models using
 # conformer in vLLM, e.g., phi4mm audio.
 class GraniteSpeechConformerFeedForward(nn.Module):
@@ -890,7 +890,7 @@ class GraniteSpeechForConditionalGeneration(
             multi_modal_data={"audio": audio},
         )
 
-    # Adapted from https://github.com/huggingface/transformers/blob/v4.56.0/src/transformers/models/granite_speech/feature_extraction_granite_speech.py#L122 # noqa: E501
+    # Adapted from https://github.hyhy.fun/huggingface/transformers/blob/v4.56.0/src/transformers/models/granite_speech/feature_extraction_granite_speech.py#L122 # noqa: E501
     @classmethod
     def get_num_audio_tokens(
         cls,

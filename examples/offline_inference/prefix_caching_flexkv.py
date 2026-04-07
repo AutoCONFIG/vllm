@@ -7,7 +7,7 @@ FlexKV is a distributed KV Store and multi-level cache management system for
 ultra-large-scale LLM inference.
 
 Requirements:
-    - Install FlexKV (https://github.com/taco-project/FlexKV):
+    - Install FlexKV (https://github.hyhy.fun/taco-project/FlexKV):
         1. git clone git@github.com:taco-project/FlexKV.git
         2. cd FlexKV && bash build.sh
     - Ensure FlexKV is compatible with your vLLM version.

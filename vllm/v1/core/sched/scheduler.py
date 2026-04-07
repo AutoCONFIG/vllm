@@ -193,7 +193,7 @@ class Scheduler(SchedulerInterface):
 
         # NOTE: Text-only encoder-decoder models are implemented as
         # multi-modal models for convenience
-        # Example: https://github.com/vllm-project/bart-plugin
+        # Example: https://github.hyhy.fun/vllm-project/bart-plugin
         if self.is_encoder_decoder:
             assert mm_budget and len(mm_budget.mm_max_toks_per_item) <= 1, (
                 "Encoder-decoder models are expected to implement the "

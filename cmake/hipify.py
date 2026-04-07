@@ -6,7 +6,7 @@
 # A command line tool for running pytorch's hipify preprocessor on CUDA
 # source files.
 #
-# See https://github.com/ROCm/hipify_torch
+# See https://github.hyhy.fun/ROCm/hipify_torch
 # and <torch install dir>/utils/hipify/hipify_python.py
 #
 

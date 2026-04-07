@@ -308,7 +308,7 @@ class GeluAndMul(CustomOp):
 # --8<-- [start:swigluoai_and_mul]
 @CustomOp.register("swigluoai_and_mul")
 class SwigluOAIAndMul(CustomOp):
-    # https://github.com/huggingface/transformers/blob/v4.55.0/src/transformers/models/gpt_oss/modeling_gpt_oss.py#L106-L110
+    # https://github.hyhy.fun/huggingface/transformers/blob/v4.55.0/src/transformers/models/gpt_oss/modeling_gpt_oss.py#L106-L110
     # --8<-- [end:swigluoai_and_mul]
 
     def __init__(self, alpha: float = 1.702, limit: float = 7.0):
@@ -433,7 +433,7 @@ class FastGELU(CustomOp):
 # --8<-- [start:quick_gelu]
 @CustomOp.register("quick_gelu")
 class QuickGELU(CustomOp):
-    # https://github.com/huggingface/transformers/blob/main/src/transformers/activations.py#L90
+    # https://github.hyhy.fun/huggingface/transformers/blob/main/src/transformers/activations.py#L90
     # --8<-- [end:quick_gelu]
 
     def __init__(self):
@@ -536,7 +536,7 @@ class XIELU(CustomOp):
             logger.warning_once(
                 "CUDA-fused xIELU not available (%s) –"
                 " falling back to a Python version.\n"
-                "For CUDA xIELU (experimental), `pip install git+https://github.com/nickjbrowning/XIELU`",
+                "For CUDA xIELU (experimental), `pip install git+https://github.hyhy.fun/nickjbrowning/XIELU`",
                 str(err),
             )
 

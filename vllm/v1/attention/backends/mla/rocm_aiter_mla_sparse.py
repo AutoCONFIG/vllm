@@ -254,7 +254,7 @@ class ROCMAiterMLASparseMetadataBuilder(
 
 
 # Take from
-# https://github.com/deepseek-ai/FlashMLA/blob/main/tests/test_flash_mla_prefill.py#L72
+# https://github.hyhy.fun/deepseek-ai/FlashMLA/blob/main/tests/test_flash_mla_prefill.py#L72
 def reference_mla_sparse_prefill(
     q: torch.Tensor, kv: torch.Tensor, indices: torch.Tensor, sm_scale: float, d_v: int
 ) -> tuple[torch.Tensor, torch.Tensor]:

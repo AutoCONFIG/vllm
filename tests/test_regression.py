@@ -19,7 +19,7 @@ from vllm.platforms import current_platform
 
 @pytest.mark.skip(reason="In V1, we reject tokens > max_seq_len")
 def test_duplicated_ignored_sequence_group():
-    """https://github.com/vllm-project/vllm/issues/1655"""
+    """https://github.hyhy.fun/vllm-project/vllm/issues/1655"""
 
     sampling_params = SamplingParams(temperature=0.01, top_p=0.1, max_tokens=256)
     llm = LLM(

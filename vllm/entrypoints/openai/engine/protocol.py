@@ -2,7 +2,7 @@
 # SPDX-FileCopyrightText: Copyright contributors to the vLLM project
 
 # Adapted from
-# https://github.com/lm-sys/FastChat/blob/168ccc29d3f7edc50823016105c024fe2282732a/fastchat/protocol/openai_api_protocol.py
+# https://github.hyhy.fun/lm-sys/FastChat/blob/168ccc29d3f7edc50823016105c024fe2282732a/fastchat/protocol/openai_api_protocol.py
 import time
 from http import HTTPStatus
 from typing import Any, ClassVar, Literal, TypeAlias
@@ -169,7 +169,7 @@ class FunctionDefinition(OpenAIBaseModel):
 
 
 # extra="forbid" is a workaround to have kwargs as a field,
-# see https://github.com/pydantic/pydantic/issues/3125
+# see https://github.hyhy.fun/pydantic/pydantic/issues/3125
 class LogitsProcessorConstructor(BaseModel):
     qualname: str
     args: list[Any] | None = None

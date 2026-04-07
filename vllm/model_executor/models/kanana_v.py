@@ -409,7 +409,7 @@ class KananaVProcessingInfo(BaseProcessingInfo):
             preprocessed_size = ImageSize(width=image_width, height=image_height)
 
         # NOTE: Frames are padded to be divisible by `temporal_patch_size`
-        # https://github.com/huggingface/transformers/blob/v4.48.3/src/transformers/models/qwen2_vl/image_processing_qwen2_vl.py#L294
+        # https://github.hyhy.fun/huggingface/transformers/blob/v4.48.3/src/transformers/models/qwen2_vl/image_processing_qwen2_vl.py#L294
         padded_num_frames = num_frames + num_frames % temporal_patch_size
 
         grid_t = max(padded_num_frames // temporal_patch_size, 1)

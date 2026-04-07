@@ -16,7 +16,7 @@ sequence classification model. This converted model:
 2. Fully supports vLLM's score() API
 3. Simplifies initialization parameters
 Reference: https://huggingface.co/Qwen/Qwen3-Reranker-0.6B/discussions/3
-Reference: https://github.com/vllm-project/vllm/blob/main/examples/pooling/score/convert_model_to_seq_cls.py
+Reference: https://github.hyhy.fun/vllm-project/vllm/blob/main/examples/pooling/score/convert_model_to_seq_cls.py
 
 For the converted model, initialization would simply be:
     vllm serve tomaarsen/Qwen3-Reranker-0.6B-seq-cls --runner pooling --chat-template examples/pooling/score/template/qwen3_reranker.jinja

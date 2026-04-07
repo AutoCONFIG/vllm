@@ -111,7 +111,7 @@ VLLM_PATH = Path(__file__).parent.parent
 
 # ROCm: disable skinny GEMM to avoid non-deterministic results from
 # atomic reductions in wvSplitKrc kernel.
-# See: https://github.com/vllm-project/vllm/pull/33493#issuecomment-3906083975
+# See: https://github.hyhy.fun/vllm-project/vllm/pull/33493#issuecomment-3906083975
 ROCM_ENV_OVERRIDES = (
     {"VLLM_ROCM_USE_SKINNY_GEMM": "0"} if current_platform.is_rocm() else {}
 )
@@ -1259,7 +1259,7 @@ _P = ParamSpec("_P")
 
 def fork_new_process_for_each_test(func: Callable[_P, None]) -> Callable[_P, None]:
     """Decorator to fork a new process for each test function.
-    See https://github.com/vllm-project/vllm/issues/7053 for more details.
+    See https://github.hyhy.fun/vllm-project/vllm/issues/7053 for more details.
     """
 
     @functools.wraps(func)
@@ -1852,7 +1852,7 @@ class TestFP8Layer(torch.nn.Module):
 
 # TODO: Drop TestBlockFP8Layer in favour of a unified TestFP8Layer
 # after refactoring W8A8BlockFp8LinearOp.
-# https://github.com/vllm-project/vllm/issues/31818
+# https://github.hyhy.fun/vllm-project/vllm/issues/31818
 class TestBlockFP8Layer:
     """
     Test helper for blockwise FP8 linear operations. Creates random weights

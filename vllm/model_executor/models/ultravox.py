@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: Apache-2.0
 # SPDX-FileCopyrightText: Copyright contributors to the vLLM project
 
-# Adapted from https://github.com/fixie-ai/ultravox/blob/ecd58c4041030bae2ad15aa6bcf04ab43199ea02/ultravox/model/ultravox_model.py
+# Adapted from https://github.hyhy.fun/fixie-ai/ultravox/blob/ecd58c4041030bae2ad15aa6bcf04ab43199ea02/ultravox/model/ultravox_model.py
 """PyTorch Ultravox model."""
 
 import copy
@@ -431,8 +431,8 @@ class ModifiedWhisperEncoder(WhisperEncoder):
            than or equal to `expected_seq_length` instead of strictly equal
         - embed_pos is now sliced to match the length of `inputs_embeds`
 
-    Original: https://github.com/huggingface/transformers/blob/main/src/transformers/models/whisper/modeling_whisper.py
-    See commentary: https://github.com/huggingface/transformers/issues/25744
+    Original: https://github.hyhy.fun/huggingface/transformers/blob/main/src/transformers/models/whisper/modeling_whisper.py
+    See commentary: https://github.hyhy.fun/huggingface/transformers/issues/25744
     """
 
     base_model_prefix = "model.encoder"

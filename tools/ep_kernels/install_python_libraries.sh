@@ -180,7 +180,7 @@ do_build() {
 
 # build DeepEP
 do_build \
-    "https://github.com/deepseek-ai/DeepEP" \
+    "https://github.hyhy.fun/deepseek-ai/DeepEP" \
     "DeepEP" \
     "setup.py" \
     "$DEEPEP_COMMIT_HASH" \

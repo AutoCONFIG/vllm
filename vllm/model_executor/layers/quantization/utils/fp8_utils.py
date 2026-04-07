@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: Apache-2.0
 # SPDX-FileCopyrightText: Copyright contributors to the vLLM project
 
-# Adapted from https://github.com/sgl-project/sglang/pull/2575
+# Adapted from https://github.hyhy.fun/sgl-project/sglang/pull/2575
 import functools
 import json
 import os
@@ -77,7 +77,7 @@ def cutlass_scaled_mm(
 
 # TODO we should be able to change the type of block_size to GroupShape
 # after we resolve GroupShape compilation issue
-# https://github.com/vllm-project/vllm/issues/25270
+# https://github.hyhy.fun/vllm-project/vllm/issues/25270
 def _w8a8_triton_block_scaled_mm_func(
     qx: torch.Tensor,
     weight: torch.Tensor,
@@ -346,7 +346,7 @@ direct_register_custom_op(
 
 
 # TODO fix ROCm->Triton custom path:
-#  https://github.com/vllm-project/vllm/issues/14397
+#  https://github.hyhy.fun/vllm-project/vllm/issues/14397
 class W8A8BlockFp8LinearOp:
     """
     This class executes a Blocked FP8 linear layer using cutlass if supported
@@ -1350,10 +1350,10 @@ def deepgemm_post_process_fp8_weight_block(
         wq = wq.unsqueeze(0)
         ws = ws.unsqueeze(0)
 
-    # From https://github.com/deepseek-ai/DeepGEMM/blob/c9f8b34dcdacc20aa746b786f983492c51072870/csrc/utils/layout.hpp#L46
+    # From https://github.hyhy.fun/deepseek-ai/DeepGEMM/blob/c9f8b34dcdacc20aa746b786f983492c51072870/csrc/utils/layout.hpp#L46
     recipe = (1, 128, 128)
 
-    # Ref : https://github.com/deepseek-ai/DeepGEMM/blob/c9f8b34dcdacc20aa746b786f983492c51072870/csrc/apis/gemm.hpp
+    # Ref : https://github.hyhy.fun/deepseek-ai/DeepGEMM/blob/c9f8b34dcdacc20aa746b786f983492c51072870/csrc/apis/gemm.hpp
     # DeepGemm uses the `transform_sf_into_required_layout` function to
     # represent scales in the correct format.
     dg_ws = transform_sf_into_required_layout(

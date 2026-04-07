@@ -1,6 +1,6 @@
 /*
-Adapted from https://github.com/turboderp/exllamav2 and
-https://github.com/turboderp/exllama
+Adapted from https://github.hyhy.fun/turboderp/exllamav2 and
+https://github.hyhy.fun/turboderp/exllama
 */
 
 #ifndef _matrix_view_cuh

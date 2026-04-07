@@ -231,7 +231,7 @@ def _fwd_kv_parallel(
 
         # NOTE: Need to add the extra dim here due to AMD MLIR lowering error.
         # Please don't move it back until issue is resolved.
-        # Issue: https://github.com/ROCm/triton/issues/907
+        # Issue: https://github.hyhy.fun/ROCm/triton/issues/907
         k_decay = k_decay[None, :]
 
         kv += tl.dot(k_trans * k_decay, v)

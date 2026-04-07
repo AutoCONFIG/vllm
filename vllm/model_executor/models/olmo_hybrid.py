@@ -2,7 +2,7 @@
 # SPDX-FileCopyrightText: Copyright contributors to the vLLM project
 
 # Adapted from:
-# https://github.com/huggingface/transformers/blob/main/src/transformers/models/olmo_hybrid/modeling_olmo_hybrid.py
+# https://github.hyhy.fun/huggingface/transformers/blob/main/src/transformers/models/olmo_hybrid/modeling_olmo_hybrid.py
 # Copyright 2026 The vLLM team.
 #
 # This code combines OLMo2/OLMo3 attention with Gated DeltaNet linear attention

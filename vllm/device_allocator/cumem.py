@@ -131,7 +131,7 @@ class CuMemAllocator:
         conf = os.environ.get("PYTORCH_CUDA_ALLOC_CONF", "")
         assert "expandable_segments:True" not in conf, (
             "Expandable segments are not compatible with memory pool. "
-            "Please track https://github.com/pytorch/pytorch/issues/147851 "
+            "Please track https://github.hyhy.fun/pytorch/pytorch/issues/147851 "
             "for the latest updates."
         )
 
@@ -140,7 +140,7 @@ class CuMemAllocator:
         self.allocator_and_pools: dict[str, Any] = {}
         # Creating strong references to the two callbacks here to prevent
         # these ephemeral bound-method objects being garbage collected.
-        # See discussions in https://github.com/vllm-project/vllm/pull/22724
+        # See discussions in https://github.hyhy.fun/vllm-project/vllm/pull/22724
         self.python_malloc_callback = self._python_malloc_callback
         self.python_free_callback = self._python_free_callback
 
@@ -273,12 +273,12 @@ class CuMemAllocator:
             # possibly because of gc-related issue w.r.t. the allocator and
             # the memory pool.
             # to avoid the issue, we keep a reference of the data.
-            # see https://github.com/pytorch/pytorch/issues/146431 .
+            # see https://github.hyhy.fun/pytorch/pytorch/issues/146431 .
             self.allocator_and_pools[tag] = data
             yield
             # PyTorch's bug, calling torch.cuda.empty_cache() will error
             # when using pluggable allocator, see
-            # https://github.com/pytorch/pytorch/issues/145168 .
+            # https://github.hyhy.fun/pytorch/pytorch/issues/145168 .
             # if we have some memory allocated and then freed,
             # the memory will not be released, e.g. in online quantization,
             # where the model is created in higher precision, and then

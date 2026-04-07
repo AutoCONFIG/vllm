@@ -23,7 +23,7 @@ logger = init_logger(__name__)
 # (ids parameter) used for FastIncrementalDetokenizer.
 USE_FAST_DETOKENIZER = version.parse(tokenizers.__version__) >= version.parse("0.22.0")
 
-# Error string from https://github.com/huggingface/tokenizers/blob/909fdde2a4ffedd9295206f705eb612be2a91b12/tokenizers/src/tokenizer/mod.rs#L1042
+# Error string from https://github.hyhy.fun/huggingface/tokenizers/blob/909fdde2a4ffedd9295206f705eb612be2a91b12/tokenizers/src/tokenizer/mod.rs#L1042
 INVALID_PREFIX_ERR_MSG = "Invalid prefix encountered"
 
 
@@ -117,7 +117,7 @@ class BaseIncrementalDetokenizer(IncrementalDetokenizer, ABC):
         for new_token_id in new_token_ids:
             self.token_ids.append(new_token_id)
             self.output_text += self.decode_next(new_token_id)
-            # Support min_tokens, see https://github.com/vllm-project/vllm/pull/22014
+            # Support min_tokens, see https://github.hyhy.fun/vllm-project/vllm/pull/22014
             if self.min_tokens and self.num_output_tokens() <= self.min_tokens:
                 stop_check_offset = len(self.output_text)
 
@@ -222,7 +222,7 @@ class FastIncrementalDetokenizer(BaseIncrementalDetokenizer):
             token = self.stream.step(self.tokenizer, next_token_id)
         except (OverflowError, TypeError):
             # Handle rare observed overflow, still to be diagnosed.
-            # See https://github.com/vllm-project/vllm/issues/21951.
+            # See https://github.hyhy.fun/vllm-project/vllm/issues/21951.
             logger.exception("Encountered invalid token id: %r", next_token_id)
             token = None
         except Exception as e:
@@ -231,7 +231,7 @@ class FastIncrementalDetokenizer(BaseIncrementalDetokenizer):
             # Recover from edge case where tokenizer can produce non-monotonic,
             # invalid UTF-8 output, which breaks the internal state of
             # tokenizers' DecodeStream.
-            # See https://github.com/vllm-project/vllm/issues/17448.
+            # See https://github.hyhy.fun/vllm-project/vllm/issues/17448.
             logger.warning(
                 "Encountered invalid prefix detokenization error"
                 " for request %s, resetting decode stream.",

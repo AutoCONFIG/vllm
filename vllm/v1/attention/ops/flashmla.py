@@ -1,6 +1,6 @@
 # SPDX-License-Identifier: Apache-2.0
 # SPDX-FileCopyrightText: Copyright contributors to the vLLM project
-# adapted from: https://github.com/deepseek-ai/FlashMLA/blob/main/flash_mla/flash_mla_interface.py
+# adapted from: https://github.hyhy.fun/deepseek-ai/FlashMLA/blob/main/flash_mla/flash_mla_interface.py
 
 import torch
 

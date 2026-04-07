@@ -217,7 +217,7 @@ def cp_gather_indexer_k_quant_cache_triton(
     )
 
 
-# Taken from https://github.com/deepseek-ai/DeepGEMM/blob/main/tests/test_attention.py#L156
+# Taken from https://github.hyhy.fun/deepseek-ai/DeepGEMM/blob/main/tests/test_attention.py#L156
 def fp8_paged_mqa_logits_torch(
     q: torch.Tensor,
     kv_cache: torch.Tensor,
@@ -355,7 +355,7 @@ def rocm_fp8_paged_mqa_logits(
         )
 
 
-# Take from https://github.com/deepseek-ai/DeepGEMM/blob/main/tests/test_attention.py#L84
+# Take from https://github.hyhy.fun/deepseek-ai/DeepGEMM/blob/main/tests/test_attention.py#L84
 def fp8_mqa_logits_torch(
     q: torch.Tensor,
     kv: tuple[torch.Tensor, torch.Tensor],

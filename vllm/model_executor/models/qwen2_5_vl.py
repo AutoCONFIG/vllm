@@ -2,7 +2,7 @@
 # SPDX-FileCopyrightText: Copyright contributors to the vLLM project
 
 # Adapted from
-# https://github.com/huggingface/transformers/blob/main/src/transformers/models/qwen2_5_vl/modeling_qwen2_5_vl.py
+# https://github.hyhy.fun/huggingface/transformers/blob/main/src/transformers/models/qwen2_5_vl/modeling_qwen2_5_vl.py
 # Copyright 2025 The vLLM team.
 # Copyright 2025 The Qwen Team.
 # Copyright 2025 The HuggingFace Inc. team.
@@ -1294,7 +1294,7 @@ class Qwen2_5_VLForConditionalGeneration(
         merge_size = self.visual.spatial_merge_size
 
         # Cast to long to match the original code
-        # https://github.com/huggingface/transformers/blob/41980ce93e775f6c88500c51c8db7946fc6a2add/src/transformers/models/qwen2_5_vl/modular_qwen2_5_vl.py#L491 # noqa
+        # https://github.hyhy.fun/huggingface/transformers/blob/41980ce93e775f6c88500c51c8db7946fc6a2add/src/transformers/models/qwen2_5_vl/modular_qwen2_5_vl.py#L491 # noqa
         second_per_grid_ts = video_input.get("second_per_grid_ts")
         if second_per_grid_ts is None:
             raise ValueError(

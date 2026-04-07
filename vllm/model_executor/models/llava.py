@@ -794,7 +794,7 @@ class MantisMultiModalProcessor(LlavaMultiModalProcessor):
         mm_hashes = result["mm_hashes"]
 
         # We reimplement the functionality of MLlavaProcessor from
-        # https://github.com/TIGER-AI-Lab/Mantis.git
+        # https://github.hyhy.fun/TIGER-AI-Lab/Mantis.git
         def get_replacement_mantis(item_idx: int):
             return "".join(
                 [

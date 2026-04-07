@@ -349,7 +349,7 @@ class VoxtralRealtimeGeneration(VoxtralForConditionalGeneration, SupportsRealtim
             # connected to this view of inputs_embeds, the AOT autograd cache
             # fails to pickle the ViewMetaSequence containing SymInt shapes.
             # This will be fixed in pytorch 2.11 and beyond.
-            # issue: https://github.com/pytorch/pytorch/issues/174299
+            # issue: https://github.hyhy.fun/pytorch/pytorch/issues/174299
             inputs_embeds = inputs_embeds.reshape(
                 inputs_embeds.shape[0] * pool_size, inputs_embeds.shape[1] // pool_size
             ).clone()

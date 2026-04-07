@@ -71,7 +71,7 @@ def test_qwenvl_int8wo_model_loading_with_params(vllm_runner):
 @pytest.mark.skipif(not TORCHAO_AVAILABLE, reason="torchao is not available")
 @pytest.mark.skip(
     reason="since torchao nightly is only compatible with torch nightly"
-    "currently https://github.com/pytorch/ao/issues/2919, we'll have to skip "
+    "currently https://github.hyhy.fun/pytorch/ao/issues/2919, we'll have to skip "
     "torchao tests that requires newer versions (0.14.0.dev+) for now"
 )
 def test_opt_125m_awq_int4wo_model_loading_with_params(vllm_runner):
@@ -225,7 +225,7 @@ def test_reload_weights():
 @pytest.mark.skipif(not TORCHAO_AVAILABLE, reason="torchao is not available")
 @pytest.mark.skip(
     reason="since torchao nightly is only compatible with torch nightly"
-    "currently https://github.com/pytorch/ao/issues/2919, we'll have to skip "
+    "currently https://github.hyhy.fun/pytorch/ao/issues/2919, we'll have to skip "
     "torchao tests that requires newer versions (0.15.0.dev+) for now"
 )
 def test_safetensors_model_loading_with_params(vllm_runner):
@@ -241,7 +241,7 @@ def test_safetensors_model_loading_with_params(vllm_runner):
 @pytest.mark.skipif(not TORCHAO_AVAILABLE, reason="torchao is not available")
 @pytest.mark.skip(
     reason="since torchao nightly is only compatible with torch nightly"
-    "currently https://github.com/pytorch/ao/issues/2919, we'll have to skip "
+    "currently https://github.hyhy.fun/pytorch/ao/issues/2919, we'll have to skip "
     "torchao tests that requires newer versions (0.14.0.dev+) for now"
 )
 def test_opt_125m_module_fqn_to_config_regex_model(vllm_runner):
@@ -258,7 +258,7 @@ def test_opt_125m_module_fqn_to_config_regex_model(vllm_runner):
 @pytest.mark.skipif(not TORCHAO_AVAILABLE, reason="torchao is not available")
 @pytest.mark.skip(
     reason="since torchao nightly is only compatible with torch nightly"
-    "currently https://github.com/pytorch/ao/issues/2919, we'll have to skip "
+    "currently https://github.hyhy.fun/pytorch/ao/issues/2919, we'll have to skip "
     "torchao tests that requires newer versions (0.14.0.dev+) for now"
 )
 def test_opt_125m_int4wo_model_running_preshuffled_kernel(vllm_runner, monkeypatch):
@@ -320,7 +320,7 @@ def test_opt_125m_int4wo_model_running_preshuffled_kernel(vllm_runner, monkeypat
 @pytest.mark.skipif(not TORCHAO_AVAILABLE, reason="torchao is not available")
 @pytest.mark.skip(
     reason="since torchao nightly is only compatible with torch nightly"
-    "currently https://github.com/pytorch/ao/issues/2919, we'll have to skip "
+    "currently https://github.hyhy.fun/pytorch/ao/issues/2919, we'll have to skip "
     "torchao tests that requires newer versions (0.14.0.dev+) for now"
 )
 def test_opt_125m_int4wo_model_running_preshuffled_kernel_online_quant(

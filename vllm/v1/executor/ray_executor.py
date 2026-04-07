@@ -294,7 +294,7 @@ class RayDistributedExecutor(Executor):
             # convert them to integers for consistency.
             # NOTE: gpu_ids can be larger than 9 (e.g. 16 GPUs),
             # string sorting is not sufficient.
-            # see https://github.com/vllm-project/vllm/issues/5590
+            # see https://github.hyhy.fun/vllm-project/vllm/issues/5590
             gpu_ids = [int(x) for x in gpu_ids]
             node_gpus[node_id].extend(gpu_ids)
         for node_id, gpu_ids in node_gpus.items():

@@ -123,7 +123,7 @@ class TestFlexKVConnectorImportError:
                 kv_cache_config=_make_kv_cache_config(),
             )
 
-        assert "https://github.com/taco-project/FlexKV" in str(exc_info.value)
+        assert "https://github.hyhy.fun/taco-project/FlexKV" in str(exc_info.value)
 
 
 class TestFlexKVConnectorDelegation:

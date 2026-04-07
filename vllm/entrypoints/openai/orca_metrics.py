@@ -20,7 +20,7 @@ def create_orca_header(
     Creates ORCA headers named 'endpoint-load-metrics' in the specified format
     and adds custom metrics to named_metrics.
     ORCA headers format description: https://docs.google.com/document/d/1C1ybMmDKJIVlrbOLbywhu9iRYo4rilR-cT50OTtOFTs/edit?tab=t.0
-    ORCA proto https://github.com/cncf/xds/blob/main/xds/data/orca/v3/orca_load_report.proto
+    ORCA proto https://github.hyhy.fun/cncf/xds/blob/main/xds/data/orca/v3/orca_load_report.proto
 
     Parameters:
     - metrics_format (str): The format of the header ('TEXT', 'JSON').
@@ -103,7 +103,7 @@ def metrics_header(metrics_format: str) -> Mapping[str, str] | None:
     Metrics are collected from Prometheus using `get_named_metrics_from_prometheus()`.
 
     ORCA headers format description: https://docs.google.com/document/d/1C1ybMmDKJIVlrbOLbywhu9iRYo4rilR-cT50OTtOFTs/edit?tab=t.0
-    ORCA proto https://github.com/cncf/xds/blob/main/xds/data/orca/v3/orca_load_report.proto
+    ORCA proto https://github.hyhy.fun/cncf/xds/blob/main/xds/data/orca/v3/orca_load_report.proto
 
     Parameters:
     - metrics_format (str): The format of the header ('TEXT', 'JSON').

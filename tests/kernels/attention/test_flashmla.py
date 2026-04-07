@@ -1,4 +1,4 @@
-# Adapted from: https://github.com/deepseek-ai/FlashMLA/blob/main/tests/test_flash_mla.py
+# Adapted from: https://github.hyhy.fun/deepseek-ai/FlashMLA/blob/main/tests/test_flash_mla.py
 # SPDX-License-Identifier: Apache-2.0
 # SPDX-FileCopyrightText: Copyright contributors to the vLLM project
 import math

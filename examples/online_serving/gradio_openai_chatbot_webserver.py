@@ -9,7 +9,7 @@ Start Gradio OpenAI Chatbot Webserver:
                     -m meta-llama/Llama-2-7b-chat-hf
 
 Note that `pip install --upgrade gradio` is needed to run this example.
-More details: https://github.com/gradio-app/gradio
+More details: https://github.hyhy.fun/gradio-app/gradio
 
 If your antivirus software blocks the download of frpc for gradio,
 you can install it manually by following these steps:

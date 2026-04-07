@@ -166,7 +166,7 @@ class GuidanceGrammar(StructuredOutputGrammar):
         # self.ll_matcher.compute_ff_tokens() - this only works for
         #   "canonical" tokenizers
         # For conversion between the two, see
-        # https://github.com/guidance-ai/llguidance/blob/main/docs/fast_forward.md
+        # https://github.hyhy.fun/guidance-ai/llguidance/blob/main/docs/fast_forward.md
 
         r = self.ll_matcher.consume_tokens(tokens)
 

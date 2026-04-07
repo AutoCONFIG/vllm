@@ -335,7 +335,7 @@ class DynamicShapesConfig:
     Enabling this allow observing the dynamic shapes guards in the tlparse
     artifacts also.
     When type is backed, aot_compile must be disabled for this mode to work.
-    until this change picked up https://github.com/pytorch/pytorch/pull/169239.
+    until this change picked up https://github.hyhy.fun/pytorch/pytorch/pull/169239.
     """
 
     assume_32_bit_indexing: bool = False
@@ -848,11 +848,11 @@ class CompilationConfig:
 
         # TODO(zou3519/luka): There are 2 issues with auto-functionalization V2:
         # 1. A bug in PyTorch, fixed in 2.7:
-        #    https://github.com/pytorch/pytorch/issues/147924
+        #    https://github.hyhy.fun/pytorch/pytorch/issues/147924
         # 2. Custom passes (fusion) rely on auto-functionalization V1 and don't
         #    work with V2. Addressing this will take extra engineering effort
         #    and it is not yet a priority. RFC here:
-        #    https://github.com/vllm-project/vllm/issues/14703
+        #    https://github.hyhy.fun/vllm-project/vllm/issues/14703
 
         KEY = "enable_auto_functionalized_v2"
         if KEY not in self.inductor_compile_config:
@@ -867,7 +867,7 @@ class CompilationConfig:
         # VLLM_LOGGING_LEVEL=DEBUG. Users can still override explicitly
         # via --compilation-config '{"inductor_compile_config":
         # {"size_asserts": true, ...}}'.
-        # See: https://github.com/pytorch/pytorch/issues/177719
+        # See: https://github.hyhy.fun/pytorch/pytorch/issues/177719
         if not is_torch_equal_or_newer("2.12.0.dev"):
             enable_asserts = envs.VLLM_LOGGING_LEVEL == "DEBUG"
             for key in (
@@ -899,14 +899,14 @@ class CompilationConfig:
             and "+rotary_embedding" not in self.custom_ops
         ):
             # TODO(zhuhaoran): support rope native forward match and remove this.
-            # Linked issue: https://github.com/vllm-project/vllm/issues/28042
+            # Linked issue: https://github.hyhy.fun/vllm-project/vllm/issues/28042
             self.custom_ops.append("+rotary_embedding")
         if (
             self.pass_config.fuse_rope_kvcache
             and "+rotary_embedding" not in self.custom_ops
         ):
             # TODO(Rohan138): support rope native forward match and remove this.
-            # Linked issue: https://github.com/vllm-project/vllm/issues/28042
+            # Linked issue: https://github.hyhy.fun/vllm-project/vllm/issues/28042
             self.custom_ops.append("+rotary_embedding")
 
         if (
@@ -1062,7 +1062,7 @@ class CompilationConfig:
                 # graph, we keep the piecewise fx graph structure but capture
                 # the full cudagraph outside the fx graph. This reduces some
                 # cpu overhead when the runtime batch_size is not cudagraph
-                # captured. see https://github.com/vllm-project/vllm/pull/20059
+                # captured. see https://github.hyhy.fun/vllm-project/vllm/pull/20059
                 # for details. Make a copy to avoid mutating the class-level
                 # list via reference.
                 self.splitting_ops = list(self._attention_ops)
@@ -1071,7 +1071,7 @@ class CompilationConfig:
                 # from reusing piecewise graphs. Remove it from the compiled graph.
                 # This has the side-effect of excluding cache from cudagraphs but
                 # that doesn't seem to affect performance.
-                # https://github.com/vllm-project/vllm/issues/33267
+                # https://github.hyhy.fun/vllm-project/vllm/issues/33267
                 if not self.use_inductor_graph_partition:
                     self.splitting_ops.append("vllm::unified_kv_cache_update")
                     self.splitting_ops.append("vllm::unified_mla_kv_cache_update")
@@ -1111,7 +1111,7 @@ class CompilationConfig:
         ):
             # TODO: Piecewise Cuda graph might be enabled
             # if torch compile cache key issue fixed
-            # See https://github.com/vllm-project/vllm/pull/25093
+            # See https://github.hyhy.fun/vllm-project/vllm/pull/25093
             logger.info(
                 "DeepEP: Disabling CUDA Graphs since DeepEP high-throughput kernels "
                 "are optimized for prefill and are incompatible with CUDA Graphs. "
@@ -1269,7 +1269,7 @@ class CompilationConfig:
         size equals num_tokens, so capture sizes exceeding num_blocks
         would cause out-of-bounds access in Mamba kernels.
 
-        See: https://github.com/vllm-project/vllm/issues/34094
+        See: https://github.hyhy.fun/vllm-project/vllm/issues/34094
         """
         if not self.cudagraph_capture_sizes or num_mamba_cache_blocks <= 0:
             return

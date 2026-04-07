@@ -32,7 +32,7 @@ async def whisper_client(server):
 
 @pytest.mark.asyncio
 async def test_basic_audio(whisper_client, mary_had_lamb):
-    # Based on https://github.com/openai/openai-cookbook/blob/main/examples/Whisper_prompting_guide.ipynb.
+    # Based on https://github.hyhy.fun/openai/openai-cookbook/blob/main/examples/Whisper_prompting_guide.ipynb.
     transcription = await whisper_client.audio.transcriptions.create(
         model=MODEL_NAME,
         file=mary_had_lamb,

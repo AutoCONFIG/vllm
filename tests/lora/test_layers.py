@@ -257,7 +257,7 @@ def test_embeddings(
     default_vllm_config, dist_init, num_loras, device, vocab_size, stage
 ) -> None:
     # For multi-GPU testing of Triton kernel, we must explicitly set the CUDA
-    # device, see: https://github.com/triton-lang/triton/issues/2925
+    # device, see: https://github.hyhy.fun/triton-lang/triton/issues/2925
     # Same below.
     if current_platform.is_cuda_alike():
         torch.accelerator.set_device_index(device)

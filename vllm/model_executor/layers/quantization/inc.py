@@ -25,7 +25,7 @@ logger = init_logger(__name__)
 
 class INCConfig(QuantizationConfig):
     """Config class for Intel Neural Compressor (INC).
-    Repo: https://github.com/intel/neural-compressor
+    Repo: https://github.hyhy.fun/intel/neural-compressor
     """
 
     SUPPORTED_BITS = {2, 3, 4, 8}

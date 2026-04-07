@@ -941,7 +941,7 @@ def enable_batch_invariant_mode():
         or current_platform.is_device_capability(89)
     ):
         # For PyTorch 2.9, B200 uses GEMV for bs=1
-        # Requires https://github.com/pytorch/pytorch/pull/166735
+        # Requires https://github.hyhy.fun/pytorch/pytorch/pull/166735
         _batch_invariant_LIB.impl("aten::mm", mm_batch_invariant, "CUDA")
         _batch_invariant_LIB.impl("aten::addmm", addmm_batch_invariant, "CUDA")
         _batch_invariant_LIB.impl("aten::matmul", matmul_batch_invariant, "CUDA")

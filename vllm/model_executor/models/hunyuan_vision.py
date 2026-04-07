@@ -352,7 +352,7 @@ class HunYuanVisionPatchEmbed(nn.Module):
         for grid in grid_thw:
             _, h0, w0 = grid
             # we add a small number to avoid floating point error in the interpolation
-            # see discussion at https://github.com/facebookresearch/dino/issues/8
+            # see discussion at https://github.hyhy.fun/facebookresearch/dino/issues/8
             h0, w0 = h0 + 0.1, w0 + 0.1
             patch_pos_embed = nn.functional.interpolate(
                 self.patch_pos_embed,

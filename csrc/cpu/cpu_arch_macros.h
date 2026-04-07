@@ -62,7 +62,7 @@
 
 #ifdef __aarch64__
   // Implementation copied from Arm Optimized Routines (expf AdvSIMD)
-  // https://github.com/ARM-software/optimized-routines/blob/master/math/aarch64/advsimd/expf.c
+  // https://github.hyhy.fun/ARM-software/optimized-routines/blob/master/math/aarch64/advsimd/expf.c
   #include <limits>
   #define DEFINE_FAST_EXP                                                      \
     const float32x4_t inv_ln2 = vdupq_n_f32(0x1.715476p+0f);                   \

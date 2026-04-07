@@ -220,7 +220,7 @@ class ModelOptQuantConfigBase(QuantizationConfig):
     def apply_vllm_mapper(self, hf_to_vllm_mapper: "WeightsMapper"):
         if len(self.exclude_modules) > 0:
             # This is a workaround for the weights remapping issue:
-            # https://github.com/vllm-project/vllm/issues/28072
+            # https://github.hyhy.fun/vllm-project/vllm/issues/28072
             # Right now, the Nvidia ModelOpt library use just one wildcard pattern:
             #        module_path*
             # It gets applied if the whole tree of modules rooted at module_path

@@ -29,7 +29,7 @@ logger = init_logger(__name__)
 
 
 def in_wsl() -> bool:
-    # Reference: https://github.com/microsoft/WSL/issues/4071
+    # Reference: https://github.hyhy.fun/microsoft/WSL/issues/4071
     return "microsoft" in " ".join(platform.uname()).lower()
 
 
@@ -103,19 +103,19 @@ class Platform:
     device_type: str
 
     # available dispatch keys:
-    # check https://github.com/pytorch/pytorch/blob/313dac6c1ca0fa0cde32477509cce32089f8532a/torchgen/model.py#L134 # noqa
+    # check https://github.hyhy.fun/pytorch/pytorch/blob/313dac6c1ca0fa0cde32477509cce32089f8532a/torchgen/model.py#L134 # noqa
     # use "CPU" as a fallback for platforms not registered in PyTorch
     dispatch_key: str = "CPU"
 
     # available ray device keys:
-    # https://github.com/ray-project/ray/blob/10ba5adadcc49c60af2c358a33bb943fb491a171/python/ray/_private/ray_constants.py#L438 # noqa
+    # https://github.hyhy.fun/ray-project/ray/blob/10ba5adadcc49c60af2c358a33bb943fb491a171/python/ray/_private/ray_constants.py#L438 # noqa
     # empty string means the device does not support ray
     ray_device_key: str = ""
 
     # platform-agnostic way to specify the device control environment variable,
     # .e.g. CUDA_VISIBLE_DEVICES for CUDA.
     # hint: search for "get_visible_accelerator_ids_env_var" in
-    # https://github.com/ray-project/ray/tree/master/python/ray/_private/accelerators # noqa
+    # https://github.hyhy.fun/ray-project/ray/tree/master/python/ray/_private/accelerators # noqa
     device_control_env_var: str = "VLLM_DEVICE_CONTROL_ENV_VAR_PLACEHOLDER"
 
     # environment variables that need to be set to 1 to prevent ray from

@@ -47,7 +47,7 @@ class LoadConfig:
     - "sharded_state" will load weights from pre-sharded checkpoint files,
     supporting efficient loading of tensor-parallel models.\n
     - "gguf" will load weights from GGUF format files (details specified in
-    https://github.com/ggml-org/ggml/blob/master/docs/gguf.md).\n
+    https://github.hyhy.fun/ggml-org/ggml/blob/master/docs/gguf.md).\n
     - "mistral" will load weights from consolidated safetensors files used by
     Mistral models.\n
     - Other custom values can be supported via plugins."""

@@ -134,7 +134,7 @@ def _fp8_quantize(
     """
     if block_shape is None:
         # TODO(luka): use QuantFP8 custom op
-        #  https://github.com/vllm-project/vllm/issues/20711
+        #  https://github.hyhy.fun/vllm-project/vllm/issues/20711
         A, A_scale = ops.scaled_fp8_quant(
             A, A_scale, use_per_token_if_dynamic=per_act_token
         )
@@ -319,7 +319,7 @@ def normalize_batched_scales_shape(
 
 # Torch custom ops can't deal with outputs aliasing inputs so we need to
 # disable inplace for torch >= 2.9.
-# See https://github.com/vllm-project/vllm/issues/26378
+# See https://github.hyhy.fun/vllm-project/vllm/issues/26378
 @functools.cache
 def disable_inplace() -> bool:
     return is_torch_equal_or_newer("2.9")

@@ -353,7 +353,7 @@ def _prepare_decoder_input_ids_for_generation(
     according to `GenerationMixin._prepare_decoder_input_ids_for_generation()`.
 
     Source:
-    https://github.com/huggingface/transformers/blob/v5.1.0/src/transformers/generation/utils.py
+    https://github.hyhy.fun/huggingface/transformers/blob/v5.1.0/src/transformers/generation/utils.py
     """
     if len(decoder_input_ids) == 0 or decoder_input_ids[0] != decoder_start_token_id:
         decoder_input_ids = [decoder_start_token_id] + decoder_input_ids

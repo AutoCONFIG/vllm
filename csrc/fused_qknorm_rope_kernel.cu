@@ -88,7 +88,7 @@ inline __device__ __host__ T divUp(T m, T n) {
 namespace tensorrt_llm::kernels {
 // NOTE(zhuhaoran): This kernel is adapted from TensorRT-LLM implementation,
 // with added support for passing the cos_sin_cache as an input.
-// https://github.com/NVIDIA/TensorRT-LLM/blob/main/cpp/tensorrt_llm/kernels/fusedQKNormRopeKernel.cu
+// https://github.hyhy.fun/NVIDIA/TensorRT-LLM/blob/main/cpp/tensorrt_llm/kernels/fusedQKNormRopeKernel.cu
 
 // Perform per-head QK Norm and RoPE in a single kernel.
 // scalar_t_in: data type of QKV and RMSNorm weights
@@ -302,7 +302,7 @@ __global__ void fusedQKNormRopeKernel(
 }
 
 // Borrowed from
-// https://github.com/flashinfer-ai/flashinfer/blob/8125d079a43e9a0ba463a4ed1b639cefd084cec9/include/flashinfer/pos_enc.cuh#L568
+// https://github.hyhy.fun/flashinfer-ai/flashinfer/blob/8125d079a43e9a0ba463a4ed1b639cefd084cec9/include/flashinfer/pos_enc.cuh#L568
 #define DISPATCH_INTERLEAVE(interleave, INTERLEAVE, ...) \
   if (interleave) {                                      \
     const bool INTERLEAVE = true;                        \

@@ -155,7 +155,7 @@ PARAMS_MODELS_BACKENDS_TOKENIZER_MODE = [
             reason=(
                 "Flaky: lm-format-enforcer intermittently returns"
                 "incomplete JSON."
-                "See https://github.com/noamgat/lm-format-enforcer/issues/169"
+                "See https://github.hyhy.fun/noamgat/lm-format-enforcer/issues/169"
             )
         ),
     ),
@@ -170,7 +170,7 @@ PARAMS_MODELS_BACKENDS_TOKENIZER_MODE = [
             reason=(
                 "Flaky: lm-format-enforcer intermittently returns"
                 "incomplete JSON."
-                "See https://github.com/noamgat/lm-format-enforcer/issues/169"
+                "See https://github.hyhy.fun/noamgat/lm-format-enforcer/issues/169"
             )
         ),
     ),

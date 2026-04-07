@@ -908,7 +908,7 @@ def get_sub_grids(
 
 
 #### HF Transformers version of Pixtral ####
-# Based off https://github.com/huggingface/transformers/blob/d7950bff82b18c823193d17d72188c5e46d06c83/src/transformers/models/pixtral/modeling_pixtral.py
+# Based off https://github.hyhy.fun/huggingface/transformers/blob/d7950bff82b18c823193d17d72188c5e46d06c83/src/transformers/models/pixtral/modeling_pixtral.py
 # This model follows the Llava family, meaning image embeddings are placed
 # instead of the `[IMG]` token placeholders.
 # The model uses [`PixtralVisionModel`] for its vision encoder,
@@ -943,7 +943,7 @@ class PixtralHFEncoderInfo(VisionEncoderInfo[PixtralVisionConfig]):
         # assert image_size % patch_size == 0
         return image_size // patch_size
 
-    # Adapted from: https://github.com/huggingface/transformers/blob/v4.49.0/src/transformers/models/pixtral/image_processing_pixtral.py#L99
+    # Adapted from: https://github.hyhy.fun/huggingface/transformers/blob/v4.49.0/src/transformers/models/pixtral/image_processing_pixtral.py#L99
     def get_patch_grid_size(
         self,
         *,
@@ -1285,7 +1285,7 @@ class PixtralHFVisionModel(nn.Module):
         return torch.split(out.squeeze(0), embed_sizes)
 
     # (TODO) Add prefix argument for filtering out weights to be loaded
-    #        ref: https://github.com/vllm-project/vllm/pull/7186#discussion_r1734163986
+    #        ref: https://github.hyhy.fun/vllm-project/vllm/pull/7186#discussion_r1734163986
     def load_weights(self, weights: Iterable[tuple[str, torch.Tensor]]) -> set[str]:
         stacked_params_mapping = [
             # (param_name, shard_name, shard_id)

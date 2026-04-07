@@ -81,7 +81,7 @@ class GGUFModelLoader(BaseModelLoader):
         where N signifies the block number of a layer, and BB signifies the
         attention/mlp layer components.
         See "Standardized tensor names" in
-        https://github.com/ggerganov/ggml/blob/master/docs/gguf.md for details.
+        https://github.hyhy.fun/ggerganov/ggml/blob/master/docs/gguf.md for details.
         """
         config = model_config.hf_config
         # Get text config to handle both nested (multimodal) and flat

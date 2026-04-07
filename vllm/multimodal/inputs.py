@@ -596,7 +596,7 @@ class MultiModalFlatField(BaseMultiModalField):
             # Variable-length case: non-concat dimensions differ
             # (e.g., Ultravox with different audio durations).
             # Use slice-assign approach (more efficient than padding).
-            # See: https://github.com/vllm-project/vllm/issues/31658
+            # See: https://github.hyhy.fun/vllm-project/vllm/issues/31658
 
             ndim = batch[0].ndim
 
@@ -1124,7 +1124,7 @@ class MultiModalEncDecInputs(MultiModalInputs):
 
     Note: Even text-only encoder-decoder models are currently implemented
     as multi-modal models for convenience.
-    (Example: https://github.com/vllm-project/bart-plugin)
+    (Example: https://github.hyhy.fun/vllm-project/bart-plugin)
     """
 
     encoder_prompt_token_ids: list[int]

@@ -81,7 +81,7 @@ class StructuredOutputsWorker:
 
 
 # Adapted from
-# https://github.com/mlc-ai/xgrammar/blob/main/python/xgrammar/kernels/apply_token_bitmask_inplace_triton.py
+# https://github.hyhy.fun/mlc-ai/xgrammar/blob/main/python/xgrammar/kernels/apply_token_bitmask_inplace_triton.py
 @triton.jit
 def _apply_grammar_bitmask_kernel(
     logits_ptr,

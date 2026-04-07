@@ -7,7 +7,7 @@ import torch
 from vllm.v1.attention.ops.xpu_mla_sparse import triton_bf16_mla_sparse_interface
 
 
-# https://github.com/deepseek-ai/FlashMLA/blob/main/tests/ref.py#L7
+# https://github.hyhy.fun/deepseek-ai/FlashMLA/blob/main/tests/ref.py#L7
 def _merge_two_lse(
     lse0: torch.Tensor, lse1: torch.Tensor | None, s_q: int, h_q: int
 ) -> torch.Tensor:
@@ -20,7 +20,7 @@ def _merge_two_lse(
         )
 
 
-# Adapted from https://github.com/deepseek-ai/FlashMLA/blob/main/tests/ref.py#L19
+# Adapted from https://github.hyhy.fun/deepseek-ai/FlashMLA/blob/main/tests/ref.py#L19
 def reference_mla_sparse_prefill(
     q: torch.Tensor,
     kv: torch.Tensor,

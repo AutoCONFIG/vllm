@@ -22,8 +22,8 @@ static inline __device__ int8_t float_to_int8_rn(float x) {
   float dst = std::nearbyint(x);
 
   // saturate
-  // See https://github.com/pytorch/pytorch/issues/127666
-  // See https://github.com/llvm/llvm-project/issues/95183
+  // See https://github.hyhy.fun/pytorch/pytorch/issues/127666
+  // See https://github.hyhy.fun/llvm/llvm-project/issues/95183
   // hip-clang std::clamp __glibcxx_assert_fail host function when building on
   // Arch/gcc14. The following replaces std::clamp usage with similar logic
   // dst = std::clamp(dst, i8_min, i8_max);
@@ -80,8 +80,8 @@ static inline __device__ int8_t int32_to_int8(int32_t x) {
       static_cast<int32_t>(std::numeric_limits<int8_t>::max());
 
   // saturate
-  // See https://github.com/pytorch/pytorch/issues/127666
-  // See https://github.com/llvm/llvm-project/issues/95183
+  // See https://github.hyhy.fun/pytorch/pytorch/issues/127666
+  // See https://github.hyhy.fun/llvm/llvm-project/issues/95183
   // hip-clang std::clamp __glibcxx_assert_fail host function when building on
   // Arch/gcc14. The following replaces std::clamp usage with similar logic
   // int32_t dst = std::clamp(x, i8_min, i8_max);

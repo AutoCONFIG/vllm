@@ -86,7 +86,7 @@ def test_custom_op():
         _ = CompilationConfig(custom_ops=["quant_fp8"])
 
 
-# forked needed to workaround https://github.com/vllm-project/vllm/issues/21073
+# forked needed to workaround https://github.hyhy.fun/vllm-project/vllm/issues/21073
 @pytest.mark.forked
 # NB: We don't test VLLM_DISABLE_COMPILE_CACHE=0 because that depends
 # on the state of the cache directory on the current machine, which
@@ -114,7 +114,7 @@ def test_VLLM_DISABLE_COMPILE_CACHE(vllm_runner, monkeypatch, val):
         pass
 
 
-# forked needed to workaround https://github.com/vllm-project/vllm/issues/21073
+# forked needed to workaround https://github.hyhy.fun/vllm-project/vllm/issues/21073
 @pytest.mark.forked
 @pytest.mark.parametrize(
     "cudagraph_mode,num_cudagraph_captured",
@@ -152,7 +152,7 @@ def test_use_cudagraphs(
         pass
 
 
-# forked needed to workaround https://github.com/vllm-project/vllm/issues/21073
+# forked needed to workaround https://github.hyhy.fun/vllm-project/vllm/issues/21073
 @pytest.mark.forked
 def test_stock_torch_compile(vllm_runner, monkeypatch):
     # Disable multiprocessing so that the counter is in the same process
@@ -170,7 +170,7 @@ def test_stock_torch_compile(vllm_runner, monkeypatch):
         pass
 
 
-# forked needed to workaround https://github.com/vllm-project/vllm/issues/21073
+# forked needed to workaround https://github.hyhy.fun/vllm-project/vllm/issues/21073
 @pytest.mark.forked
 def test_no_compilation(vllm_runner, monkeypatch):
     # Disable multiprocessing so that the counter is in the same process
@@ -187,7 +187,7 @@ def test_no_compilation(vllm_runner, monkeypatch):
         pass
 
 
-# forked needed to workaround https://github.com/vllm-project/vllm/issues/21073
+# forked needed to workaround https://github.hyhy.fun/vllm-project/vllm/issues/21073
 @pytest.mark.forked
 def test_enforce_eager(vllm_runner, monkeypatch):
     # Disable multiprocessing so that the counter is in the same process
@@ -600,7 +600,7 @@ def test_adjust_cudagraph_sizes_for_mamba_cache(
     """Test that cudagraph capture sizes are correctly capped to fit
     available Mamba cache blocks.
 
-    See: https://github.com/vllm-project/vllm/issues/34094
+    See: https://github.hyhy.fun/vllm-project/vllm/issues/34094
     """
     config = CompilationConfig(
         cudagraph_capture_sizes=capture_sizes,

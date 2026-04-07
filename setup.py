@@ -755,7 +755,7 @@ def _build_custom_ops() -> bool:
 
 def get_rocm_version():
     # Get the Rocm version from the ROCM_HOME/bin/librocm-core.so
-    # see https://github.com/ROCm/rocm-core/blob/d11f5c20d500f729c393680a01fa902ebf92094b/rocm_version.cpp#L21
+    # see https://github.hyhy.fun/ROCm/rocm-core/blob/d11f5c20d500f729c393680a01fa902ebf92094b/rocm_version.cpp#L21
     try:
         if ROCM_HOME is None:
             return None
@@ -790,7 +790,7 @@ def get_rocm_version():
 def get_nvcc_cuda_version() -> Version:
     """Get the CUDA version from nvcc.
 
-    Adapted from https://github.com/NVIDIA/apex/blob/8b7a1ff183741dd8f9b87e7bafd04cfde99cea28/setup.py
+    Adapted from https://github.hyhy.fun/NVIDIA/apex/blob/8b7a1ff183741dd8f9b87e7bafd04cfde99cea28/setup.py
     """
     assert CUDA_HOME is not None, "CUDA_HOME is not set"
     nvcc_output = subprocess.check_output(
@@ -936,7 +936,7 @@ if _is_cpu():
 
 if _build_custom_ops():
     ext_modules.append(CMakeExtension(name="vllm._C"))
-    # also _is_hip() once https://github.com/vllm-project/vllm/issues/35163 is
+    # also _is_hip() once https://github.hyhy.fun/vllm-project/vllm/issues/35163 is
     # fixed
     if _is_cuda():
         ext_modules.append(CMakeExtension(name="vllm._C_stable_libtorch"))

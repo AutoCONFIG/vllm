@@ -12,7 +12,7 @@ launch this proxy demo through:
        --port 8000
 
 Note: This demo will be removed once the PDController implemented in PR 15343
-(https://github.com/vllm-project/vllm/pull/15343) supports XpYd.
+(https://github.hyhy.fun/vllm-project/vllm/pull/15343) supports XpYd.
 """
 
 import argparse

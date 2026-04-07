@@ -218,7 +218,7 @@ class TorchCompileWithNoGuardsWrapper:
         """Hook to save the compiled bytecode for direct execution."""
         if old_code is not self.original_code_object():
             return
-        # code borrowed from https://github.com/thuml/depyf/blob/f4ad79fadee27ea113b4c75202db1eb1a11c0dbc/depyf/explain/enable_debugging.py#L25
+        # code borrowed from https://github.hyhy.fun/thuml/depyf/blob/f4ad79fadee27ea113b4c75202db1eb1a11c0dbc/depyf/explain/enable_debugging.py#L25
         frame = sys._getframe()
         while frame and frame.f_back:
             frame = frame.f_back

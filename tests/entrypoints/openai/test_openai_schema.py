@@ -115,7 +115,7 @@ def before_generate_case(context: schemathesis.hooks.HookContext, strategy):
 
             # Sometimes structured_outputs.grammar is generated to be empty
             # Causing a server error in EBNF grammar parsing
-            # https://github.com/vllm-project/vllm/pull/22587#issuecomment-3195253421
+            # https://github.hyhy.fun/vllm-project/vllm/pull/22587#issuecomment-3195253421
             structured_outputs = case.body.get("structured_outputs", {})
             grammar = (
                 structured_outputs.get("grammar")

@@ -31,7 +31,7 @@ def _triton_mrope_forward(
     is_interleaved: tl.constexpr,
 ):
     # Adapted from
-    # https://github.com/linkedin/Liger-Kernel/blob/main/src/liger_kernel/ops/qwen2vl_mrope.py
+    # https://github.hyhy.fun/linkedin/Liger-Kernel/blob/main/src/liger_kernel/ops/qwen2vl_mrope.py
     # This version supports flatten input tensors from vllm
     # and supports cos and sin cache with shape (3, num_tokens, head_dim // 2)
     # instead of (3, bsz, seq_len, head_dim), also supports interleaved rotary

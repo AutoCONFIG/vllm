@@ -655,7 +655,7 @@ def filter_files_not_needed_for_inference(hf_weights_files: list[str]) -> list[s
     """
     Exclude files that are not needed for inference.
 
-    See https://github.com/huggingface/transformers/blob/v4.34.0/src/transformers/trainer.py#L227-L233
+    See https://github.hyhy.fun/huggingface/transformers/blob/v4.34.0/src/transformers/trainer.py#L227-L233
     """
     blacklist = [
         "training_args.bin",
@@ -1047,7 +1047,7 @@ def fastsafetensors_weights_iterator(
                 nogds = True
                 logger.warning_once(
                     "GDS not enabled, setting `nogds=True`.\n"
-                    "For more information, see: https://github.com/foundation-model-stack/fastsafetensors?tab=readme-ov-file#basic-api-usages"
+                    "For more information, see: https://github.hyhy.fun/foundation-model-stack/fastsafetensors?tab=readme-ov-file#basic-api-usages"
                 )
                 loader = _init_fastsafetensors_loader(pg, device, f_list, nogds=nogds)
                 fb = loader.copy_files_to_device()

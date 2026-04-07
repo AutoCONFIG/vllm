@@ -345,7 +345,7 @@ class TrtLlmMxfp4ExpertsModular(TrtLlmMxfp4ExpertsBase, mk.FusedMoEExpertsModula
 
         with autotune(False):
             # Enable autotune when,
-            # https://github.com/flashinfer-ai/flashinfer/issues/2023 is
+            # https://github.hyhy.fun/flashinfer-ai/flashinfer/issues/2023 is
             # resolved.
             trtllm_fp4_block_scale_routed_moe(**kwargs)
 

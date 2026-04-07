@@ -68,8 +68,8 @@ class RayPrometheusMetric:
         Allowed characters: a-z, A-Z, 0-9, _
 
         # ruff: noqa: E501
-        Ref: https://github.com/open-telemetry/opentelemetry-cpp/blob/main/sdk/src/metrics/instrument_metadata_validator.cc#L22-L23
-        Ref: https://github.com/ray-project/ray/blob/master/src/ray/stats/metric.cc#L107
+        Ref: https://github.hyhy.fun/open-telemetry/opentelemetry-cpp/blob/main/sdk/src/metrics/instrument_metadata_validator.cc#L22-L23
+        Ref: https://github.hyhy.fun/ray-project/ray/blob/master/src/ray/stats/metric.cc#L107
         """
 
         return re.sub(r"[^a-zA-Z0-9_]", "_", name)

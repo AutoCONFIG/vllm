@@ -25,7 +25,7 @@ logger = init_logger(__name__)
 
 # This is the storage path for the cubins, it can be replaced
 # with a local path for testing.
-# Referenced from https://github.com/flashinfer-ai/flashinfer/blob/0c9a92c3d9a7e043ab6f3f7b2273269caf6ab044/flashinfer/jit/cubin_loader.py#L35  # noqa: E501
+# Referenced from https://github.hyhy.fun/flashinfer-ai/flashinfer/blob/0c9a92c3d9a7e043ab6f3f7b2273269caf6ab044/flashinfer/jit/cubin_loader.py#L35  # noqa: E501
 FLASHINFER_CUBINS_REPOSITORY = os.environ.get(
     "FLASHINFER_CUBINS_REPOSITORY",
     "https://edge.urm.nvidia.com/artifactory/sw-kernelinferencelibrary-public-generic-local/",  # noqa: E501
@@ -67,7 +67,7 @@ def _missing(*_: Any, **__: Any) -> NoReturn:
     raise RuntimeError(
         "FlashInfer backend is not available. Please install the package "
         "to enable FlashInfer kernels: "
-        "https://github.com/flashinfer-ai/flashinfer"
+        "https://github.hyhy.fun/flashinfer-ai/flashinfer"
     )
 
 

@@ -382,7 +382,7 @@ class Blip2QFormerEncoder(nn.Module):
         return hidden_states
 
 
-# Adapted from https://github.com/huggingface/transformers/blob/v4.41.2/src/transformers/models/blip_2/modeling_blip_2.py#L1025
+# Adapted from https://github.hyhy.fun/huggingface/transformers/blob/v4.41.2/src/transformers/models/blip_2/modeling_blip_2.py#L1025
 class Blip2QFormerModel(nn.Module):
     def __init__(
         self,

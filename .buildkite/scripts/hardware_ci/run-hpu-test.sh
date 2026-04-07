@@ -44,14 +44,14 @@ ENV PT_HPU_ENABLE_LAZY_COLLECTIVES=true
 
 RUN bash -c 'pip install -r <(sed "/^torch/d" requirements/build.txt)'
 RUN VLLM_TARGET_DEVICE=empty pip install --no-build-isolation -e .
-RUN pip install git+https://github.com/vllm-project/vllm-gaudi.git
+RUN pip install git+https://github.hyhy.fun/vllm-project/vllm-gaudi.git
 
 # install development dependencies (for testing)
 RUN python3 -m pip install -e tests/vllm_test_utils
 
 WORKDIR /workspace/
 
-RUN git clone https://github.com/vllm-project/vllm-gaudi.git
+RUN git clone https://github.hyhy.fun/vllm-project/vllm-gaudi.git
 
 RUN ln -s /workspace/vllm/tests && ln -s /workspace/vllm/examples && ln -s /workspace/vllm/benchmarks
 

@@ -648,10 +648,10 @@ _PREVIOUSLY_SUPPORTED_MODELS = {
 }
 
 _OOT_SUPPORTED_MODELS = {
-    "BartModel": "https://github.com/vllm-project/bart-plugin",
-    "BartForConditionalGeneration": "https://github.com/vllm-project/bart-plugin",
-    "Florence2ForConditionalGeneration": "https://github.com/vllm-project/bart-plugin",
-    "MBartForConditionalGeneration": "https://github.com/vllm-project/bart-plugin",
+    "BartModel": "https://github.hyhy.fun/vllm-project/bart-plugin",
+    "BartForConditionalGeneration": "https://github.hyhy.fun/vllm-project/bart-plugin",
+    "Florence2ForConditionalGeneration": "https://github.hyhy.fun/vllm-project/bart-plugin",
+    "MBartForConditionalGeneration": "https://github.hyhy.fun/vllm-project/bart-plugin",
 }
 
 

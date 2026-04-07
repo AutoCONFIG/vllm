@@ -26,7 +26,7 @@ def _get_lora_a_ptr(lora_a_weights: list[torch.Tensor], device: torch.device):
     `_LORA_A_PTR_DICT` collects the required information during `profile_run`,
     After this, it remains constant and subsequent usage is through LUT.
     Refer to:
-    https://github.com/triton-lang/triton/blob/release/3.1.x/python/tutorials/08-grouped-gemm.py
+    https://github.hyhy.fun/triton-lang/triton/blob/release/3.1.x/python/tutorials/08-grouped-gemm.py
     """
     key = tuple(lora_weight.data_ptr() for lora_weight in lora_a_weights)
 
@@ -76,7 +76,7 @@ def _get_lora_b_ptr(
      `_LORA_B_PTR_DICT` collects the required information during `profile_run`,
     After this, it remains constant and subsequent usage is through LUT.
     Refer to:
-    https://github.com/triton-lang/triton/blob/release/3.1.x/python/tutorials/08-grouped-gemm.py
+    https://github.hyhy.fun/triton-lang/triton/blob/release/3.1.x/python/tutorials/08-grouped-gemm.py
 
     """
 
@@ -306,7 +306,7 @@ def get_lora_op_configs(
 @lru_cache
 def supports_pdl(device: torch.device | None = None) -> bool:
     """
-    Refer to: https://github.com/triton-lang/triton/blob/v3.5.0/python/tutorials/11-programmatic-dependent-launch.py
+    Refer to: https://github.hyhy.fun/triton-lang/triton/blob/v3.5.0/python/tutorials/11-programmatic-dependent-launch.py
     """
     # PDL requires compute capability SM90 or above
 

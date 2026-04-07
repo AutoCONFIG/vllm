@@ -1195,7 +1195,7 @@ def test_cudagraph_sizes_capped_for_mamba_cache():
     """Test that cudagraph capture sizes are capped to num_blocks for
     hybrid models with Mamba layers.
 
-    See: https://github.com/vllm-project/vllm/issues/34094
+    See: https://github.hyhy.fun/vllm-project/vllm/issues/34094
     """
     set_random_seed(42)
 

@@ -16,7 +16,7 @@ static uint16_t float_to_bf16(float fp32) {
  * Copyright (c) 2015 Princeton Vision Group
  * Licensed under the MIT license.
  * Codes below copied from
- * https://github.com/PrincetonVision/marvin/tree/master/tools/tensorIO_matlab
+ * https://github.hyhy.fun/PrincetonVision/marvin/tree/master/tools/tensorIO_matlab
  *************************************************/
 static uint16_t float_to_fp16(float fp32) {
   uint16_t fp16;

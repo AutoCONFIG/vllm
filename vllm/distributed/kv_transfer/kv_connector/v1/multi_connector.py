@@ -322,7 +322,7 @@ class MultiConnector(KVConnectorBase_V1):
             c.handle_preemptions(cm)
 
     def get_finished_count(self) -> int | None:
-        # TODO(https://github.com/vllm-project/vllm/issues/33400)
+        # TODO(https://github.hyhy.fun/vllm-project/vllm/issues/33400)
         # Currently no connectors return non-None
         return None
 
@@ -342,7 +342,7 @@ class MultiConnector(KVConnectorBase_V1):
     # method for the MultiConnector. It should be able to get events from
     # multiple connectors, handling the case where only a subset of the
     # requested connectors implements the 'get_kv_connector_kv_cache_events'
-    # WIP: https://github.com/vllm-project/vllm/pull/31811
+    # WIP: https://github.hyhy.fun/vllm-project/vllm/pull/31811
 
     # ==============================
     # Scheduler-side methods

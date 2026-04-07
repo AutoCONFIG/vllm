@@ -440,7 +440,7 @@ class GPUModelRunner(
         # Broadcast PP output for external_launcher (torchrun)
         # to make sure we are synced across pp ranks
         # TODO: Support overlapping micro-batches
-        # https://github.com/vllm-project/vllm/issues/18019
+        # https://github.hyhy.fun/vllm-project/vllm/issues/18019
         self.broadcast_pp_output = (
             self.parallel_config.distributed_executor_backend == "external_launcher"
             and len(get_pp_group().ranks) > 1
@@ -593,7 +593,7 @@ class GPUModelRunner(
         # Input Batch
         # NOTE(Chen): Ideally, we should initialize the input batch inside
         # `initialize_kv_cache` based on the kv cache config. However, as in
-        # https://github.com/vllm-project/vllm/pull/18298, due to some unknown
+        # https://github.hyhy.fun/vllm-project/vllm/pull/18298, due to some unknown
         # reasons, we have to initialize the input batch before `load_model`,
         # quantization + weight offloading will fail otherwise. As a temporary
         # solution, we initialize the input batch here, and re-initialize it
@@ -729,7 +729,7 @@ class GPUModelRunner(
             # NOTE: `mrope_positions` is implemented with one additional dummy
             # position on purpose to make it non-contiguous so that it can work
             # with torch compile.
-            # See detailed explanation in https://github.com/vllm-project/vllm/pull/12128#discussion_r1926431923
+            # See detailed explanation in https://github.hyhy.fun/vllm-project/vllm/pull/12128#discussion_r1926431923
 
             # NOTE: When M-RoPE is enabled, position ids are 3D regardless of
             # the modality of inputs. For text-only inputs, each dimension has
@@ -5503,7 +5503,7 @@ class GPUModelRunner(
                 # Note(gnovack) - We need to disable cudagraphs for one of the two
                 # lora cases when cudagraph_specialize_lora is enabled. This is a
                 # short term mitigation for issue mentioned in
-                # https://github.com/vllm-project/vllm/issues/28334
+                # https://github.hyhy.fun/vllm-project/vllm/issues/28334
                 if (
                     self.compilation_config.cudagraph_specialize_lora
                     and num_active_loras > 0
@@ -6369,8 +6369,8 @@ class GPUModelRunner(
 
         # if we have dedicated decode cudagraphs, and spec-decode is enabled,
         # we need to adjust the cudagraph sizes to be a multiple of the uniform
-        # decode query length to avoid: https://github.com/vllm-project/vllm/issues/28207
-        # temp-fix: https://github.com/vllm-project/vllm/issues/28207#issuecomment-3504004536
+        # decode query length to avoid: https://github.hyhy.fun/vllm-project/vllm/issues/28207
+        # temp-fix: https://github.hyhy.fun/vllm-project/vllm/issues/28207#issuecomment-3504004536
         # Will be removed in the near future when we have separate cudagraph capture
         # sizes for decode and mixed prefill-decode.
         if (
@@ -6388,7 +6388,7 @@ class GPUModelRunner(
         # cache line, so capture batch sizes cannot exceed num_blocks.
         # Only FULL decode graphs are affected because PIECEWISE captures
         # run GDN/Mamba ops eagerly (prefill path, no causal_conv1d_update).
-        # See: https://github.com/vllm-project/vllm/issues/34094
+        # See: https://github.hyhy.fun/vllm-project/vllm/issues/34094
         if cudagraph_mode.has_full_cudagraphs():
             has_mamba = any(
                 isinstance(g.kv_cache_spec, MambaSpec) for g in kv_cache_groups
@@ -6472,7 +6472,7 @@ class GPUModelRunner(
         ):
             assert self.offload_config.uva.cpu_offload_gb == 0, (
                 "Cannot re-initialize the input batch when CPU weight "
-                "offloading is enabled. See https://github.com/vllm-project/vllm/pull/18298 "  # noqa: E501
+                "offloading is enabled. See https://github.hyhy.fun/vllm-project/vllm/pull/18298 "  # noqa: E501
                 "for more details."
             )
             self._init_block_sizes = block_sizes
@@ -6921,7 +6921,7 @@ class GPUModelRunner(
 
     def _to_list(self, sampled_token_ids: torch.Tensor) -> list[list[int]]:
         # This is a short term mitigation for issue mentioned in
-        # https://github.com/vllm-project/vllm/issues/22754.
+        # https://github.hyhy.fun/vllm-project/vllm/issues/22754.
         # `tolist` would trigger a cuda wise stream sync, which
         # would block other copy ops from other cuda streams.
         # A cuda event sync would avoid such a situation. Since

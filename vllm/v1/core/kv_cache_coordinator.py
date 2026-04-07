@@ -489,7 +489,7 @@ class HybridKVCacheCoordinator(KVCacheCoordinator):
         # being applied multiple times to non-full-attn groups.
         # FIXME (yifan): However, for complex hybrid models with multiple attn
         # groups, we still have the EAGLE spiral block dropping problem. See
-        # discussion in issue https://github.com/vllm-project/vllm/issues/32802.
+        # discussion in issue https://github.hyhy.fun/vllm-project/vllm/issues/32802.
         is_simple_hybrid = len(self.attention_groups) == 2 and isinstance(
             self.attention_groups[0][0], FullAttentionSpec
         )

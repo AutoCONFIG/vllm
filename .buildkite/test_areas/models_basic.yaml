@@ -60,7 +60,7 @@ steps:
   optional: true
   soft_fail: true
   commands:
-    - pip install --upgrade git+https://github.com/huggingface/transformers
+    - pip install --upgrade git+https://github.hyhy.fun/huggingface/transformers
     - pytest -v -s tests/models/test_initialization.py
     - pytest -v -s tests/models/test_transformers.py
     - pytest -v -s tests/models/multimodal/processing/

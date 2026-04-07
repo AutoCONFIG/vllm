@@ -59,7 +59,7 @@ echo "Results will be stored in: $RESULTS_DIR"
 
 # Install dependencies
 echo "--- Installing Python dependencies ---"
-python3 -m pip install --progress-bar off git+https://github.com/thuml/depyf.git \
+python3 -m pip install --progress-bar off git+https://github.hyhy.fun/thuml/depyf.git \
     && python3 -m pip install --progress-bar off pytest pytest-asyncio tpu-info \
     && python3 -m pip install --progress-bar off "lm-eval[api]>=0.4.11" \
     && python3 -m pip install --progress-bar off hf-transfer tblib==3.1.0

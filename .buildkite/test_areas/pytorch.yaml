@@ -12,7 +12,7 @@ steps:
   # not including subdirectories, which are usually heavier
   # tests covered elsewhere.
   # Use `find` to launch multiple instances of pytest so that
-  # they do not suffer from https://github.com/vllm-project/vllm/issues/28965
+  # they do not suffer from https://github.hyhy.fun/vllm-project/vllm/issues/28965
   # However, find does not normally propagate error codes, so we combine it with xargs
   # (using -0 for proper path handling)
   - "find compile/ -maxdepth 1 -name 'test_*.py' -print0 | xargs -0 -n1 -I{} pytest -s -v '{}'"
@@ -34,7 +34,7 @@ steps:
   # Run smoke tests under fullgraph directory, except test_full_graph.py
   # as it is a heavy test that is covered in other steps.
   # Use `find` to launch multiple instances of pytest so that
-  # they do not suffer from https://github.com/vllm-project/vllm/issues/28965
+  # they do not suffer from https://github.hyhy.fun/vllm-project/vllm/issues/28965
   - "find compile/fullgraph/ -name 'test_*.py' -not -name 'test_full_graph.py' -print0 | xargs -0 -n1 -I{} pytest -s -v '{}'"
 
 - label: PyTorch Fullgraph

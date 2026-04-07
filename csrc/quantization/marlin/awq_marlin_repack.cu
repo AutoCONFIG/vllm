@@ -137,7 +137,7 @@ __global__ void awq_marlin_repack_kernel(
     int out_offset = (k_tile_id * n_tiles + n_tile_id) * tile_size;
 
     // Result of:
-    // https://github.com/NVIDIA/FasterTransformer/blob/main/src/fastertransformer/cutlass_extensions/include/cutlass_extensions/interleaved_numeric_conversion.h
+    // https://github.hyhy.fun/NVIDIA/FasterTransformer/blob/main/src/fastertransformer/cutlass_extensions/include/cutlass_extensions/interleaved_numeric_conversion.h
     if constexpr (!is_a_8bit && num_bits == 4) {
       int pack_idx[8] = {0, 2, 4, 6, 1, 3, 5, 7};
 

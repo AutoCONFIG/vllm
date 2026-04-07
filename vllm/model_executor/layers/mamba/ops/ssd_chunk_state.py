@@ -2,7 +2,7 @@
 # SPDX-FileCopyrightText: Copyright contributors to the vLLM project
 
 # Copyright (c) 2024, Tri Dao, Albert Gu.
-# Adapted from https://github.com/state-spaces/mamba/blob/v2.2.4/mamba_ssm/ops/triton/ssd_chunk_state.py
+# Adapted from https://github.hyhy.fun/state-spaces/mamba/blob/v2.2.4/mamba_ssm/ops/triton/ssd_chunk_state.py
 
 # ruff: noqa: E501
 
@@ -58,7 +58,7 @@ def _chunk_cumsum_fwd_kernel(
     BLOCK_SIZE_CHUNK: tl.constexpr,
 ):
     # if dt is long, may cause problems, so use 64 bit
-    # https://github.com/triton-lang/triton/issues/1058
+    # https://github.hyhy.fun/triton-lang/triton/issues/1058
     pid_c = tl.program_id(axis=0).to(tl.int64)
     pid_h = tl.program_id(axis=1)
 

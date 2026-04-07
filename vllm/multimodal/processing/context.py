@@ -266,7 +266,7 @@ class InputProcessingContext:
         try:
             output = hf_processor(**data, **allowed_kwargs, return_tensors="pt")
         except Exception as exc:
-            # See https://github.com/huggingface/tokenizers/issues/537
+            # See https://github.hyhy.fun/huggingface/tokenizers/issues/537
             if (
                 isinstance(exc, RuntimeError)
                 and exc

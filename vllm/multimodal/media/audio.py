@@ -37,7 +37,7 @@ except ImportError:
 # 0 = sf_error(NULL) race condition: when multiple threads fail sf_open_virtual
 #     concurrently, one thread may clear the global error before another reads it,
 #     producing code=0 ("Garbled error message from libsndfile" in soundfile).
-#     See: https://github.com/bastibe/python-soundfile/issues/479
+#     See: https://github.hyhy.fun/bastibe/python-soundfile/issues/479
 # 1 = unrecognised format      (file is not a supported audio container)
 # 3 = malformed file           (corrupt or structurally invalid audio)
 # 4 = unsupported encoding     (codec not supported by this libsndfile build)

@@ -6,9 +6,9 @@ Expert parallelism load balancer (EPLB) for vLLM.
 This module implements the core rearrangement algorithm.
 
 The rearrangement algorithm is adapted from
-[DeepSeek EPLB](https://github.com/deepseek-ai/eplb).
+[DeepSeek EPLB](https://github.hyhy.fun/deepseek-ai/eplb).
 
-Please find at [#12](https://github.com/deepseek-ai/EPLB/issues/12) an example
+Please find at [#12](https://github.hyhy.fun/deepseek-ai/EPLB/issues/12) an example
 on how the EPLB algorithm works.
 """
 

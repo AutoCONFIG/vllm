@@ -194,7 +194,7 @@ class ScalarType {
     // adjust the exponent to match that of a double
     //  for now we assume the exponent bias is the standard 2^(e-1) -1, (where e
     //  is the exponent bits), there is some precedent for non-standard biases,
-    //  example `float8_e4m3b11fnuz` here: https://github.com/jax-ml/ml_dtypes
+    //  example `float8_e4m3b11fnuz` here: https://github.hyhy.fun/jax-ml/ml_dtypes
     //  but to avoid premature over complication we are just assuming the
     //  standard exponent bias until there is a need to support non-standard
     //  biases
@@ -264,7 +264,7 @@ class ScalarType {
   }
 
   std::string str() const {
-    /* naming generally follows: https://github.com/jax-ml/ml_dtypes
+    /* naming generally follows: https://github.hyhy.fun/jax-ml/ml_dtypes
      * for floating point types (leading f) the scheme is:
      *  `float<size_bits>_e<exponent_bits>m<mantissa_bits>[flags]`
      *  flags:
@@ -307,7 +307,7 @@ class ScalarType {
 using ScalarTypeId = ScalarType::Id;
 
 // "rust style" names generally following:
-//   https://github.com/pytorch/pytorch/blob/6d9f74f0af54751311f0dd71f7e5c01a93260ab3/torch/csrc/api/include/torch/types.h#L60-L70
+//   https://github.hyhy.fun/pytorch/pytorch/blob/6d9f74f0af54751311f0dd71f7e5c01a93260ab3/torch/csrc/api/include/torch/types.h#L60-L70
 static inline constexpr auto kS4 = ScalarType::int_(4);
 static inline constexpr auto kU4 = ScalarType::uint(4);
 static inline constexpr auto kU4B8 = ScalarType::uint(4, 8);
@@ -328,7 +328,7 @@ static inline constexpr auto kFE8M7 = ScalarType::float_IEEE754(8, 7);
 static inline constexpr auto kFE5M10 = ScalarType::float_IEEE754(5, 10);
 
 // Fixed width style names, generally following:
-//  https://github.com/pytorch/pytorch/blob/6d9f74f0af54751311f0dd71f7e5c01a93260ab3/torch/csrc/api/include/torch/types.h#L47-L57
+//  https://github.hyhy.fun/pytorch/pytorch/blob/6d9f74f0af54751311f0dd71f7e5c01a93260ab3/torch/csrc/api/include/torch/types.h#L47-L57
 static inline constexpr auto kInt4 = kS4;
 static inline constexpr auto kUint4 = kU4;
 static inline constexpr auto kUint4b8 = kU4B8;

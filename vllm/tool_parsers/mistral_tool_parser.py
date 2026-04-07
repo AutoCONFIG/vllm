@@ -57,7 +57,7 @@ class MistralToolCall(ToolCall):
     @staticmethod
     def generate_random_id():
         # Mistral Tool Call Ids must be alphanumeric with a length of 9.
-        # https://github.com/mistralai/mistral-common/blob/21ee9f6cee3441e9bb1e6ed2d10173f90bd9b94b/src/mistral_common/protocol/instruct/validator.py#L299
+        # https://github.hyhy.fun/mistralai/mistral-common/blob/21ee9f6cee3441e9bb1e6ed2d10173f90bd9b94b/src/mistral_common/protocol/instruct/validator.py#L299
         return "".join(choices(ALPHANUMERIC, k=9))
 
     @staticmethod
@@ -72,7 +72,7 @@ def _is_pre_v11_tokeniser(model_tokenizer: TokenizerLike) -> bool:
 class MistralToolParser(ToolParser):
     """
     Tool call parser for Mistral 7B Instruct v0.3, intended for use with
-    - [`mistral_common`](https://github.com/mistralai/mistral-common/)
+    - [`mistral_common`](https://github.hyhy.fun/mistralai/mistral-common/)
     - the examples/tool_chat_template_mistral.jinja template.
 
     Used when --enable-auto-tool-choice --tool-call-parser mistral are all set

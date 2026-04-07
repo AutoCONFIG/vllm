@@ -787,7 +787,7 @@ ASYNC_REQUEST_FUNCS: dict[str, RequestFunc] = {
     "openai-embeddings-chat": async_request_openai_embeddings_chat,
     "openai-embeddings-clip": async_request_openai_embeddings_clip,
     "openai-embeddings-vlm2vec": async_request_openai_embeddings_vlm2vec,
-    # Infinity embedding server: https://github.com/michaelfeil/infinity
+    # Infinity embedding server: https://github.hyhy.fun/michaelfeil/infinity
     "infinity-embeddings": async_request_infinity_embeddings,
     "infinity-embeddings-clip": async_request_infinity_embeddings_clip,
     # (Infinity embedding server does not support vlm2vec)

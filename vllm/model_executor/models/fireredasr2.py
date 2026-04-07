@@ -691,7 +691,7 @@ class FireRedASR2ForConditionalGeneration(
         if language is None:
             # TODO language should be optional and can be guessed.
             # For now we default to en. See
-            # https://github.com/huggingface/transformers/blob/main/src/transformers/models/whisper/generation_whisper.py#L1520
+            # https://github.hyhy.fun/huggingface/transformers/blob/main/src/transformers/models/whisper/generation_whisper.py#L1520
             logger.warning(
                 "Defaulting to language='en'. If you wish to transcribe "
                 "audio in a different language, pass the `language` field "

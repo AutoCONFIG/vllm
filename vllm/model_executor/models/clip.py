@@ -277,7 +277,7 @@ class CLIPMultiModalProcessor(BaseMultiModalProcessor[CLIPProcessingInfo]):
         ]
 
 
-# Adapted from: https://github.com/huggingface/transformers/blob/v4.56.2/src/transformers/models/clip/modeling_clip.py
+# Adapted from: https://github.hyhy.fun/huggingface/transformers/blob/v4.56.2/src/transformers/models/clip/modeling_clip.py
 class CLIPTextEmbeddings(nn.Module):
     def __init__(self, config: CLIPTextConfig):
         super().__init__()

@@ -971,7 +971,7 @@ def test_prefill_hybrid_model_combinations_eagle(
 def test_prefill_hybrid_model_mamba_align():
     """Test that MambaManager.cache_blocks() handles null blocks in align mode.
 
-    Regression test for https://github.com/vllm-project/vllm/issues/34361.
+    Regression test for https://github.hyhy.fun/vllm-project/vllm/issues/34361.
     In mamba_cache_mode="align", allocate_new_blocks() pads req_to_blocks with
     null blocks. cache_full_blocks() correctly skips them, but
     MambaManager.cache_blocks() must also skip null blocks when tracking

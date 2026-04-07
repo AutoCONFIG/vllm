@@ -256,7 +256,7 @@ class DeepEPAll2AllManagerBase(All2AllManagerBase):
 
     def __init__(self, cpu_group, tcp_store_group=None):
         assert has_deep_ep(), (
-            "DeepEP kernels not found. Please follow https://github.com/vllm-project/vllm/blob/main/tools/ep_kernels/README.md"
+            "DeepEP kernels not found. Please follow https://github.hyhy.fun/vllm-project/vllm/blob/main/tools/ep_kernels/README.md"
             " to install DeepEP kernels."
         )  # noqa
         super().__init__(cpu_group, tcp_store_group)
@@ -561,7 +561,7 @@ class FlashInferNVLinkTwoSidedManager(All2AllManagerBase):
     """
 
     # This type lint could be removed after all of the work in
-    # https://github.com/vllm-project/vllm/issues/26533 done.
+    # https://github.hyhy.fun/vllm-project/vllm/issues/26533 done.
     rank: int
     world_size: int
 
@@ -775,7 +775,7 @@ class FlashInferNVLinkOneSidedManager(All2AllManagerBase):
 class MoriAll2AllManager(All2AllManagerBase):
     def __init__(self, cpu_group):
         assert has_mori(), (
-            "MoRI kernels not found. Please follow https://github.com/ROCm/mori/blob/main/README.md"
+            "MoRI kernels not found. Please follow https://github.hyhy.fun/ROCm/mori/blob/main/README.md"
             " to install MoRI kernels."
         )  # noqa
         import mori

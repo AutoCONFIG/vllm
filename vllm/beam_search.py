@@ -139,7 +139,7 @@ def get_beam_search_score(
 
     Adapted from
 
-    https://github.com/huggingface/transformers/blob/ccb92be23def445f2afdea94c31286f84b89eb5b/src/transformers/generation/beam_search.py#L938
+    https://github.hyhy.fun/huggingface/transformers/blob/ccb92be23def445f2afdea94c31286f84b89eb5b/src/transformers/generation/beam_search.py#L938
     """
     seq_len = len(tokens)
     if tokens[-1] == eos_token_id:

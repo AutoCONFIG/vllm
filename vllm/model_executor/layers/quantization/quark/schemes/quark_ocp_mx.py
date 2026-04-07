@@ -225,7 +225,7 @@ class QuarkOCP_MX(QuarkScheme):
             raise NotImplementedError(
                 f"{self.__class__.__name__} requires AITER to be installed "
                 "for non-emulation mode! Please refer to "
-                "https://github.com/ROCm/aiter for installation details."
+                "https://github.hyhy.fun/ROCm/aiter for installation details."
             )
 
         if not current_platform.supports_mx():

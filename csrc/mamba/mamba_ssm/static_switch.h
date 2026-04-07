@@ -1,9 +1,9 @@
 // Inspired by
-// https://github.com/NVIDIA/DALI/blob/main/include/dali/core/static_switch.h
-// and https://github.com/pytorch/pytorch/blob/master/aten/src/ATen/Dispatch.h
+// https://github.hyhy.fun/NVIDIA/DALI/blob/main/include/dali/core/static_switch.h
+// and https://github.hyhy.fun/pytorch/pytorch/blob/master/aten/src/ATen/Dispatch.h
 
 // clang-format off
-// adapted from https://github.com/state-spaces/mamba/blob/main/csrc/selective_scan/static_switch.h
+// adapted from https://github.hyhy.fun/state-spaces/mamba/blob/main/csrc/selective_scan/static_switch.h
 #pragma once
 
 /// @param COND       - a boolean expression to switch by

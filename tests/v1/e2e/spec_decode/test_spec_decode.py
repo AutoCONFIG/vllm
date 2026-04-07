@@ -376,7 +376,7 @@ def _run_eagle_correctness(
     if attn_backend == "TREE_ATTN":
         pytest.skip(
             "TREE_ATTN is flaky in the test disable for now until it can be "
-            "resolved (see https://github.com/vllm-project/vllm/issues/22922)"
+            "resolved (see https://github.hyhy.fun/vllm-project/vllm/issues/22922)"
         )
     if model_impl == "transformers":
         import transformers

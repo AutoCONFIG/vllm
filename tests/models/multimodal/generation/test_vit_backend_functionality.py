@@ -23,7 +23,7 @@ from ....utils import create_new_process_for_each_test
 from ...utils import dummy_hf_overrides
 
 # Dots.OCR prompt from official repository
-# https://github.com/rednote-hilab/dots.ocr/blob/d72d1d8c5bdd0362eb264f714cdbd1e5daa7cdff/dots_ocr/utils/prompts.py#L3
+# https://github.hyhy.fun/rednote-hilab/dots.ocr/blob/d72d1d8c5bdd0362eb264f714cdbd1e5daa7cdff/dots_ocr/utils/prompts.py#L3
 # ruff: noqa: E501
 DOTS_OCR_PROMPT = """Please output the layout information from the PDF image, including each layout element's bbox, its category, and the corresponding text content within the bbox.
 

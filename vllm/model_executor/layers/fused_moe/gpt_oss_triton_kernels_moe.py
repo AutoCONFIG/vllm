@@ -81,7 +81,7 @@ def pack_bitmatrix(
     """
     Packs topk_ids into a bitmatrix.
     code reference:
-    https://github.com/triton-lang/triton/blob/dd1bbc52b34d202dfe5ffea1e04fb16166c5c04e/python/triton_kernels/bench/distributed.py#L264
+    https://github.hyhy.fun/triton-lang/triton/blob/dd1bbc52b34d202dfe5ffea1e04fb16166c5c04e/python/triton_kernels/bench/distributed.py#L264
     """
     pid_m = tl.program_id(0)
     offsets_m = pid_m * BLOCK_SIZE_M + tl.arange(0, BLOCK_SIZE_M)

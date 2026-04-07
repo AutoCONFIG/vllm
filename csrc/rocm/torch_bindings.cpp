@@ -9,7 +9,7 @@
 // See the following links for detailed docs on op registration and function
 // schemas.
 // https://docs.google.com/document/d/1_W62p8WJOQQUzPsJYa7s701JXt0qf2OfLub2sbkHOaU/edit#heading=h.ptttacy8y1u9
-// https://github.com/pytorch/pytorch/blob/main/aten/src/ATen/native/README.md#annotations
+// https://github.hyhy.fun/pytorch/pytorch/blob/main/aten/src/ATen/native/README.md#annotations
 
 TORCH_LIBRARY_EXPAND(TORCH_EXTENSION_NAME, rocm_ops) {
   // vLLM custom ops for rocm

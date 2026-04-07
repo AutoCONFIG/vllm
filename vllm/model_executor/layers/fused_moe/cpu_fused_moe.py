@@ -423,7 +423,7 @@ def cpu_fused_moe_torch(
     act = MoEActivation.from_str(activation)
     layer = _CPU_MOE_LAYER_CACHE[layer_id]()
 
-    # Ref code from https://github.com/sgl-project/sglang/blob/716e682721397df103f347d22da8bd46c6016dab/python/sglang/srt/layers/moe/fused_moe_native.py#L53
+    # Ref code from https://github.hyhy.fun/sgl-project/sglang/blob/716e682721397df103f347d22da8bd46c6016dab/python/sglang/srt/layers/moe/fused_moe_native.py#L53
     len_experts = global_num_experts
 
     cnts = topk_ids.new_zeros((topk_ids.shape[0], len_experts))

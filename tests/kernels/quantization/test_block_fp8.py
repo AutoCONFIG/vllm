@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: Apache-2.0
 # SPDX-FileCopyrightText: Copyright contributors to the vLLM project
 
-# Adapted from https://github.com/sgl-project/sglang/pull/2575
+# Adapted from https://github.hyhy.fun/sgl-project/sglang/pull/2575
 import itertools
 
 import pytest

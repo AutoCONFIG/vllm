@@ -3,7 +3,7 @@
 # ruff: noqa: E501
 
 # Adapted from
-# https://github.com/lgai-exaone/transformers/blob/add-exaone4/src/transformers/models/exaone4/modeling_exaone4.py
+# https://github.hyhy.fun/lgai-exaone/transformers/blob/add-exaone4/src/transformers/models/exaone4/modeling_exaone4.py
 # Copyright 2025 The LG CNS Gen AI Solution Delivery Team.
 # Copyright 2025 The LG AI Research and HuggingFace Inc. team. All rights reserved.
 #

@@ -580,7 +580,7 @@ def generate_uniform_probs(
     # NOTE(woosuk): We deliberately use float64 instead of float32 here
     # because when using float32, there's a non-negligible chance that
     # uniform_prob is sampled to be exact 0.0 as reported in
-    # https://github.com/pytorch/pytorch/issues/16706. Using float64
+    # https://github.hyhy.fun/pytorch/pytorch/issues/16706. Using float64
     # mitigates the issue.
     uniform_probs = torch.rand(
         (num_tokens,),

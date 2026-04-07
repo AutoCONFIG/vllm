@@ -1,4 +1,4 @@
-// copied and adapted from https://github.com/ggerganov/llama.cpp/blob/b2899/ggml-cuda/convert.cu
+// copied and adapted from https://github.hyhy.fun/ggerganov/llama.cpp/blob/b2899/ggml-cuda/convert.cu
 // Dequant functions
 static __device__ __forceinline__ void dequantize_q4_0(const void * vx, const int ib, const int iqs, dfloat2 & v){
     const block_q4_0 * x = (const block_q4_0 *) vx;

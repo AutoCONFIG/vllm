@@ -16,7 +16,7 @@ if(QUTLASS_SRC_DIR)
 else()
   FetchContent_Declare(
     qutlass
-    GIT_REPOSITORY https://github.com/IST-DASLab/qutlass.git
+    GIT_REPOSITORY https://github.hyhy.fun/IST-DASLab/qutlass.git
     GIT_TAG 830d2c4537c7396e14a02a46fbddd18b5d107c65
     GIT_PROGRESS TRUE
     CONFIGURE_COMMAND ""

@@ -136,7 +136,7 @@ class LlavaOnevisionProcessingInfo(LlavaNextProcessingInfo):
     def get_supported_mm_limits(self) -> Mapping[str, int | None]:
         return {"image": None, "video": None}
 
-    # Based on: https://github.com/huggingface/text-generation-inference/blob/v3.0.1/server/text_generation_server/models/vlm_causal_lm.py#L86
+    # Based on: https://github.hyhy.fun/huggingface/text-generation-inference/blob/v3.0.1/server/text_generation_server/models/vlm_causal_lm.py#L86
     # with additional logic afterwards taken from LlavaOnevisionProcessor
     def _get_num_unpadded_features(
         self,
@@ -619,7 +619,7 @@ class LlavaOnevisionForConditionalGeneration(nn.Module, SupportsMultiModal, Supp
             feature_select_strategy=self.config.vision_feature_select_strategy,
         )
 
-    # Based on: https://github.com/haotian-liu/LLaVA/blob/main/llava/model/llava_arch.py
+    # Based on: https://github.hyhy.fun/haotian-liu/LLaVA/blob/main/llava/model/llava_arch.py
     def _merge_image_patch_embeddings(
         self,
         image_size: torch.Tensor,

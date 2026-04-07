@@ -22,7 +22,7 @@ def get_act_fn(
 ) -> "PoolerActivation":
     # get classification act_fn
     # Implement alignment with transformers ForSequenceClassificationLoss
-    # https://github.com/huggingface/transformers/blob/57bb6db6ee4cfaccc45b8d474dfad5a17811ca60/src/transformers/loss/loss_utils.py#L92
+    # https://github.hyhy.fun/huggingface/transformers/blob/57bb6db6ee4cfaccc45b8d474dfad5a17811ca60/src/transformers/loss/loss_utils.py#L92
     problem_type = getattr(config, "problem_type", "")
     if problem_type == "regression":
         return PoolerIdentity()

@@ -16,7 +16,7 @@
  */
 
 /*
- * Adapted from https://github.com/IST-DASLab/marlin
+ * Adapted from https://github.hyhy.fun/IST-DASLab/marlin
  */
 
 #ifndef MARLIN_NAMESPACE_NAME

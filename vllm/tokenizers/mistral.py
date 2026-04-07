@@ -51,7 +51,7 @@ logger = init_logger(__name__)
 
 
 def maybe_serialize_tool_calls(request: "MistralChatCompletionRequest"):
-    # SEE: https://github.com/vllm-project/vllm/pull/9951
+    # SEE: https://github.hyhy.fun/vllm-project/vllm/pull/9951
     # Credits go to: @gcalmettes
     # NOTE: There is currently a bug in pydantic where attributes
     # declared as iterables are replaced in the instances by
@@ -59,7 +59,7 @@ def maybe_serialize_tool_calls(request: "MistralChatCompletionRequest"):
     # affects tool_calls defined in ChatCompletionAssistantMessageParam
     # model:
     # see:
-    #   - https://github.com/pydantic/pydantic/issues/9467
+    #   - https://github.hyhy.fun/pydantic/pydantic/issues/9467
     # As a result, tool_calls from assistant messages are never
     # deserialized in the request object if the tool_calls iterator is
     # not consumed. This affect messages passed to the MistralTokenizer
@@ -69,9 +69,9 @@ def maybe_serialize_tool_calls(request: "MistralChatCompletionRequest"):
     # v2.11 release. In the meantime, the official workaround is to
     # consume the iterator so the tool_calls are correctly deserialized
     # in the OpenAI ChatCompletionAssistantMessageParam object
-    # https://github.com/pydantic/pydantic/issues/9467#issuecomment-2442097291 # noqa: E501
+    # https://github.hyhy.fun/pydantic/pydantic/issues/9467#issuecomment-2442097291 # noqa: E501
     # Official Pydantic Issues:
-    #   - https://github.com/pydantic/pydantic/issues/9541
+    #   - https://github.hyhy.fun/pydantic/pydantic/issues/9541
     # TODO: remove when pydantic v2.11 is released
     for i, message in enumerate(request.messages):
         if message.get("role") == "assistant":
@@ -150,7 +150,7 @@ def _prepare_apply_chat_template_tools_and_messages(
 
     # mistral-common requires AssistantMessage content to be string [1].
     #
-    # [1]: https://github.com/mistralai/mistral-common/blob/f4a06998b75ed78bbf5aaf569590b772ea26c9f6/src/mistral_common/protocol/instruct/messages.py#L80
+    # [1]: https://github.hyhy.fun/mistralai/mistral-common/blob/f4a06998b75ed78bbf5aaf569590b772ea26c9f6/src/mistral_common/protocol/instruct/messages.py#L80
     for message in messages:
         # Remove reasoning as unsupported by Mistral
         _ = message.pop("reasoning", None)  # type: ignore
@@ -378,7 +378,7 @@ class MistralTokenizer(TokenizerLike):
             truncation=truncation,
             max_length=max_length,
         )
-        # TODO(juliendenize): once https://github.com/huggingface/transformers/pull/41962
+        # TODO(juliendenize): once https://github.hyhy.fun/huggingface/transformers/pull/41962
         # is in, revert to only call self.transformers_tokenizer(...).
         # Hack to fix wrongly added eos token, when fix will be supported the condition
         # below will be False even before the revert is done.
@@ -406,7 +406,7 @@ class MistralTokenizer(TokenizerLike):
         max_length: int | None = None,
         add_special_tokens: bool = True,
     ) -> list[int]:
-        # TODO(juliendenize): once https://github.com/huggingface/transformers/pull/41962
+        # TODO(juliendenize): once https://github.hyhy.fun/huggingface/transformers/pull/41962
         # is in, directly call self.transformers_tokenizer.encode(...).
         encoded = self.tokenizer.encode(text, bos=add_special_tokens, eos=False)
 
@@ -454,7 +454,7 @@ class MistralTokenizer(TokenizerLike):
     def decode(
         self, ids: Sequence[int] | int, skip_special_tokens: bool = False
     ) -> str:
-        # TODO(juliendenize): once https://github.com/huggingface/transformers/pull/41962
+        # TODO(juliendenize): once https://github.hyhy.fun/huggingface/transformers/pull/41962
         # is in, directly call self.transformers_tokenizer.decode(...).
         if isinstance(ids, int):
             ids = [ids]
@@ -562,8 +562,8 @@ class MistralTokenizer(TokenizerLike):
         if any("�" in t for t in tokens) and self.is_tekken:
             # if a decoded token contains the replacement character, then the
             # token has an incomplete UTF-8 character so we must use bytes
-            # See: https://github.com/vllm-project/vllm/pull/8640
-            #      https://github.com/vllm-project/vllm/pull/9625
+            # See: https://github.hyhy.fun/vllm-project/vllm/pull/8640
+            #      https://github.hyhy.fun/vllm-project/vllm/pull/9625
             # if underlying tokenizer is sentencepiece, we just add "�".
             # We filtered unwanted special tokens so we can decode the rest.
             tokens = [

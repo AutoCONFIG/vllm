@@ -282,7 +282,7 @@ class SiglipEncoderInfo(VisionEncoderInfo[SiglipVisionConfig]):
         return image_size // patch_size
 
 
-# Adapted from https://github.com/huggingface/transformers/blob/v4.57.3/src/transformers/models/siglip/modeling_siglip.py#L216
+# Adapted from https://github.hyhy.fun/huggingface/transformers/blob/v4.57.3/src/transformers/models/siglip/modeling_siglip.py#L216
 class SiglipVisionEmbeddings(nn.Module):
     def __init__(self, config: SiglipVisionConfig):
         super().__init__()
@@ -985,7 +985,7 @@ def maybe_swap_ffn_param(
     return param
 
 
-# Adapted from: https://github.com/huggingface/transformers/blob/v4.54.1/src/transformers/models/siglip/modeling_siglip.py#L200
+# Adapted from: https://github.hyhy.fun/huggingface/transformers/blob/v4.54.1/src/transformers/models/siglip/modeling_siglip.py#L200
 class SiglipTextEmbeddings(nn.Module):
     def __init__(self, config: SiglipTextConfig):
         super().__init__()

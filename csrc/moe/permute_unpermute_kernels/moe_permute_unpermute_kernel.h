@@ -1,6 +1,6 @@
 #pragma once
 // reference from tensorrt_llm moe kernel implementation archive in
-// https://github.com/BBuf/tensorrt-llm-moe/tree/master
+// https://github.hyhy.fun/BBuf/tensorrt-llm-moe/tree/master
 
 #include <c10/core/ScalarType.h>
 #include <torch/all.h>

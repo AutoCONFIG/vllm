@@ -81,7 +81,7 @@ def _require_is_multimodal(is_multimodal: Tensor | None) -> Tensor:
         raise ValueError(
             "`embed_input_ids` now requires `is_multimodal` arg, "
             "please update your model runner according to "
-            "https://github.com/vllm-project/vllm/pull/16229."
+            "https://github.hyhy.fun/vllm-project/vllm/pull/16229."
         )
 
     return is_multimodal

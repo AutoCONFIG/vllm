@@ -28,7 +28,7 @@ docker build \
   --build-arg buildkite_commit="$BUILDKITE_COMMIT" \
   --tag "$REGISTRY"/"$REPO":"$BUILDKITE_COMMIT"-hpu \
   --progress plain \
-  https://github.com/vllm-project/vllm-gaudi.git
+  https://github.hyhy.fun/vllm-project/vllm-gaudi.git
 
 # push
 docker push "$REGISTRY"/"$REPO":"$BUILDKITE_COMMIT"-hpu

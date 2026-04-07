@@ -51,7 +51,7 @@ try:
 except ImportError as e:
     raise ImportError(
         "Please install mooncake by following the instructions at "
-        "https://github.com/kvcache-ai/Mooncake/blob/main/doc/en/build.md "
+        "https://github.hyhy.fun/kvcache-ai/Mooncake/blob/main/doc/en/build.md "
         "to run VLLM with MooncakeTransferEngine."
     ) from e
 

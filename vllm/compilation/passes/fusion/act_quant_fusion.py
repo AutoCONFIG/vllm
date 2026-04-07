@@ -181,7 +181,7 @@ class ActivationQuantFusionPass(VllmPatternMatcherPass):
 
     Because patterns can only be registered once, the pass is a singleton.
     This will be addressed in a future version of PyTorch:
-    https://github.com/pytorch/pytorch/pull/139321#issuecomment-2452354980
+    https://github.hyhy.fun/pytorch/pytorch/pull/139321#issuecomment-2452354980
     """
 
     @enable_fake_mode

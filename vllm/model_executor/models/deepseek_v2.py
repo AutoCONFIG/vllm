@@ -2,7 +2,7 @@
 # SPDX-FileCopyrightText: Copyright contributors to the vLLM project
 
 # Adapted from
-# https://github.com/huggingface/transformers/blob/v4.28.0/src/transformers/models/llama/modeling_llama.py
+# https://github.hyhy.fun/huggingface/transformers/blob/v4.28.0/src/transformers/models/llama/modeling_llama.py
 # Copyright 2023 The vLLM team.
 # Copyright 2023 DeepSeek-AI and the HuggingFace Inc. team. All rights reserved.
 #
@@ -820,7 +820,7 @@ class DeepSeekV2FusedQkvAProjLinear(MergedColumnParallelLinear):
 class DeepseekV2MLAAttention(nn.Module):
     """
     Main reference: DeepseekV2 paper, and FlashInfer Implementation
-    (https://arxiv.org/abs/2405.04434 and https://github.com/flashinfer-ai/flashinfer/pull/551).
+    (https://arxiv.org/abs/2405.04434 and https://github.hyhy.fun/flashinfer-ai/flashinfer/pull/551).
 
         For more info see MLACommonImpl in:
         vllm/v1/attention/backends/mla/utils.py

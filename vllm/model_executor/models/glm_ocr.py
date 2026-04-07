@@ -2,7 +2,7 @@
 # SPDX-FileCopyrightText: Copyright contributors to the vLLM project
 
 # Adapted from
-# https://github.com/huggingface/transformers/blob/main/src/transformers/models/Glm4v/modeling_Glm4v.py
+# https://github.hyhy.fun/huggingface/transformers/blob/main/src/transformers/models/Glm4v/modeling_Glm4v.py
 # Copyright 2026 The ZhipuAI Team.
 # Copyright 2026 The vLLM team.
 # Copyright 2022 EleutherAI and the HuggingFace Inc. team. All rights reserved.

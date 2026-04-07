@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: Apache-2.0
 # SPDX-FileCopyrightText: Copyright contributors to the vLLM project
 # Adapted from
-# https://github.com/sgl-project/sglang/blob/main/python/sglang/srt/utils/offloader.py
+# https://github.hyhy.fun/sgl-project/sglang/blob/main/python/sglang/srt/utils/offloader.py
 """Base classes for model parameter offloading."""
 
 from abc import ABC, abstractmethod

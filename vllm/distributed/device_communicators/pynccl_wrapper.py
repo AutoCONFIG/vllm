@@ -14,7 +14,7 @@
 # Another rejected idea is to write a C/C++ binding for NCCL. It is usually
 # doable, but we often encounter issues related with nccl versions, and need
 # to switch between different versions of NCCL. See
-# https://github.com/NVIDIA/nccl/issues/1234 for more details.
+# https://github.hyhy.fun/NVIDIA/nccl/issues/1234 for more details.
 # A C/C++ binding is not flexible enough to handle this. It requires
 # recompilation of the code every time we want to switch between different
 # versions. This current implementation, with a **pure** Python wrapper, is
@@ -39,7 +39,7 @@ logger = init_logger(__name__)
 
 # === export types and functions from nccl to Python ===
 # for the original nccl definition, please check
-# https://github.com/NVIDIA/nccl/blob/master/src/nccl.h.in
+# https://github.hyhy.fun/NVIDIA/nccl/blob/master/src/nccl.h.in
 
 ncclResult_t = ctypes.c_int
 ncclComm_t = ctypes.c_void_p

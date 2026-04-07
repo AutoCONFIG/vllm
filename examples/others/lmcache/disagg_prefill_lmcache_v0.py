@@ -9,7 +9,7 @@ KV cache is transferred in the following manner:
 vLLM prefill node -> LMCache server -> vLLM decode node.
 
 Note that `pip install lmcache` is needed to run this example.
-Learn more about LMCache in https://github.com/LMCache/LMCache.
+Learn more about LMCache in https://github.hyhy.fun/LMCache/LMCache.
 """
 
 import os

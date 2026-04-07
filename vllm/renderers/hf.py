@@ -329,7 +329,7 @@ def _log_chat_template_content_format(
             "which is different from the detected format '%s'. "
             "If our automatic detection is incorrect, please consider "
             "opening a GitHub issue so that we can improve it: "
-            "https://github.com/vllm-project/vllm/issues/new/choose",
+            "https://github.hyhy.fun/vllm-project/vllm/issues/new/choose",
             given_format,
             detected_format,
         )
@@ -362,7 +362,7 @@ def resolve_chat_template_content_format(
     return detected_format
 
 
-# adapted from https://github.com/huggingface/transformers/blob/v4.56.2/src/transformers/utils/chat_template_utils.py#L398-L412
+# adapted from https://github.hyhy.fun/huggingface/transformers/blob/v4.56.2/src/transformers/utils/chat_template_utils.py#L398-L412
 # only preserve the parse function used to resolve chat template kwargs
 class AssistantTracker(jinja2.ext.Extension):
     tags = {"generation"}

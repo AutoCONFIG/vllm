@@ -10,7 +10,7 @@ class SuffixDecodingProposer:
     """
     Speculative decoding proposer for Suffix Decoding (https://arxiv.org/pdf/2411.04975).
     This class imports and uses the official implementation from Arctic Inference
-    (https://github.com/snowflakedb/ArcticInference).
+    (https://github.hyhy.fun/snowflakedb/ArcticInference).
     """
 
     def __init__(self, vllm_config: VllmConfig):

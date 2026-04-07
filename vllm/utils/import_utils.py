@@ -46,7 +46,7 @@ def import_pynvml():
     unofficial one by mistake, and we have to handle this case.
     For example, `nvcr.io/nvidia/pytorch:24.12-py3` uses the unofficial
     one, and it will cause errors, see the issue
-    https://github.com/vllm-project/vllm/issues/12847 for example.
+    https://github.hyhy.fun/vllm-project/vllm/issues/12847 for example.
     After all the troubles, we decide to copy the official `pynvml`
     module to our codebase, and use it directly.
     """
@@ -80,7 +80,7 @@ def import_triton_kernels():
         logger.info_once(
             "triton_kernels unavailable in this build. "
             "Please consider installing triton_kernels from "
-            "https://github.com/triton-lang/triton/tree/main/python/triton_kernels"
+            "https://github.hyhy.fun/triton-lang/triton/tree/main/python/triton_kernels"
         )
 
 
@@ -343,7 +343,7 @@ class _PlaceholderModuleAttr(_PlaceholderBase):
 class LazyLoader(ModuleType):
     """
     `LazyLoader` module borrowed from [Tensorflow]
-    (https://github.com/tensorflow/tensorflow/blob/main/tensorflow/python/util/lazy_loader.py)
+    (https://github.hyhy.fun/tensorflow/tensorflow/blob/main/tensorflow/python/util/lazy_loader.py)
     with an addition of "module caching".
 
     Lazily import a module, mainly to avoid pulling in large dependencies.
@@ -442,7 +442,7 @@ def has_helion() -> bool:
     """Whether the optional `helion` package is available.
 
     Helion is a Python-embedded DSL for writing ML kernels.
-    See: https://github.com/pytorch/helion
+    See: https://github.hyhy.fun/pytorch/helion
 
     Usage:
         if has_helion():

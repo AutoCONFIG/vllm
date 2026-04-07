@@ -3,7 +3,7 @@
 
 # Copyright 2023 The vLLM team.
 # Adapted from
-# https://github.com/NVIDIA/Megatron-LM/blob/main/megatron/core/parallel_state.py
+# https://github.hyhy.fun/NVIDIA/Megatron-LM/blob/main/megatron/core/parallel_state.py
 # Copyright (c) 2022, NVIDIA CORPORATION. All rights reserved.
 """vLLM distributed state.
 It takes over the control of the distributed environment from PyTorch.
@@ -191,7 +191,7 @@ def patched_fused_scaled_matmul_reduce_scatter_fake(
     use_fast_accum: bool = False,
 ) -> torch.Tensor:
     # Copied from
-    # https://github.com/pytorch/pytorch/blob/50c338c2da905062449e4d9ac807832d1b5cd90e/torch/distributed/_symmetric_memory/__init__.py#L1189
+    # https://github.hyhy.fun/pytorch/pytorch/blob/50c338c2da905062449e4d9ac807832d1b5cd90e/torch/distributed/_symmetric_memory/__init__.py#L1189
     if A_scale.numel() > 1:
         if A_scale.shape[:-1] != A.shape[:-1]:
             raise ValueError(
@@ -278,7 +278,7 @@ direct_register_custom_op(
 )
 
 # TODO: Remove this once the pytorch fix
-# (https://github.com/pytorch/pytorch/pull/165086) gets released,
+# (https://github.hyhy.fun/pytorch/pytorch/pull/165086) gets released,
 # in either 2.9.1 or 2.10
 direct_register_custom_op(
     op_name="patched_fused_scaled_matmul_reduce_scatter",
@@ -1440,7 +1440,7 @@ def init_distributed_environment(
 
     # set the local rank
     # local_rank is not available in torch ProcessGroup,
-    # see https://github.com/pytorch/pytorch/issues/122816
+    # see https://github.hyhy.fun/pytorch/pytorch/issues/122816
     if local_rank == -1:
         # local rank not set, this usually happens in single-node
         # setting, where we can use rank as local rank

@@ -235,7 +235,7 @@ def _patch_constrain_to_fx_strides() -> contextlib.AbstractContextManager:
     not a ``torch.Tensor``.
 
     Returns ``nullcontext`` on torch < 2.11.
-    Upstream issue: https://github.com/pytorch/pytorch/issues/175973
+    Upstream issue: https://github.hyhy.fun/pytorch/pytorch/issues/175973
     """
     if not is_torch_equal_or_newer("2.11.0.dev"):
         return contextlib.nullcontext()
@@ -338,7 +338,7 @@ class InductorStandaloneAdaptor(CompilerInterface):
         use_aot: bool = supports_aot and envs.VLLM_USE_MEGA_AOT_ARTIFACT
         # only add 'aot' parameter if both supported and enabled...
         # this will set bundled_autograd_cache
-        # https://github.com/pytorch/pytorch/blob/9bbc5b2905c260adf41bc866a732f9c121a2828a/torch/_inductor/standalone_compile.py#L359 # noqa
+        # https://github.hyhy.fun/pytorch/pytorch/blob/9bbc5b2905c260adf41bc866a732f9c121a2828a/torch/_inductor/standalone_compile.py#L359 # noqa
         if use_aot:
             compile_kwargs["aot"] = True  # type: ignore[assignment]
 
@@ -346,7 +346,7 @@ class InductorStandaloneAdaptor(CompilerInterface):
         # The pre-grad passes get run even on cache-hit and negatively impact
         # vllm cold compile times by O(1s)
         # Can remove this after the following issue gets fixed
-        # https://github.com/pytorch/pytorch/issues/174502
+        # https://github.hyhy.fun/pytorch/pytorch/issues/174502
         if envs.VLLM_ENABLE_PREGRAD_PASSES:
             pregrad_ctx: Any = contextlib.nullcontext()
         else:
@@ -363,7 +363,7 @@ class InductorStandaloneAdaptor(CompilerInterface):
         # ignore_shape_env=True (from "from_example_inputs") and mode
         # consistency (from reusing our mode).
         # Can remove this after the following issue gets fixed:
-        # https://github.com/pytorch/pytorch/issues/176562
+        # https://github.hyhy.fun/pytorch/pytorch/issues/176562
         from torch._subclasses.fake_tensor import FakeTensor
 
         input_fake_mode = None
@@ -517,7 +517,7 @@ class InductorAdaptor(CompilerInterface):
         set_functorch_config()
 
         # inductor can inplace modify the graph, so we need to copy it
-        # see https://github.com/pytorch/pytorch/issues/138980
+        # see https://github.hyhy.fun/pytorch/pytorch/issues/138980
         graph = copy.deepcopy(graph)
 
         # it's the first time we compile this graph
@@ -566,7 +566,7 @@ class InductorAdaptor(CompilerInterface):
             # tracing context, and also disables caching for graphs
             # with high-order ops.
             # For vLLM, in either case, we want to cache the graph.
-            # see https://github.com/pytorch/pytorch/blob/9f5ebf3fc609105a74eab4ccc24932d6353ff566/torch/_inductor/codecache.py#L1221 # noqa
+            # see https://github.hyhy.fun/pytorch/pytorch/blob/9f5ebf3fc609105a74eab4ccc24932d6353ff566/torch/_inductor/codecache.py#L1221 # noqa
             return
 
         def _get_shape_env() -> AlwaysHitShapeEnv:

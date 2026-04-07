@@ -41,7 +41,7 @@ class LlamaDecoderLayer(LlamaDecoderLayer):
         super().__init__(vllm_config, prefix=prefix, config=config)
 
         # Skip the input_layernorm
-        # https://github.com/SafeAILab/EAGLE/blob/35c78f6cdc19a73e05cf5c330b4c358dad970c6a/eagle/model/cnets.py#L427
+        # https://github.hyhy.fun/SafeAILab/EAGLE/blob/35c78f6cdc19a73e05cf5c330b4c358dad970c6a/eagle/model/cnets.py#L427
         if disable_input_layernorm:
             del self.input_layernorm
             self.input_layernorm = nn.Identity()

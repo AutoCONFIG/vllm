@@ -325,7 +325,7 @@ if(VLLM_GPU_LANG STREQUAL "CUDA")
   else()
     FetchContent_Declare(
         cutlass
-        GIT_REPOSITORY https://github.com/nvidia/cutlass.git
+        GIT_REPOSITORY https://github.hyhy.fun/nvidia/cutlass.git
         # Please keep this in sync with CUTLASS_REVISION line above.
         GIT_TAG ${CUTLASS_REVISION}
         GIT_PROGRESS TRUE
@@ -960,7 +960,7 @@ define_extension_target(
 target_compile_definitions(_C PRIVATE CUTLASS_ENABLE_DIRECT_CUDA_DRIVER_CALL=1)
 
 # add OR VLLM_GPU_LANG STREQUAL "HIP" here once
-# https://github.com/vllm-project/vllm/issues/35163 is resolved
+# https://github.hyhy.fun/vllm-project/vllm/issues/35163 is resolved
 if(VLLM_GPU_LANG STREQUAL "CUDA")
   #
   # _C_stable_libtorch extension (ops registered via STABLE_TORCH_LIBRARY)

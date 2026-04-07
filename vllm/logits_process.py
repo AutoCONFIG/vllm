@@ -88,7 +88,7 @@ class NoBadWordsLogitsProcessor:
 
     def _init_word_bias(self, logits: torch.FloatTensor) -> None:
         # Code based on NoBadWordsLogitsProcessor and SequenceBiasLogitsProcessor  # noqa: E501
-        # from https://github.com/huggingface/transformers/blob/main/src/transformers/generation/logits_process.py
+        # from https://github.hyhy.fun/huggingface/transformers/blob/main/src/transformers/generation/logits_process.py
 
         vocab_size = logits.shape[-1]
 

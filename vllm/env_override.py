@@ -96,13 +96,13 @@ logger = init_logger(__name__)
 # that interact with vllm workers.
 # they are executed whenever `import vllm` is called.
 
-# see https://github.com/vllm-project/vllm/pull/15951
+# see https://github.hyhy.fun/vllm-project/vllm/pull/15951
 # it avoids unintentional cuda initialization from torch.cuda.is_available()
 os.environ["PYTORCH_NVML_BASED_CUDA_CHECK"] = "1"
 
-# see https://github.com/vllm-project/vllm/issues/10480
+# see https://github.hyhy.fun/vllm-project/vllm/issues/10480
 os.environ["TORCHINDUCTOR_COMPILE_THREADS"] = "1"
-# see https://github.com/vllm-project/vllm/issues/10619
+# see https://github.hyhy.fun/vllm-project/vllm/issues/10619
 torch._inductor.config.compile_threads = 1
 
 # Enable Triton autotuning result caching to disk by default.
@@ -118,7 +118,7 @@ os.environ.setdefault("TRITON_CACHE_AUTOTUNING", "1")
 # ===================================================
 # This change monkeypatches memory_plan_reuse in pytorch 2.9.0 to work around
 # a test failure for test_multi_graph_piecewise_compile_outputs_equal.
-# For more context, see https://github.com/pytorch/pytorch/pull/165514.
+# For more context, see https://github.hyhy.fun/pytorch/pytorch/pull/165514.
 
 
 def memory_plan_reuse_patched(self):
@@ -186,7 +186,7 @@ def memory_plan_reuse_patched(self):
 # This change monkeypatches get_graph_partition_signature in pytorch 2.9.0 to
 # fix inductor partition + attention-nvfp4 quant fusion, tested in
 # `tests/compile/test_fusion_attn.py::test_attn_quant`.
-# For more context, see https://github.com/pytorch/pytorch/pull/165815.
+# For more context, see https://github.hyhy.fun/pytorch/pytorch/pull/165815.
 
 
 def get_graph_partition_signature_patched(
@@ -334,7 +334,7 @@ def get_graph_partition_signature_patched(
 # torch 2.9 Inductor Scheduler monkeypatch
 # ========================================
 # This change monkeypatches a function in Inductor to work around the following
-# bug: https://github.com/vllm-project/vllm/issues/26678
+# bug: https://github.hyhy.fun/vllm-project/vllm/issues/26678
 #
 # The bug occurs when `use_inductor_graph_partition` is turned on and there
 # exists operators inside of `splitting_ops` that have an in-place mutation. In
@@ -355,7 +355,7 @@ def should_partition_patched(self, node, should_log: bool = False) -> bool:
     # This is a patched version of
     # torch._inductor.scheduler.Scheduler.should_partition that modifies
     # the following piece of code so that we always return True:
-    # https://github.com/pytorch/pytorch/blob/ecb53078faf86ca1b33277df33b82985675bb011/torch/_inductor/scheduler.py#L4712-L4724
+    # https://github.hyhy.fun/pytorch/pytorch/blob/ecb53078faf86ca1b33277df33b82985675bb011/torch/_inductor/scheduler.py#L4712-L4724
     """Return True if we should partition the inductor graph on this node"""
 
     import torch._inductor.ir as ir
@@ -458,7 +458,7 @@ def _update_scheduler_patched(self) -> None:
 # ===================================================
 # Workaround for TorchInductor autotune using get_raw_stream() without defining it.
 # This occurs when compile_sizes > 1 in compilation_config.
-# For more context, see https://github.com/vllm-project/vllm/issues/30905.
+# For more context, see https://github.hyhy.fun/vllm-project/vllm/issues/30905.
 def _patch_get_raw_stream_if_needed():
     """Workaround for TorchInductor autotune get_raw_stream() bug."""
     from vllm.utils.torch_utils import is_torch_equal

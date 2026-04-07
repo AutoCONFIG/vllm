@@ -16,7 +16,7 @@
  */
 
 /*
- * Adapted from https://github.com/IST-DASLab/marlin
+ * Adapted from https://github.hyhy.fun/IST-DASLab/marlin
  */
 
 #ifndef MARLIN_NAMESPACE_NAME
@@ -386,7 +386,7 @@ __global__ void Marlin(
   // we use DP + two-tile SK here
   // part1: DP
   // part2: two-tile SK
-  // see https://github.com/vllm-project/vllm/pull/24722 for more details
+  // see https://github.hyhy.fun/vllm-project/vllm/pull/24722 for more details
   if (global_mn_tiles > gridDim.x) {
     part2_mn_tiles = global_mn_tiles % gridDim.x;
     if (part2_mn_tiles * 3 <= gridDim.x) part2_mn_tiles += gridDim.x;

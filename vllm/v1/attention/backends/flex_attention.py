@@ -789,7 +789,7 @@ class FlexAttentionMetadataBuilder(AttentionMetadataBuilder[FlexAttentionMetadat
             num_blocks_per_seq=num_blocks_per_seq,
             # FIXME(Isotr0py): direct build has issue to build bidirectional
             # attention block mask for encoder-only models, disable it temporarily.
-            # see: https://github.com/vllm-project/vllm/pull/27329#issuecomment-3431484053
+            # see: https://github.hyhy.fun/vllm-project/vllm/pull/27329#issuecomment-3431484053
             direct_build=(self.direct_build and common_attn_metadata.causal),
             q_block_size=self.q_block_size,
             kv_block_size=self.kv_block_size,
@@ -981,7 +981,7 @@ class FlexAttentionImpl(AttentionImpl):
             ):
                 # In the encoder-only model with torch.compile,
                 # qkv might be padded, which might cause exception.
-                # see: https://github.com/vllm-project/vllm/pull/24872#discussion_r2353252290
+                # see: https://github.hyhy.fun/vllm-project/vllm/pull/24872#discussion_r2353252290
                 key_tensor = key_tensor[:, :, :num_actual_tokens, :]
                 value_tensor = value_tensor[:, :, :num_actual_tokens, :]
 

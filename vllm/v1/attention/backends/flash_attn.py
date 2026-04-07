@@ -84,7 +84,7 @@ class FlashAttentionBackend(AttentionBackend):
             # NOTE(tdoublep): while in principle, FA supports
             # MultipleOf(16), these are the block sizes that do not
             # suffer from the NaN propagation problem described here:
-            # https://github.com/Dao-AILab/flash-attention/issues/1974
+            # https://github.hyhy.fun/Dao-AILab/flash-attention/issues/1974
             return [16, 32, 64]
         return [MultipleOf(16)]
 
@@ -263,7 +263,7 @@ class FlashAttentionMetadataBuilder(AttentionMetadataBuilder[FlashAttentionMetad
     # but for now just set it to `UNIFORM_BATCH` to get use to drop down
     # to FULL_AND_PIECEWISE.
     # TODO(luka, lucas): audit FA2 as part of:
-    #  https://github.com/vllm-project/vllm/issues/22945
+    #  https://github.hyhy.fun/vllm-project/vllm/issues/22945
     _cudagraph_support = (
         AttentionCGSupport.ALWAYS
         if get_flash_attn_version() == 3
@@ -328,7 +328,7 @@ class FlashAttentionMetadataBuilder(AttentionMetadataBuilder[FlashAttentionMetad
             # The +1 is for the tile_count_semaphore (synchronization).
             # The 4 slots per batch element (num_prepare_batch_vectors) are:
             #   prepare_varlen + dynamic_split + sort_batches + head_swizzle
-            # See: https://github.com/vllm-project/flash-attention/blob/5824e6e/hopper/flash_api.cpp#L664-L671  # noqa: E501
+            # See: https://github.hyhy.fun/vllm-project/flash-attention/blob/5824e6e/hopper/flash_api.cpp#L664-L671  # noqa: E501
             max_batch_size = max(
                 vllm_config.scheduler_config.max_num_seqs,
                 self.max_cudagraph_size or 0,
@@ -1022,7 +1022,7 @@ def use_cascade_attention(
     #    is likely to be faster since it saves memory bandwidth.
     num_queries_per_kv = num_query_heads // num_kv_heads
     # The criteria for using FlashDecoding can be found in the following link:
-    # https://github.com/vllm-project/flash-attention/blob/96266b1111111f3d11aabefaf3bacbab6a89d03c/csrc/flash_attn/flash_api.cpp#L535
+    # https://github.hyhy.fun/vllm-project/flash-attention/blob/96266b1111111f3d11aabefaf3bacbab6a89d03c/csrc/flash_attn/flash_api.cpp#L535
     use_flash_decoding = (
         num_queries_per_kv > 1
         and not use_sliding_window

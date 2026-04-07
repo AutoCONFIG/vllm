@@ -156,7 +156,7 @@ async def watchdog_loop(server: uvicorn.Server, engine: EngineClient):
 def terminate_if_errored(server: uvicorn.Server, engine: EngineClient):
     """
     See discussions here on shutting down a uvicorn server
-    https://github.com/encode/uvicorn/discussions/1103
+    https://github.hyhy.fun/encode/uvicorn/discussions/1103
     In this case we cannot await the server shutdown here
     because handler must first return to close the connection
     for this request.

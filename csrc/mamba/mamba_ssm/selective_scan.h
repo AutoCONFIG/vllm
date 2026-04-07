@@ -2,7 +2,7 @@
  * Copyright (c) 2023, Tri Dao.
  ******************************************************************************/
 // clang-format off
-// adapted from https://github.com/state-spaces/mamba/blob/main/csrc/selective_scan/selective_scan.h
+// adapted from https://github.hyhy.fun/state-spaces/mamba/blob/main/csrc/selective_scan/selective_scan.h
 
 #pragma once
 

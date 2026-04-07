@@ -2,7 +2,7 @@
 # adding a new command to an existing step. See different options here for examples.
 
 # This script will be feed into Jinja template in `test-template-aws.j2` at
-# https://github.com/vllm-project/buildkite-ci/blob/main/scripts/test-template-aws.j2
+# https://github.hyhy.fun/vllm-project/buildkite-ci/blob/main/scripts/test-template-aws.j2
 # to generate the final pipeline yaml file.
 
 # Documentation
@@ -40,7 +40,7 @@
 #                                                                                                                                   #
 # IMPORTANT:                                                                                                                        #
 #   * Currently AMD CI has MI250 agents, MI325 agents, and MI355 agents. All upcoming feature improvements are tracked in:          #
-#         https://github.com/vllm-project/vllm/issues/34994                                                                         #
+#         https://github.hyhy.fun/vllm-project/vllm/issues/34994                                                                         #
 #                                                                                                                                   #
 #-----------------------------------------------------------------------------------------------------------------------------------#
 #                                                                                                                                   #
@@ -54,7 +54,7 @@
 #   * [Engine / Engine (1 GPU) / e2e Scheduling / e2e Core / V1 e2e / Spec Decode / V1 Sample + Logits / V1 Core + KV + Metrics]:   #
 #     - Previously a single "V1 Test e2e + engine" step, now split across multiple groups.                                          #
 #     - V1 e2e (2/4 GPUs) uses 4 GPUs but is scheduled on 8-GPU machines for stability. See:                                        #
-#       https://github.com/vllm-project/vllm/pull/31040                                                                             #
+#       https://github.hyhy.fun/vllm-project/vllm/pull/31040                                                                             #
 #   * [V1 Sample + Logits / V1 Core + KV + Metrics / V1 others (CPU)]:                                                              #
 #     - Previously a single "V1 others" step, now split to avoid interference.                                                      #
 #     - Integration test for streaming correctness (requires special branch for __harness__ lib).                                   #
@@ -62,10 +62,10 @@
 #   * [PyTorch Compilation Unit Tests]: Run unit tests defined directly under `compile/`, not including subdirectories, which       #
 #                                       are usually heavier tests covered elsewhere. Use `find` to launch multiple instances        #
 #                                       of pytest so that they do not suffer from:                                                  #
-#                                       https://github.com/vllm-project/vllm/issues/28965                                           #
+#                                       https://github.hyhy.fun/vllm-project/vllm/issues/28965                                           #
 #   * [PyTorch Fullgraph Smoke Test]: Run smoke tests under fullgraph directory, except `test_full_graph.py` as it is a heavy       #
 #                                     test that is covered in other steps. Use `find` to launch multiple instances of pytest        #
-#                                     so that they do not suffer from: https://github.com/vllm-project/vllm/issues/28965            #
+#                                     so that they do not suffer from: https://github.hyhy.fun/vllm-project/vllm/issues/28965            #
 #   * [PyTorch Fullgraph]:                                                                                                          #
 #     - Limit to no custom ops to reduce running time. Wrap with quotes to escape yaml and avoid starting `-k` string               #
 #       with a `-`                                                                                                                  #
@@ -73,7 +73,7 @@
 #           ```bash                                                                                                                 #
 #           pytest -v -s compile/distributed/test_fusions_e2e.py -k 'TRITON and not +quant_fp8 and not Llama-4'                     #
 #           ```                                                                                                                     #
-#       were removed in https://github.com/vllm-project/vllm/pull/33293 in favor of new tests in `fusions_e2e`. We                  #
+#       were removed in https://github.hyhy.fun/vllm-project/vllm/pull/33293 in favor of new tests in `fusions_e2e`. We                  #
 #       avoid replicating the new jobs in this file as it's deprecated.                                                             #
 #   * [Basic Models Tests (Extra Initialization) %N]: Only when vLLM model source is modified - test initialization of a            #
 #                                                     large subset of supported models (the complement of the small subset in       #
@@ -96,8 +96,8 @@
 #     - {`pytest -v -s -x lora/test_gptoss_tp.py`}: Disabled for now because MXFP4 backend on non-cuda platform doesn't support     #
 #                                                   LoRA yet.                                                                       #
 #   * [Distributed Tests (NxGPUs)(HW-TAG)]: Don't test llama model here, it seems hf implementation is buggy. See:                  #
-#                                           https://github.com/vllm-project/vllm/pull/5689                                          #
-#   * [Distributed Tests (NxGPUs)(HW-TAG)]: Some old E2E tests were removed in https://github.com/vllm-project/vllm/pull/33293     #
+#                                           https://github.hyhy.fun/vllm-project/vllm/pull/5689                                          #
+#   * [Distributed Tests (NxGPUs)(HW-TAG)]: Some old E2E tests were removed in https://github.hyhy.fun/vllm-project/vllm/pull/33293     #
 #                                           in favor of new tests in fusions_e2e. We avoid replicating the new jobs in              #
 #                                           this file as it's deprecated.                                                           #
 #                                                                                                                                   #
@@ -528,7 +528,7 @@ steps:
   - pytest -v -s v1/worker
   - pytest -v -s -m 'not cpu_test' v1/kv_connector/unit
   - pytest -v -s -m 'not cpu_test' v1/metrics
-  - pip install -U git+https://github.com/robertgshaw2-redhat/lm-evaluation-harness.git@streaming-api
+  - pip install -U git+https://github.hyhy.fun/robertgshaw2-redhat/lm-evaluation-harness.git@streaming-api
   - pytest -v -s entrypoints/openai/correctness/test_lmeval.py::test_lm_eval_accuracy_v1_engine
 
 
@@ -995,7 +995,7 @@ steps:
   - tests/models/multimodal
   - tests/models/registry.py
   commands:
-  - pip install git+https://github.com/TIGER-AI-Lab/Mantis.git
+  - pip install git+https://github.hyhy.fun/TIGER-AI-Lab/Mantis.git
   - pytest -v -s models/multimodal/processing --ignore models/multimodal/processing/test_tensor_schema.py
 
 
@@ -1025,7 +1025,7 @@ steps:
   - vllm/
   - tests/models/multimodal
   commands:
-  - pip install git+https://github.com/TIGER-AI-Lab/Mantis.git
+  - pip install git+https://github.hyhy.fun/TIGER-AI-Lab/Mantis.git
   - pytest -v -s models/multimodal/generation/test_common.py -m core_model -k "qwen2"
   - pytest -v -s models/multimodal/generation/test_ultravox.py -m core_model
 
@@ -1040,7 +1040,7 @@ steps:
   - vllm/
   - tests/models/multimodal
   commands:
-  - pip install git+https://github.com/TIGER-AI-Lab/Mantis.git
+  - pip install git+https://github.hyhy.fun/TIGER-AI-Lab/Mantis.git
   - pytest -v -s models/multimodal/generation/test_common.py -m core_model -k "qwen3 or gemma"
   - pytest -v -s models/multimodal/generation/test_qwen2_5_vl.py -m core_model
 
@@ -1055,7 +1055,7 @@ steps:
   - vllm/
   - tests/models/multimodal
   commands:
-  - pip install git+https://github.com/TIGER-AI-Lab/Mantis.git
+  - pip install git+https://github.hyhy.fun/TIGER-AI-Lab/Mantis.git
   - pytest -v -s models/multimodal/generation/test_common.py -m core_model -k "not qwen2 and not qwen3 and not gemma"
   - pytest -v -s models/multimodal/generation/test_qwen2_vl.py -m core_model
 
@@ -1071,7 +1071,7 @@ steps:
   - tests/models/multimodal/generation
   - tests/models/multimodal/test_mapping.py
   commands:
-  - pip install git+https://github.com/TIGER-AI-Lab/Mantis.git
+  - pip install git+https://github.hyhy.fun/TIGER-AI-Lab/Mantis.git
   - pytest -v -s models/multimodal -m core_model --ignore models/multimodal/generation/test_common.py --ignore models/multimodal/generation/test_ultravox.py --ignore models/multimodal/generation/test_qwen2_5_vl.py --ignore models/multimodal/generation/test_qwen2_vl.py --ignore models/multimodal/generation/test_whisper.py --ignore models/multimodal/processing
   - cd .. && VLLM_WORKER_MULTIPROC_METHOD=spawn pytest -v -s tests/models/multimodal/generation/test_whisper.py -m core_model
 
@@ -1086,7 +1086,7 @@ steps:
   - tests/models/multimodal/generation
   - tests/models/multimodal/test_mapping.py
   commands:
-  - pip install git+https://github.com/TIGER-AI-Lab/Mantis.git
+  - pip install git+https://github.hyhy.fun/TIGER-AI-Lab/Mantis.git
   - pytest -v -s models/multimodal/generation -m 'not core_model' --ignore models/multimodal/generation/test_common.py
   - pytest -v -s models/multimodal/test_mapping.py
 
@@ -1100,7 +1100,7 @@ steps:
   - vllm/
   - tests/models/multimodal/generation
   commands:
-  - pip install git+https://github.com/TIGER-AI-Lab/Mantis.git
+  - pip install git+https://github.hyhy.fun/TIGER-AI-Lab/Mantis.git
   - pytest -v -s models/multimodal/generation/test_common.py -m 'split(group=0) and not core_model'
 
 
@@ -1113,7 +1113,7 @@ steps:
   - vllm/
   - tests/models/multimodal/generation
   commands:
-  - pip install git+https://github.com/TIGER-AI-Lab/Mantis.git
+  - pip install git+https://github.hyhy.fun/TIGER-AI-Lab/Mantis.git
   - pytest -v -s models/multimodal/generation/test_common.py -m 'split(group=1) and not core_model'
 
 
@@ -1859,7 +1859,7 @@ steps:
   - pytest -v -s v1/worker
   - pytest -v -s -m 'not cpu_test' v1/kv_connector/unit
   - pytest -v -s -m 'not cpu_test' v1/metrics
-  - pip install -U git+https://github.com/robertgshaw2-redhat/lm-evaluation-harness.git@streaming-api
+  - pip install -U git+https://github.hyhy.fun/robertgshaw2-redhat/lm-evaluation-harness.git@streaming-api
   # - export HSA_NO_SCRATCH_RECLAIM=1
   - pytest -v -s entrypoints/openai/correctness/test_lmeval.py::test_lm_eval_accuracy_v1_engine
 
@@ -2183,8 +2183,8 @@ steps:
   - vllm/
   - tests/models/language/generation
   commands:
-  - uv pip install --system --no-build-isolation 'git+https://github.com/AndreasKaratzas/mamba@fix-rocm-7.0-warp-size-constexpr'
-  - uv pip install --system --no-build-isolation 'git+https://github.com/Dao-AILab/causal-conv1d@v1.5.2'
+  - uv pip install --system --no-build-isolation 'git+https://github.hyhy.fun/AndreasKaratzas/mamba@fix-rocm-7.0-warp-size-constexpr'
+  - uv pip install --system --no-build-isolation 'git+https://github.hyhy.fun/Dao-AILab/causal-conv1d@v1.5.2'
   - pytest -v -s models/language/generation -m hybrid_model --num-shards=$$BUILDKITE_PARALLEL_JOB_COUNT --shard-id=$$BUILDKITE_PARALLEL_JOB
 
 
@@ -2197,8 +2197,8 @@ steps:
   - vllm/
   - tests/models/language/generation
   commands:
-  - uv pip install --system --no-build-isolation 'git+https://github.com/AndreasKaratzas/mamba@fix-rocm-7.0-warp-size-constexpr'
-  - uv pip install --system --no-build-isolation 'git+https://github.com/Dao-AILab/causal-conv1d@v1.5.2'
+  - uv pip install --system --no-build-isolation 'git+https://github.hyhy.fun/AndreasKaratzas/mamba@fix-rocm-7.0-warp-size-constexpr'
+  - uv pip install --system --no-build-isolation 'git+https://github.hyhy.fun/Dao-AILab/causal-conv1d@v1.5.2'
   - pytest -v -s models/language/generation -m '(not core_model) and (not hybrid_model)'
 
 
@@ -2213,7 +2213,7 @@ steps:
   - tests/models/multimodal
   - tests/models/registry.py
   commands:
-  - pip install git+https://github.com/TIGER-AI-Lab/Mantis.git
+  - pip install git+https://github.hyhy.fun/TIGER-AI-Lab/Mantis.git
   - pytest -v -s models/multimodal/processing/test_tensor_schema.py
 
 
@@ -2228,7 +2228,7 @@ steps:
   - vllm/
   - tests/models/multimodal
   commands:
-  - pip install git+https://github.com/TIGER-AI-Lab/Mantis.git
+  - pip install git+https://github.hyhy.fun/TIGER-AI-Lab/Mantis.git
   - pytest -v -s models/multimodal/generation/test_common.py -m core_model -k "qwen2"
   - pytest -v -s models/multimodal/generation/test_ultravox.py -m core_model
 
@@ -2243,7 +2243,7 @@ steps:
   - vllm/
   - tests/models/multimodal
   commands:
-  - pip install git+https://github.com/TIGER-AI-Lab/Mantis.git
+  - pip install git+https://github.hyhy.fun/TIGER-AI-Lab/Mantis.git
   - pytest -v -s models/multimodal/generation/test_common.py -m core_model -k "qwen3 or gemma"
   - pytest -v -s models/multimodal/generation/test_qwen2_5_vl.py -m core_model
 
@@ -2260,7 +2260,7 @@ steps:
   - tests/models/multimodal/generation
   - tests/models/multimodal/test_mapping.py
   commands:
-  - pip install git+https://github.com/TIGER-AI-Lab/Mantis.git
+  - pip install git+https://github.hyhy.fun/TIGER-AI-Lab/Mantis.git
   - pytest -v -s models/multimodal/generation/test_common.py -m core_model -k "not qwen2 and not qwen3 and not gemma"
   - pytest -v -s models/multimodal/generation/test_qwen2_vl.py -m core_model
 
@@ -2276,7 +2276,7 @@ steps:
   - vllm/
   - tests/models/multimodal/generation
   commands:
-  - pip install git+https://github.com/TIGER-AI-Lab/Mantis.git
+  - pip install git+https://github.hyhy.fun/TIGER-AI-Lab/Mantis.git
   - pytest -v -s models/multimodal -m core_model --ignore models/multimodal/generation/test_common.py --ignore models/multimodal/generation/test_ultravox.py --ignore models/multimodal/generation/test_qwen2_5_vl.py --ignore models/multimodal/generation/test_qwen2_vl.py --ignore models/multimodal/generation/test_whisper.py --ignore models/multimodal/processing
   - cd .. && VLLM_WORKER_MULTIPROC_METHOD=spawn pytest -v -s tests/models/multimodal/generation/test_whisper.py -m core_model
 
@@ -2292,7 +2292,7 @@ steps:
   - tests/models/multimodal/generation
   - tests/models/multimodal/test_mapping.py
   commands:
-  - pip install git+https://github.com/TIGER-AI-Lab/Mantis.git
+  - pip install git+https://github.hyhy.fun/TIGER-AI-Lab/Mantis.git
   - pytest -v -s models/multimodal/generation -m 'not core_model' --ignore models/multimodal/generation/test_common.py
   - pytest -v -s models/multimodal/test_mapping.py
 
@@ -2307,7 +2307,7 @@ steps:
   - vllm/
   - tests/models/multimodal/generation
   commands:
-  - pip install git+https://github.com/TIGER-AI-Lab/Mantis.git
+  - pip install git+https://github.hyhy.fun/TIGER-AI-Lab/Mantis.git
   - pytest -v -s models/multimodal/generation/test_common.py -m 'split(group=0) and not core_model'
 
 
@@ -2321,7 +2321,7 @@ steps:
   - vllm/
   - tests/models/multimodal/generation
   commands:
-  - pip install git+https://github.com/TIGER-AI-Lab/Mantis.git
+  - pip install git+https://github.hyhy.fun/TIGER-AI-Lab/Mantis.git
   - pytest -v -s models/multimodal/generation/test_common.py -m 'split(group=1) and not core_model'
 
 
@@ -2370,7 +2370,7 @@ steps:
   - tests/models/
   - examples/
   commands:
-  - pip install --upgrade git+https://github.com/huggingface/transformers
+  - pip install --upgrade git+https://github.hyhy.fun/huggingface/transformers
   - pytest -v -s tests/models/test_initialization.py
   - pytest -v -s tests/models/test_transformers.py
   - pytest -v -s tests/models/multimodal/processing/
@@ -3143,7 +3143,7 @@ steps:
   - pytest -v -s v1/worker
   - pytest -v -s -m 'not cpu_test' v1/kv_connector/unit
   - pytest -v -s -m 'not cpu_test' v1/metrics
-  - pip install -U git+https://github.com/robertgshaw2-redhat/lm-evaluation-harness.git@streaming-api
+  - pip install -U git+https://github.hyhy.fun/robertgshaw2-redhat/lm-evaluation-harness.git@streaming-api
   - pytest -v -s entrypoints/openai/correctness/test_lmeval.py::test_lm_eval_accuracy_v1_engine
 
 
@@ -3335,8 +3335,8 @@ steps:
   - vllm/
   - tests/models/language/generation
   commands:
-  - uv pip install --system --no-build-isolation 'git+https://github.com/AndreasKaratzas/mamba@fix-rocm-7.0-warp-size-constexpr'
-  - uv pip install --system --no-build-isolation 'git+https://github.com/Dao-AILab/causal-conv1d@v1.5.2'
+  - uv pip install --system --no-build-isolation 'git+https://github.hyhy.fun/AndreasKaratzas/mamba@fix-rocm-7.0-warp-size-constexpr'
+  - uv pip install --system --no-build-isolation 'git+https://github.hyhy.fun/Dao-AILab/causal-conv1d@v1.5.2'
   - pytest -v -s models/language/generation -m '(not core_model) and (not hybrid_model)'
 
 
@@ -3363,7 +3363,7 @@ steps:
   - vllm/
   - tests/models/multimodal
   commands:
-  - pip install git+https://github.com/TIGER-AI-Lab/Mantis.git
+  - pip install git+https://github.hyhy.fun/TIGER-AI-Lab/Mantis.git
   - pytest -v -s models/multimodal/generation/test_common.py -m core_model -k "qwen2"
   - pytest -v -s models/multimodal/generation/test_ultravox.py -m core_model
 
@@ -3379,7 +3379,7 @@ steps:
   - vllm/
   - tests/models/multimodal
   commands:
-  - pip install git+https://github.com/TIGER-AI-Lab/Mantis.git
+  - pip install git+https://github.hyhy.fun/TIGER-AI-Lab/Mantis.git
   - pytest -v -s models/multimodal/generation/test_common.py -m core_model -k "qwen3 or gemma"
   - pytest -v -s models/multimodal/generation/test_qwen2_5_vl.py -m core_model
 
@@ -3396,7 +3396,7 @@ steps:
   - tests/models/multimodal/generation
   - tests/models/multimodal/test_mapping.py
   commands:
-  - pip install git+https://github.com/TIGER-AI-Lab/Mantis.git
+  - pip install git+https://github.hyhy.fun/TIGER-AI-Lab/Mantis.git
   - pytest -v -s models/multimodal/generation/test_common.py -m core_model -k "not qwen2 and not qwen3 and not gemma"
   - pytest -v -s models/multimodal/generation/test_qwen2_vl.py -m core_model
 
@@ -3412,7 +3412,7 @@ steps:
   - vllm/
   - tests/models/multimodal/generation
   commands:
-  - pip install git+https://github.com/TIGER-AI-Lab/Mantis.git
+  - pip install git+https://github.hyhy.fun/TIGER-AI-Lab/Mantis.git
   - pytest -v -s models/multimodal -m core_model --ignore models/multimodal/generation/test_common.py --ignore models/multimodal/generation/test_ultravox.py --ignore models/multimodal/generation/test_qwen2_5_vl.py --ignore models/multimodal/generation/test_qwen2_vl.py --ignore models/multimodal/generation/test_whisper.py --ignore models/multimodal/processing
   - cd .. && VLLM_WORKER_MULTIPROC_METHOD=spawn pytest -v -s tests/models/multimodal/generation/test_whisper.py -m core_model
 
@@ -3428,7 +3428,7 @@ steps:
   - tests/models/multimodal/generation
   - tests/models/multimodal/test_mapping.py
   commands:
-  - pip install git+https://github.com/TIGER-AI-Lab/Mantis.git
+  - pip install git+https://github.hyhy.fun/TIGER-AI-Lab/Mantis.git
   - pytest -v -s models/multimodal/generation -m 'not core_model' --ignore models/multimodal/generation/test_common.py
   - pytest -v -s models/multimodal/test_mapping.py
 
@@ -3443,7 +3443,7 @@ steps:
   - vllm/
   - tests/models/multimodal/generation
   commands:
-  - pip install git+https://github.com/TIGER-AI-Lab/Mantis.git
+  - pip install git+https://github.hyhy.fun/TIGER-AI-Lab/Mantis.git
   - pytest -v -s models/multimodal/generation/test_common.py -m 'split(group=0) and not core_model'
 
 
@@ -3457,7 +3457,7 @@ steps:
   - vllm/
   - tests/models/multimodal/generation
   commands:
-  - pip install git+https://github.com/TIGER-AI-Lab/Mantis.git
+  - pip install git+https://github.hyhy.fun/TIGER-AI-Lab/Mantis.git
   - pytest -v -s models/multimodal/generation/test_common.py -m 'split(group=1) and not core_model'
 
 

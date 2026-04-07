@@ -1,6 +1,6 @@
 /*
  * Adapted from
- * https://github.com/pytorch/pytorch/blob/v2.0.1/aten/src/ATen/Dispatch.h
+ * https://github.hyhy.fun/pytorch/pytorch/blob/v2.0.1/aten/src/ATen/Dispatch.h
  */
 #pragma once
 

@@ -110,7 +110,7 @@ def _get_ptr(lora_weights: list[torch.Tensor], device: torch.device):
     `_LORA_PTR_DICT` collects the required information during `profile_run`,
     After this, it remains constant and subsequent usage is through LUT.
     Refer to:
-    https://github.com/triton-lang/triton/blob/release/3.1.x/python/tutorials/08-grouped-gemm.py
+    https://github.hyhy.fun/triton-lang/triton/blob/release/3.1.x/python/tutorials/08-grouped-gemm.py
     """
     key = tuple(lora_weight.data_ptr() for lora_weight in lora_weights)
 

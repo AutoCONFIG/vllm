@@ -179,7 +179,7 @@ void convert_vertical_slash_indexes_64x64(
  * block indices.
  *
  * The implementation is referenced from the original MInference repo:
- * https://github.com/microsoft/MInference/blob/main/csrc/vertical_slash_index.cu.
+ * https://github.hyhy.fun/microsoft/MInference/blob/main/csrc/vertical_slash_index.cu.
  */
 void convert_vertical_slash_indexes(
     torch::Tensor& block_count,      // [BATCH, N_HEADS, NUM_ROWS]

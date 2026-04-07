@@ -2,7 +2,7 @@
 # SPDX-FileCopyrightText: Copyright contributors to the vLLM project
 
 # Adapted from
-# https://github.com/huggingface/transformers/blob/v4.28.0/src/transformers/models/opt/modeling_opt.py
+# https://github.hyhy.fun/huggingface/transformers/blob/v4.28.0/src/transformers/models/opt/modeling_opt.py
 # Copyright 2023 The vLLM team.
 # Copyright 2022 The Fairseq Authors and The HuggingFace Inc. team. All rights
 # reserved.
@@ -245,7 +245,7 @@ class OPTDecoder(nn.Module):
         # Note that the only purpose of `config._remove_final_layer_norm` is to
         # keep backward compatibility with checkpoints that have been fine-tuned
         # before transformers v4.20.1
-        # see https://github.com/facebookresearch/metaseq/pull/164
+        # see https://github.hyhy.fun/facebookresearch/metaseq/pull/164
         if config.do_layer_norm_before and not config._remove_final_layer_norm:
             self.final_layer_norm = nn.LayerNorm(
                 config.hidden_size,

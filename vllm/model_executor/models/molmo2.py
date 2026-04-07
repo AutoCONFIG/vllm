@@ -506,7 +506,7 @@ class Molmo2VisionTransformer(nn.Module):
         (patch_num_0, patch_num_1) = patch_num
 
         if pos_emb.shape[0] != patch_num_0 or pos_emb.shape[1] != patch_num_1:
-            # from https://github.com/facebookresearch/mae/blob/main/util/pos_embed.py
+            # from https://github.hyhy.fun/facebookresearch/mae/blob/main/util/pos_embed.py
             pos_emb = pos_emb.unsqueeze(0).permute(0, 3, 1, 2)
             pos_emb = F.interpolate(
                 pos_emb,
@@ -2568,7 +2568,7 @@ class Molmo2ForConditionalGeneration(
             raise ValueError(
                 "`embed_input_ids` now requires `is_multimodal` arg, "
                 "please update your model runner according to "
-                "https://github.com/vllm-project/vllm/pull/16229."
+                "https://github.hyhy.fun/vllm-project/vllm/pull/16229."
             )
 
         inputs_embeds = _merge_multimodal_embeddings(

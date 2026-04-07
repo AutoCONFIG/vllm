@@ -43,7 +43,7 @@ _R = TypeVar("_R")
 pynvml = import_pynvml()
 
 # pytorch 2.5 uses cudnn sdpa by default, which will cause crash on some models
-# see https://github.com/huggingface/diffusers/issues/9704 for details
+# see https://github.hyhy.fun/huggingface/diffusers/issues/9704 for details
 torch.backends.cuda.enable_cudnn_sdp(False)
 
 
@@ -58,7 +58,7 @@ def _get_backend_priorities(
     if use_mla:
         if device_capability.major == 10:
             # Sparse MLA backend priorities
-            # See https://github.com/vllm-project/vllm/issues/35807 for
+            # See https://github.hyhy.fun/vllm-project/vllm/issues/35807 for
             # benchmark results
             if kv_cache_dtype is not None and kv_cache_dtype.startswith("fp8"):
                 # Prefer FlashInfer for fp8 kv cache
@@ -156,7 +156,7 @@ class CudaPlatformBase(Platform):
         """
         torch.cuda.set_device(device)
         # With this trick we can force the device to be set eagerly
-        # see https://github.com/pytorch/pytorch/issues/155668
+        # see https://github.hyhy.fun/pytorch/pytorch/issues/155668
         # for why and when it is needed
         _ = torch.zeros(1, device=device)
 

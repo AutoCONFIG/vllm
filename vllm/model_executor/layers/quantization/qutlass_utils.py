@@ -3,7 +3,7 @@
 #
 # Modified by Roberto L. Castro (Roberto.LopezCastro@ist.ac.at).
 #
-# Copied from https://github.com/pytorch/ao/tree/main/torchao/prototype/mx_formats
+# Copied from https://github.hyhy.fun/pytorch/ao/tree/main/torchao/prototype/mx_formats
 #
 # Copyright (c) Meta Platforms, Inc. and affiliates.
 # All rights reserved.

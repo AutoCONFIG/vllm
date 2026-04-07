@@ -786,7 +786,7 @@ class SamplingParams(
         elif backend.startswith("guidance"):
             # TODO: ideally we would have the LLTokenizer here as Lark syntax
             # allows <|special_token|> and similar, see
-            # https://github.com/guidance-ai/llguidance/blob/main/docs/syntax.md#special-tokens
+            # https://github.hyhy.fun/guidance-ai/llguidance/blob/main/docs/syntax.md#special-tokens
             # Without tokenizer these are disallowed in grammars.
             if is_mistral_tokenizer(tokenizer):
                 raise ValueError(

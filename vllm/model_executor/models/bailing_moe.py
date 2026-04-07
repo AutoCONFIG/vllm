@@ -2,7 +2,7 @@
 # SPDX-FileCopyrightText: Copyright contributors to the vLLM project
 
 # Adapted from
-# https://github.com/inclusionAI/Ling/blob/master/models/modeling_bailing_moe.py
+# https://github.hyhy.fun/inclusionAI/Ling/blob/master/models/modeling_bailing_moe.py
 # Copyright 2023 The vLLM team.
 # Copyright 2023 Antgroup and The HuggingFace Inc. team. All rights reserved.
 #

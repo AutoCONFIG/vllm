@@ -1249,7 +1249,7 @@ def run_minicpmv_base(questions: list[str], modality: str, model_name):
 
     # 2.0
     # The official repo doesn't work yet, so we need to use a fork for now
-    # For more details, please see: See: https://github.com/vllm-project/vllm/pull/4087#issuecomment-2250397630 # noqa
+    # For more details, please see: See: https://github.hyhy.fun/vllm-project/vllm/pull/4087#issuecomment-2250397630 # noqa
     # model_name = "HwwwH/MiniCPM-V-2"
 
     # 2.5

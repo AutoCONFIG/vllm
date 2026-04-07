@@ -24,7 +24,7 @@ def attach_router(app: FastAPI):
     # `response_class=PrometheusResponse` is needed to return an HTTP response
     # with header "Content-Type: text/plain; version=0.0.4; charset=utf-8"
     # instead of the default "application/json" which is incorrect.
-    # See https://github.com/trallnag/prometheus-fastapi-instrumentator/issues/163#issue-1296092364
+    # See https://github.hyhy.fun/trallnag/prometheus-fastapi-instrumentator/issues/163#issue-1296092364
     Instrumentator(
         excluded_handlers=[
             "/metrics",

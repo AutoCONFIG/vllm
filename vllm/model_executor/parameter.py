@@ -466,7 +466,7 @@ class SharedWeightParameter(BasevLLMParameter):
         self.partitions[index] = ModelWeightParameter(data=data, **self.kwargs)  # type: ignore[arg-type]
 
         # hold local reference, since ModelWeightParameter does not
-        # see https://github.com/pytorch/pytorch/issues/75932
+        # see https://github.hyhy.fun/pytorch/pytorch/issues/75932
         self.local_tensors.add(data)
 
     def load_column_parallel_weight(self, loaded_weight: torch.Tensor):

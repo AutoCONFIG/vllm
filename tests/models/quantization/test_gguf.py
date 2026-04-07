@@ -91,7 +91,7 @@ GEMMA3_CONFIG = GGUFTestConfig(
 )
 
 MODELS = [
-    # LLAMA_CONFIG, # broken: https://github.com/vllm-project/vllm/issues/19458
+    # LLAMA_CONFIG, # broken: https://github.hyhy.fun/vllm-project/vllm/issues/19458
     QWEN2_CONFIG,
     QWEN3_CONFIG,
     PHI3_CONFIG,

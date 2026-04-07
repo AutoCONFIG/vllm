@@ -88,7 +88,7 @@ class ScalarType:
         # for now we assume the exponent bias is the standard 2^(e-1) -1, (where
         # e is the exponent bits), there is some precedent for non-standard
         # biases, example `float8_e4m3b11fnuz` here:
-        # https://github.com/jax-ml/ml_dtypes but to avoid premature over
+        # https://github.hyhy.fun/jax-ml/ml_dtypes but to avoid premature over
         # complication we are just assuming the standard exponent bias until
         # there is a need to support non-standard biases
         exponent_bias = (1 << (self.exponent - 1)) - 1
@@ -217,7 +217,7 @@ class ScalarType:
 
     def __str__(self) -> str:
         """
-        naming generally follows: https://github.com/jax-ml/ml_dtypes
+        naming generally follows: https://github.hyhy.fun/jax-ml/ml_dtypes
         for floating point types (leading f) the scheme is:
         `float<size_bits>_e<exponent_bits>m<mantissa_bits>[flags]`
         flags:
@@ -312,7 +312,7 @@ class ScalarType:
         return _SCALAR_TYPES_ID_MAP[scalar_type_id]
 
 
-# naming generally follows: https://github.com/jax-ml/ml_dtypes
+# naming generally follows: https://github.hyhy.fun/jax-ml/ml_dtypes
 # for floating point types (leading f) the scheme is:
 #  `float<size_bits>_e<exponent_bits>m<mantissa_bits>[flags]`
 #  flags:
@@ -335,7 +335,7 @@ class scalar_types:
     float16_e8m7 = ScalarType.float_IEEE754(8, 7)
     float16_e5m10 = ScalarType.float_IEEE754(5, 10)
 
-    # fp6, https://github.com/usyd-fsalab/fp6_llm/tree/main
+    # fp6, https://github.hyhy.fun/usyd-fsalab/fp6_llm/tree/main
     # and https://www.opencompute.org/documents/ocp-microscaling-formats-mx-v1-0-spec-final-pdf
     float6_e3m2f = ScalarType.float_(3, 2, True, NanRepr.NONE)
 

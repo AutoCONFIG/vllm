@@ -270,7 +270,7 @@ class TrtLlmNvFp4ExpertsMonolithic(
         """
         if router_logits_dtype == torch.float32:
             # Only DeepSeekV3 routing handles float32 logits
-            # https://github.com/flashinfer-ai/flashinfer/issues/2469
+            # https://github.hyhy.fun/flashinfer-ai/flashinfer/issues/2469
             return routing_method == RoutingMethodType.DeepSeekV3
         return True
 

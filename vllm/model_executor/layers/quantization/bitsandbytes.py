@@ -402,7 +402,7 @@ def _apply_bnb_4bit(
         output_size = quant_states[i].shape[0]
         # It is more efficient to use out kwarg like
         # matmul_4bit(..., out = ...).  Infeasible now due to the bug
-        # https://github.com/TimDettmers/bitsandbytes/issues/1235.
+        # https://github.hyhy.fun/TimDettmers/bitsandbytes/issues/1235.
         # Need to change  after the bug is fixed.
         out[:, current_index : current_index + output_size] = matmul_4bit(
             x, weight[offsets[i] : offsets[i + 1]].t(), quant_states[i]

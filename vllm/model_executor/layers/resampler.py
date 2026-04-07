@@ -2,9 +2,9 @@
 # SPDX-FileCopyrightText: Copyright contributors to the vLLM project
 
 # Adapted from
-# https://github.com/huggingface/transformers/blob/v4.28.0/src/transformers/models/llama/modeling_llama.py
+# https://github.hyhy.fun/huggingface/transformers/blob/v4.28.0/src/transformers/models/llama/modeling_llama.py
 # https://huggingface.co/Qwen/Qwen-7B/blob/main/modeling_qwen.py
-# https://github.com/facebookresearch/mae/blob/efb2a8062c206524e35e47d04501ed4f544c0ae8/util/pos_embed.py#L20
+# https://github.hyhy.fun/facebookresearch/mae/blob/efb2a8062c206524e35e47d04501ed4f544c0ae8/util/pos_embed.py#L20
 #
 # Copyright 2023 The Qwen team.
 # Copyright 2023 The vLLM team.
@@ -72,7 +72,7 @@ def get_abs_pos(abs_pos: torch.Tensor, tgt_size: torch.Tensor | int) -> torch.Te
 
 
 # sin/cos positional embedding helpers are adapted from:
-# https://github.com/facebookresearch/mae/blob/efb2a8062c206524e35e47d04501ed4f544c0ae8/util/pos_embed.py#L20
+# https://github.hyhy.fun/facebookresearch/mae/blob/efb2a8062c206524e35e47d04501ed4f544c0ae8/util/pos_embed.py#L20
 def get_1d_sincos_pos_embed_from_grid(
     embed_dim: int, pos: np.ndarray, version: tuple[int, int] = (2, 0)
 ) -> torch.Tensor:

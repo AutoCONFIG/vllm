@@ -624,7 +624,7 @@ class OpenAIServingCompletion(OpenAIServing):
 
                 # makes sure to add the top num_output_top_logprobs + 1
                 # logprobs, as defined in the openai API
-                # (cf. https://github.com/openai/openai-openapi/blob/
+                # (cf. https://github.hyhy.fun/openai/openai-openapi/blob/
                 # 893ba52242dbd5387a97b96444ee1c742cfce9bd/openapi.yaml#L7153)
                 out_top_logprobs.append(
                     {

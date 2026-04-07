@@ -2,7 +2,7 @@
 # SPDX-FileCopyrightText: Copyright contributors to the vLLM project
 """
 Example of using the OpenAI entrypoint's rerank API which is compatible with
-the Cohere SDK: https://github.com/cohere-ai/cohere-python
+the Cohere SDK: https://github.hyhy.fun/cohere-ai/cohere-python
 Note that `pip install cohere` is needed to run this example.
 
 run: vllm serve BAAI/bge-reranker-base

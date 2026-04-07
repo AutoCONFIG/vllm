@@ -86,7 +86,7 @@ IS_DENSE = False
 # if model_config is not None:
 #     IS_QUANTIZED = lambda c: c.model_config.is_quantized()
 #     IS_DENSE = lambda c: not c.model_config.is_model_moe()
-# See https://github.com/vllm-project/vllm/issues/25689.
+# See https://github.hyhy.fun/vllm-project/vllm/issues/25689.
 
 
 def enable_norm_fusion(cfg: "VllmConfig") -> bool:
@@ -125,10 +125,10 @@ def enable_allreduce_rms_fusion(cfg: "VllmConfig") -> bool:
             or current_platform.is_device_capability(90)
         )
         # tp-dp combination broken:
-        # https://github.com/vllm-project/vllm/issues/34458
+        # https://github.hyhy.fun/vllm-project/vllm/issues/34458
         and cfg.parallel_config.data_parallel_size == 1
         # tp-pp combination broken:
-        # https://github.com/vllm-project/vllm/issues/35426
+        # https://github.hyhy.fun/vllm-project/vllm/issues/35426
         and cfg.parallel_config.pipeline_parallel_size == 1
     )
 
@@ -836,7 +836,7 @@ class VllmConfig:  # type: ignore[misc]
         # Enable quant_fp8 CUDA ops (TODO disable in follow up)
         # On H100 the CUDA kernel is faster than
         # native implementation
-        # https://github.com/vllm-project/vllm/issues/25094
+        # https://github.hyhy.fun/vllm-project/vllm/issues/25094
         if has_blocked_weights():
             custom_ops = self.compilation_config.custom_ops
             if "-quant_fp8" not in custom_ops:
@@ -1067,7 +1067,7 @@ class VllmConfig:  # type: ignore[misc]
             # native rms norm tracing errors due to incorrect residual shape.
             # Use custom rms norm to unblock. In the future,
             # the pass will operate on higher-level IR to avoid the issue.
-            # TODO: https://github.com/vllm-project/vllm/issues/27894
+            # TODO: https://github.hyhy.fun/vllm-project/vllm/issues/27894
             if self.compilation_config.mode != CompilationMode.VLLM_COMPILE:
                 logger.warning(
                     "Sequence parallelism is enabled, but running in wrong "
@@ -1244,7 +1244,7 @@ class VllmConfig:  # type: ignore[misc]
         # Enable quant_fp8 CUDA ops (TODO disable in follow up)
         # On H100 the CUDA kernel is faster than
         # native implementation
-        # https://github.com/vllm-project/vllm/issues/25094
+        # https://github.hyhy.fun/vllm-project/vllm/issues/25094
         if has_blocked_weights():
             custom_ops = self.compilation_config.custom_ops
             if "-quant_fp8" not in custom_ops:

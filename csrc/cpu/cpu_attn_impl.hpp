@@ -1177,7 +1177,7 @@ class AttentionMainLoop {
         float rescale_factor = init_max_val - new_max_val;
 
         // use same rescale threshold with FA4.
-        // https://github.com/Dao-AILab/flash-attention/blob/1b8e1e641c6a179be9a0538b7f40fd595050b735/flash_attn/cute/flash_fwd_sm100.py#L1271
+        // https://github.hyhy.fun/Dao-AILab/flash-attention/blob/1b8e1e641c6a179be9a0538b7f40fd595050b735/flash_attn/cute/flash_fwd_sm100.py#L1271
         bool need_rescale = rescale_factor < -8.0;
         if (!need_rescale) {
           new_max_val = init_max_val;

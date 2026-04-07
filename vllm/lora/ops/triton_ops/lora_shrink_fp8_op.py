@@ -34,7 +34,7 @@ def _get_shrink_lora_scale_ptr(
     - 4D: (lora_num, 1, N, K) — block-wise with extra dim (squeezed to 3D)
 
     Refer to:
-    https://github.com/triton-lang/triton/blob/release/3.1.x/python/tutorials/08-grouped-gemm.py
+    https://github.hyhy.fun/triton-lang/triton/blob/release/3.1.x/python/tutorials/08-grouped-gemm.py
     """
     key = tuple(lora_weight.data_ptr() for lora_weight in lora_scale_weights)
 

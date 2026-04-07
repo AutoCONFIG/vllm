@@ -424,7 +424,7 @@ def prune_rocm_search_space(
 
 
 # The following code is inspired by ROCm/Triton GEMM tuning script:
-# https://github.com/ROCm/triton/blob/triton-mlir/scripts/amd/gemm/tune_gemm.py#L89
+# https://github.hyhy.fun/ROCm/triton/blob/triton-mlir/scripts/amd/gemm/tune_gemm.py#L89
 def prune_rocm_configs(M, N, K, configs, is_fp16=True):
     pruned_configs = []
     elemBytes_a = 2 if is_fp16 else 1

@@ -224,7 +224,7 @@ def get_feature_request_tip(
     trust_remote_code: bool,
 ) -> str:
     hf_url = f"a discussion at https://huggingface.co/{model}/discussions/new"
-    gh_url = "an issue at https://github.com/huggingface/transformers/issues/new/choose"
+    gh_url = "an issue at https://github.hyhy.fun/huggingface/transformers/issues/new/choose"
     url = hf_url if trust_remote_code else gh_url
     prefix = f"Please open {url} to request support for this feature. "
     if Path(model).exists():

@@ -29,7 +29,7 @@ logger = init_logger(__name__)
 
 # FlexKV is a distributed KV Store and multi-level cache management system for
 # ultra-large-scale LLM inference.
-# GitHub: https://github.com/taco-project/FlexKV
+# GitHub: https://github.hyhy.fun/taco-project/FlexKV
 # Install: git clone git@github.com:taco-project/FlexKV.git \
 #          && cd FlexKV && bash build.sh
 class FlexKVConnectorV1(KVConnectorBase_V1):
@@ -40,7 +40,7 @@ class FlexKVConnectorV1(KVConnectorBase_V1):
     cache to CPU memory, SSD, and remote storage.
 
     Installation:
-        See https://github.com/taco-project/FlexKV for installation instructions.
+        See https://github.hyhy.fun/taco-project/FlexKV for installation instructions.
         Quick start::
 
             git clone git@github.com:taco-project/FlexKV.git
@@ -67,7 +67,7 @@ class FlexKVConnectorV1(KVConnectorBase_V1):
         except ImportError as e:
             raise ImportError(
                 "FlexKV is not installed. Please install it to use "
-                "FlexKVConnectorV1. See https://github.com/taco-project/FlexKV "
+                "FlexKVConnectorV1. See https://github.hyhy.fun/taco-project/FlexKV "
                 "for installation instructions."
             ) from e
 

@@ -328,7 +328,7 @@ VLM_TEST_SETTINGS = {
         img_idx_to_prompt=lambda idx: "",
         auto_cls=AutoModelForImageTextToText,
         vllm_output_post_proc=model_utils.blip2_vllm_to_hf_output,
-        # FIXME: https://github.com/huggingface/transformers/pull/38510
+        # FIXME: https://github.hyhy.fun/huggingface/transformers/pull/38510
         marks=[pytest.mark.skip("Model is broken")],
     ),
     "chameleon": VLMTestInfo(
@@ -964,7 +964,7 @@ VLM_TEST_SETTINGS = {
             )
         ],
     ),
-    # regression test for https://github.com/vllm-project/vllm/issues/15122
+    # regression test for https://github.hyhy.fun/vllm-project/vllm/issues/15122
     "qwen2_5_vl-windows-attention": VLMTestInfo(
         models=["Qwen/Qwen2.5-VL-3B-Instruct"],
         test_type=VLMTestType.CUSTOM_INPUTS,

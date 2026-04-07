@@ -326,7 +326,7 @@ def make_local_attention_virtual_batches(
         local_blocks * pages_per_local_batch,
     )
 
-    # NOTE: https://github.com/pytorch/pytorch/pull/160256 causes performance
+    # NOTE: https://github.hyhy.fun/pytorch/pytorch/pull/160256 causes performance
     # regression when using numpy arrays (batch and block indices) to index into
     # torch tensor (block_table). As a workaround, convert numpy arrays to torch
     # tensor first, which recovers perf.

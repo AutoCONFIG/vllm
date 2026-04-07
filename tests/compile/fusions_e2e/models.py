@@ -93,7 +93,7 @@ llama3_8b_fp4 = ModelFusionInfo(
 
 # MoEs cannot do act+quant fusion because those ops are hidden from torch.compile.
 # MoEs also only expose 1 rms+quant fusion because the quant for up_proj is hidden.
-# TODO(luka): https://github.com/vllm-project/vllm/issues/31985
+# TODO(luka): https://github.hyhy.fun/vllm-project/vllm/issues/31985
 # Also, for MoEs, gemm+collective fusion only happens for dense GEMMs (o_proj/qkv proj)
 
 llama4_scout_fp8 = ModelFusionInfo(
@@ -154,7 +154,7 @@ deepseek_v3_fp8 = ModelFusionInfo(
         #  act_quant_fusion=min(3, n_layers), # dense layers only
         act_quant_fusion=0,
         # MLA attn + quant not supported yet:
-        # https://github.com/vllm-project/vllm/issues/35792
+        # https://github.hyhy.fun/vllm-project/vllm/issues/35792
         attn_quant_fusion=0,
         ar_rms_fusion=n_layers * 2 + 1,
         # TODO

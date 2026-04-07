@@ -66,7 +66,7 @@ try:
             except Exception as e:
                 # if the driver worker also execute methods,
                 # exceptions in the rest worker may cause deadlock in rpc
-                # see https://github.com/vllm-project/vllm/issues/3455
+                # see https://github.hyhy.fun/vllm-project/vllm/issues/3455
                 msg = (
                     f"Error executing method {method!r}. "
                     "This might cause deadlock in distributed execution."

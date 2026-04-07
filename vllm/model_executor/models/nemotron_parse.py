@@ -1,11 +1,11 @@
 # SPDX-License-Identifier: Apache-2.0
 # SPDX-FileCopyrightText: Copyright contributors to the vLLM project
 #
-# Adapted from https://github.com/amalad/vllm/blob/nemotron_parse/vllm/model_executor/models/nemotron_parse.py
+# Adapted from https://github.hyhy.fun/amalad/vllm/blob/nemotron_parse/vllm/model_executor/models/nemotron_parse.py
 # that's based on https://huggingface.co/nvidia/NVIDIA-Nemotron-Parse-v1.1/blob/main/hf_nemotron_parse_modeling.py
 #
 # Bart classes based on old vLLM codebase:
-# https://github.com/vllm-project/vllm/blob/v0.10.2/vllm/model_executor/models/bart.py
+# https://github.hyhy.fun/vllm-project/vllm/blob/v0.10.2/vllm/model_executor/models/bart.py
 
 import math
 from collections.abc import Iterable, Mapping, Sequence

@@ -26,7 +26,7 @@ def _get_expand_lora_scale_ptr(lora_weights: list[torch.Tensor], device: torch.d
     `profile_run`,
     After this, it remains constant and subsequent usage is through LUT.
     Refer to:
-    https://github.com/triton-lang/triton/blob/release/3.1.x/python/tutorials/08-grouped-gemm.py
+    https://github.hyhy.fun/triton-lang/triton/blob/release/3.1.x/python/tutorials/08-grouped-gemm.py
     """
     key = tuple(lora_weight.data_ptr() for lora_weight in lora_weights)
 

@@ -530,7 +530,7 @@ def test_grouped_gemm_nt_masked(
     N = inter_dim
     # CuteDSL group gemm has issue when not all experts are active.
     # i.e. masked = [2, 3, 0, 0, 1] where the 2nd and 3rd experts are inactive
-    # see https://github.com/flashinfer-ai/flashinfer/issues/1856
+    # see https://github.hyhy.fun/flashinfer-ai/flashinfer/issues/1856
     num_experts = bs
     hidden_states = torch.randn(B, D, dtype=torch.bfloat16, device="cuda")
     weights = torch.randn(num_experts, N, D, dtype=torch.bfloat16, device="cuda")

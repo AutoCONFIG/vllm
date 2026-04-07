@@ -1234,7 +1234,7 @@ class Qwen3OmniMoeThinkerMultiModalProcessor(
 
             # TODO(Isotr0py): Remove this patch after upstream fix PR
             # released and Transformers version update:
-            # https://github.com/huggingface/transformers/pull/41473
+            # https://github.hyhy.fun/huggingface/transformers/pull/41473
             mm_kwargs = dict(mm_kwargs)
             tok_kwargs = dict(tok_kwargs)
             mm_kwargs["audio_kwargs"] = dict(mm_kwargs.get("audio_kwargs") or {})

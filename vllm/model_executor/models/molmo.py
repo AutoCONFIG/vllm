@@ -365,7 +365,7 @@ class VisionTransformer(nn.Module):
         (patch_num_0, patch_num_1) = patch_num
 
         if pos_emb.shape[0] != patch_num_0 or pos_emb.shape[1] != patch_num_1:
-            # from https://github.com/facebookresearch/mae/blob/main/util/pos_embed.py
+            # from https://github.hyhy.fun/facebookresearch/mae/blob/main/util/pos_embed.py
             pos_emb = pos_emb.unsqueeze(0).permute(0, 3, 1, 2)
             pos_emb = F.interpolate(
                 pos_emb,

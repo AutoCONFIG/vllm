@@ -100,7 +100,7 @@ class LlavaNextProcessingInfo(BaseLlavaProcessingInfo):
 
         return hf_processor
 
-    # Based on: https://github.com/huggingface/text-generation-inference/blob/v3.0.1/server/text_generation_server/models/vlm_causal_lm.py#L113
+    # Based on: https://github.hyhy.fun/huggingface/text-generation-inference/blob/v3.0.1/server/text_generation_server/models/vlm_causal_lm.py#L113
     def get_num_image_tokens(
         self,
         *,
@@ -138,7 +138,7 @@ class LlavaNextProcessingInfo(BaseLlavaProcessingInfo):
 
         return unpadded_feature_size + newline_feature_size + base_feature_size
 
-    # Based on: https://github.com/huggingface/text-generation-inference/blob/v3.0.1/server/text_generation_server/models/vlm_causal_lm.py#L86
+    # Based on: https://github.hyhy.fun/huggingface/text-generation-inference/blob/v3.0.1/server/text_generation_server/models/vlm_causal_lm.py#L86
     def _get_num_unpadded_features(
         self,
         *,
@@ -348,7 +348,7 @@ class LlavaNextForConditionalGeneration(nn.Module, SupportsMultiModal, SupportsP
             feature_select_strategy=self.config.vision_feature_select_strategy,
         )
 
-    # Based on: https://github.com/haotian-liu/LLaVA/blob/main/llava/model/llava_arch.py
+    # Based on: https://github.hyhy.fun/haotian-liu/LLaVA/blob/main/llava/model/llava_arch.py
     def _merge_image_patch_embeddings(
         self, image_size: torch.Tensor, patch_embeddings: torch.Tensor, *, strategy: str
     ) -> torch.Tensor:

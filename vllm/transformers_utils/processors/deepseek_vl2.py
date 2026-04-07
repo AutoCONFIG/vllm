@@ -3,7 +3,7 @@
 
 # ruff: noqa: E501
 # coding=utf-8
-# adapted from https://github.com/deepseek-ai/DeepSeek-VL2/blob/ff23960c5cf9e6874b44be38af930cfb0ccbb620/deepseek_vl2/models/processing_deepseek_vl_v2.py
+# adapted from https://github.hyhy.fun/deepseek-ai/DeepSeek-VL2/blob/ff23960c5cf9e6874b44be38af930cfb0ccbb620/deepseek_vl2/models/processing_deepseek_vl_v2.py
 # Copyright (c) 2023-2024 DeepSeek.
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy of

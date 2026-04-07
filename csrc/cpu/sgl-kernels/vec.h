@@ -1,5 +1,5 @@
 // Adapted from
-// https://github.com/sgl-project/sglang/tree/main/sgl-kernel/csrc/cpu
+// https://github.hyhy.fun/sgl-project/sglang/tree/main/sgl-kernel/csrc/cpu
 
 #pragma once
 
@@ -134,7 +134,7 @@ inline float vec_reduce_max(const Vectorized<float>& a) {
 }
 #endif
 
-// https://github.com/InternLM/lmdeploy/blob/086481ed84b59bee3b8e4274e5fc69620040c048/lmdeploy/pytorch/kernels/cuda/w8a8_triton_kernels.py#L282
+// https://github.hyhy.fun/InternLM/lmdeploy/blob/086481ed84b59bee3b8e4274e5fc69620040c048/lmdeploy/pytorch/kernels/cuda/w8a8_triton_kernels.py#L282
 template <typename scalar_t>
 inline void quantize_row_int8(uint8_t* __restrict__ Aq, float& As,
     const scalar_t* __restrict__ A, int64_t K, float eps = 1e-7) {
@@ -198,7 +198,7 @@ inline void quantize_row_int8<at::BFloat16>(uint8_t* __restrict__ Aq, float& As,
 #endif
 
 // transpose utils
-// taken from my PR in ggml: https://github.com/ggml-org/llama.cpp/pull/8998
+// taken from my PR in ggml: https://github.hyhy.fun/ggml-org/llama.cpp/pull/8998
 #if defined(CPU_CAPABILITY_AVX512)
 inline void transpose_16x16_32bit(__m512i * v) {
   __m512i v1[16];

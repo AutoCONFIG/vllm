@@ -156,11 +156,11 @@ def _get_vision_feature_selector(
     if callable(strategy):
         return strategy
 
-    # https://github.com/huggingface/transformers/blob/cd74917ffc3e8f84e4a886052c5ab32b7ac623cc/src/transformers/models/clip/modeling_clip.py#L762
+    # https://github.hyhy.fun/huggingface/transformers/blob/cd74917ffc3e8f84e4a886052c5ab32b7ac623cc/src/transformers/models/clip/modeling_clip.py#L762
     if strategy == "class":
         return lambda feats: feats[:, :1, :]
 
-    # https://github.com/huggingface/transformers/blob/4a02bc7004285bdb12cc033e87ad2578ce2fa900/src/transformers/models/llava/modeling_llava.py#L196
+    # https://github.hyhy.fun/huggingface/transformers/blob/4a02bc7004285bdb12cc033e87ad2578ce2fa900/src/transformers/models/llava/modeling_llava.py#L196
     if strategy == "default":
         return lambda feats: feats[:, 1:, :]
 

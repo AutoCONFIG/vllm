@@ -40,7 +40,7 @@ ensure_python_library_installed() {
     echo "Checking if $1 is installed..."
     if ! python3 -c "import $1" > /dev/null 2>&1; then
         if [ "$1" == "nixl" ]; then
-            echo "$1 is not installed. Please refer to https://github.com/ai-dynamo/nixl for installation."
+            echo "$1 is not installed. Please refer to https://github.hyhy.fun/ai-dynamo/nixl for installation."
         else
             echo "$1 is not installed. Please install it via pip install $1."
         fi

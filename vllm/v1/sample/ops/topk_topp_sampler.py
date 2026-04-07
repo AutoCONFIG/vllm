@@ -65,7 +65,7 @@ class TopKTopPSampler(nn.Module):
             arch = current_platform.get_cpu_architecture()
             # Fall back to native implementation for POWERPC and RISCV.
             # On PowerPC argmax produces incorrect output with torch.compile.
-            # PR: https://github.com/vllm-project/vllm/pull/26987
+            # PR: https://github.hyhy.fun/vllm-project/vllm/pull/26987
             if arch in (CpuArchEnum.RISCV, CpuArchEnum.POWERPC):
                 self.forward = self.forward_native
             else:
@@ -233,7 +233,7 @@ class TopKTopPSampler(nn.Module):
 
 
 # Note: this is a workaround for
-# https://github.com/pytorch/pytorch/pull/151218
+# https://github.hyhy.fun/pytorch/pytorch/pull/151218
 @torch.compile(dynamic=True)
 def compiled_random_sample(logits: torch.Tensor) -> torch.Tensor:
     probs = logits.softmax(dim=-1, dtype=torch.float32)

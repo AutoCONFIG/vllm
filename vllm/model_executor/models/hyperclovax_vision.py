@@ -1,6 +1,6 @@
 # SPDX-License-Identifier: Apache-2.0
 # SPDX-FileCopyrightText: Copyright contributors to the vLLM project
-# copied from : https://github.com/huggingface/transformers
+# copied from : https://github.hyhy.fun/huggingface/transformers
 import ast
 from collections import defaultdict
 from collections.abc import Iterable, Mapping, Sequence
@@ -408,7 +408,7 @@ class HCXVisionCAbstractor(nn.Module):
     """
     This module is based on C-Abstractor, whose license is under apache-2.0.
     You can check the original code at
-    https://github.com/khanrc/honeybee/blob/main/honeybee/projectors/projectors.py
+    https://github.hyhy.fun/khanrc/honeybee/blob/main/honeybee/projectors/projectors.py
     and we made necessary modifications.
     """
 

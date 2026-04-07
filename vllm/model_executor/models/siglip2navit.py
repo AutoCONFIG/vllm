@@ -526,7 +526,7 @@ class Siglip2Encoder(nn.Module):
             #  - FA2 requires that cu_seqlens_q must have dtype int32
             #  - torch.onnx.export requires that cu_seqlens_q must have
             #    same dtype as grid_thw
-            # See https://github.com/huggingface/transformers/pull/34852
+            # See https://github.hyhy.fun/huggingface/transformers/pull/34852
             # for more information
             dtype=grid_thws.dtype if torch.jit.is_tracing() else torch.int32,
         )

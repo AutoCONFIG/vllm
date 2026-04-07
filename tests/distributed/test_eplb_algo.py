@@ -11,7 +11,7 @@ from vllm.distributed.eplb.policy.default import DefaultEplbPolicy
 
 def test_basic_rebalance():
     """Test basic rebalancing functionality"""
-    # Example from https://github.com/deepseek-ai/eplb
+    # Example from https://github.hyhy.fun/deepseek-ai/eplb
     weight = torch.tensor(
         [
             [90, 132, 40, 61, 104, 165, 39, 4, 73, 56, 183, 86],

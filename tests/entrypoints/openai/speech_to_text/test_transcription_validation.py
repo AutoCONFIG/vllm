@@ -74,7 +74,7 @@ async def test_basic_audio(mary_had_lamb, model_name, rocm_aiter_fa_attention):
 
     add_attention_backend(server_args, rocm_aiter_fa_attention)
 
-    # Based on https://github.com/openai/openai-cookbook/blob/main/examples/Whisper_prompting_guide.ipynb.
+    # Based on https://github.hyhy.fun/openai/openai-cookbook/blob/main/examples/Whisper_prompting_guide.ipynb.
     with RemoteOpenAIServer(
         model_name, server_args, env_dict=ROCM_ENV_OVERRIDES
     ) as remote_server:
@@ -114,7 +114,7 @@ async def test_basic_audio_with_lora(mary_had_lamb, rocm_aiter_fa_attention):
 
     add_attention_backend(server_args, rocm_aiter_fa_attention)
 
-    # Based on https://github.com/openai/openai-cookbook/blob/main/examples/Whisper_prompting_guide.ipynb.
+    # Based on https://github.hyhy.fun/openai/openai-cookbook/blob/main/examples/Whisper_prompting_guide.ipynb.
     with RemoteOpenAIServer(
         model_name, server_args, env_dict=ROCM_ENV_OVERRIDES
     ) as remote_server:

@@ -187,7 +187,7 @@ class DeepEPLLPrepareAndFinalize(mk.FusedMoEPrepareAndFinalizeModular):
             logger.info_once(
                 "Since VLLM_DEEPEPLL_NVFP4_DISPATCH==1, make sure "
                 "using the hybrid-ep branch of DeepEP"
-                "(https://github.com/deepseek-ai/DeepEP/tree/hybrid-ep)"
+                "(https://github.hyhy.fun/deepseek-ai/DeepEP/tree/hybrid-ep)"
             )
             assert isinstance(x, tuple)
             x_scales = x[1]

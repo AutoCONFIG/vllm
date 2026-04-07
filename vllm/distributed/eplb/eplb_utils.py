@@ -38,7 +38,7 @@ def override_envs_for_eplb(parallel_config: ParallelConfig) -> None:
     # This circular wait causes a deadlock.
     # Limiting NCCL occupancy via NCCL_MAX_CTAS leaves space for the DeepEP
     # cooperative kernel to launch and complete, breaking the deadlock.
-    # See: https://github.com/deepseek-ai/DeepEP/issues/496
+    # See: https://github.hyhy.fun/deepseek-ai/DeepEP/issues/496
     if is_data_parallel and is_eplb_enabled and is_deepep_ll and async_eplb:
         current_value_str = os.getenv("NCCL_MAX_CTAS")
 

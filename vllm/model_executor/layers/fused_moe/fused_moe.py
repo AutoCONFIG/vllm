@@ -1014,7 +1014,7 @@ def zero_experts_compute_triton(
     return output
 
 
-# Adapted from: https://github.com/sgl-project/sglang/pull/2628
+# Adapted from: https://github.hyhy.fun/sgl-project/sglang/pull/2628
 def get_config_file_name(
     E: int, N: int, dtype: str | None, block_shape: list[int] | None = None
 ) -> str:
@@ -1029,7 +1029,7 @@ def get_config_file_name(
     return f"E={E},N={N},device_name={device_name}{dtype_selector}{block_shape_selector}.json"  # noqa: E501
 
 
-# Adapted from: https://github.com/sgl-project/sglang/pull/2628
+# Adapted from: https://github.hyhy.fun/sgl-project/sglang/pull/2628
 @functools.lru_cache
 def get_moe_configs(
     E: int,

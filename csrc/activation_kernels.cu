@@ -96,7 +96,7 @@ template <typename T>
 __device__ __forceinline__ T gelu_kernel(const T& x) {
   // Equivalent to PyTorch GELU with 'none' approximation.
   // Refer to:
-  // https://github.com/pytorch/pytorch/blob/8ac9b20d4b090c213799e81acf48a55ea8d437d6/aten/src/ATen/native/cuda/ActivationGeluKernel.cu#L36-L38
+  // https://github.hyhy.fun/pytorch/pytorch/blob/8ac9b20d4b090c213799e81acf48a55ea8d437d6/aten/src/ATen/native/cuda/ActivationGeluKernel.cu#L36-L38
   const float f = (float)x;
   constexpr float ALPHA = M_SQRT1_2;
   return (T)(f * 0.5f * (1.0f + ::erf(f * ALPHA)));
@@ -106,7 +106,7 @@ template <typename packed_t>
 __device__ __forceinline__ packed_t packed_gelu_kernel(const packed_t& val) {
   // Equivalent to PyTorch GELU with 'none' approximation.
   // Refer to:
-  // https://github.com/pytorch/pytorch/blob/8ac9b20d4b090c213799e81acf48a55ea8d437d6/aten/src/ATen/native/cuda/ActivationGeluKernel.cu#L36-L38
+  // https://github.hyhy.fun/pytorch/pytorch/blob/8ac9b20d4b090c213799e81acf48a55ea8d437d6/aten/src/ATen/native/cuda/ActivationGeluKernel.cu#L36-L38
   constexpr float ALPHA = M_SQRT1_2;
   float2 fval = cast_to_float2(val);
   fval.x = fval.x * 0.5f * (1.0f + ::erf(fval.x * ALPHA));
@@ -118,7 +118,7 @@ template <typename T>
 __device__ __forceinline__ T gelu_tanh_kernel(const T& x) {
   // Equivalent to PyTorch GELU with 'tanh' approximation.
   // Refer to:
-  // https://github.com/pytorch/pytorch/blob/8ac9b20d4b090c213799e81acf48a55ea8d437d6/aten/src/ATen/native/cuda/ActivationGeluKernel.cu#L25-L30
+  // https://github.hyhy.fun/pytorch/pytorch/blob/8ac9b20d4b090c213799e81acf48a55ea8d437d6/aten/src/ATen/native/cuda/ActivationGeluKernel.cu#L25-L30
   const float f = (float)x;
   constexpr float BETA = M_SQRT2 * M_2_SQRTPI * 0.5f;
   constexpr float KAPPA = 0.044715;
@@ -132,7 +132,7 @@ __device__ __forceinline__ packed_t
 packed_gelu_tanh_kernel(const packed_t& val) {
   // Equivalent to PyTorch GELU with 'tanh' approximation.
   // Refer to:
-  // https://github.com/pytorch/pytorch/blob/8ac9b20d4b090c213799e81acf48a55ea8d437d6/aten/src/ATen/native/cuda/ActivationGeluKernel.cu#L25-L30
+  // https://github.hyhy.fun/pytorch/pytorch/blob/8ac9b20d4b090c213799e81acf48a55ea8d437d6/aten/src/ATen/native/cuda/ActivationGeluKernel.cu#L25-L30
   float2 fval = cast_to_float2(val);
   constexpr float BETA = M_SQRT2 * M_2_SQRTPI * 0.5f;
   constexpr float KAPPA = 0.044715;

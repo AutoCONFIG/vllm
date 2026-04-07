@@ -1,4 +1,4 @@
-# Install OpenAI triton_kernels from https://github.com/triton-lang/triton/tree/main/python/triton_kernels
+# Install OpenAI triton_kernels from https://github.hyhy.fun/triton-lang/triton/tree/main/python/triton_kernels
 
 set(DEFAULT_TRITON_KERNELS_TAG "v3.6.0")
 
@@ -12,12 +12,12 @@ if (DEFINED ENV{TRITON_KERNELS_SRC_DIR})
   )
 
 else()
-  set(TRITON_GIT "https://github.com/triton-lang/triton.git")
+  set(TRITON_GIT "https://github.hyhy.fun/triton-lang/triton.git")
   message (STATUS "[triton_kernels] Fetch from ${TRITON_GIT}:${DEFAULT_TRITON_KERNELS_TAG}")
   FetchContent_Declare(
           triton_kernels
           # TODO (varun) : Fetch just the triton_kernels directory from Triton
-          GIT_REPOSITORY https://github.com/triton-lang/triton.git
+          GIT_REPOSITORY https://github.hyhy.fun/triton-lang/triton.git
           GIT_TAG ${DEFAULT_TRITON_KERNELS_TAG}
           GIT_PROGRESS TRUE
           SOURCE_SUBDIR python/triton_kernels/triton_kernels

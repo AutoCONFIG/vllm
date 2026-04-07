@@ -635,7 +635,7 @@ class T5RelativeAttentionLogitBias(nn.Module):
     2.1 of the T5 paper: https://arxiv.org/pdf/1910.10683.pdf
 
     The Huggingface implementation is used as a reference
-    https://github.com/huggingface/transformers/blob/v4.30.0/src/
+    https://github.hyhy.fun/huggingface/transformers/blob/v4.30.0/src/
     transformers/models/t5/modeling_t5.py#L435
 
     Modifies attention as Q*K^T + B, where B is a learned scalar bias based
@@ -1007,7 +1007,7 @@ class CausalConv2D(nn.Conv2d):
 
 class NemoConvSubsampling(torch.nn.Module):
     """Convlutional subsampling module, taken from NeMo ASR
-    (https://github.com/NVIDIA/NeMo/blob/b367413645d5c72db3c2c96e46e95a
+    (https://github.hyhy.fun/NVIDIA/NeMo/blob/b367413645d5c72db3c2c96e46e95a
     34501479cf/nemo/collections/asr/parts/submodules/subsampling.py)
 
     Striding Subsampling: "Speech-Transformer: A No-Recurrence
@@ -1356,7 +1356,7 @@ class NemoConvSubsampling(torch.nn.Module):
                 # if needed.
                 # avoiding a bug / feature limiting indexing of tensors
                 # to 2**31.
-                # see https://github.com/pytorch/pytorch/issues/80020
+                # see https://github.hyhy.fun/pytorch/pytorch/issues/80020
                 x_ceil = 2**31 / self._conv_channels * self._stride * self._stride
                 need_to_split = torch.numel(x) > x_ceil
             else:
@@ -1415,7 +1415,7 @@ class NemoConvSubsampling(torch.nn.Module):
                     torch.nn.init.uniform_(self.conv[idx + 1].weight, -pw_max, pw_max)
                     torch.nn.init.uniform_(self.conv[idx + 1].bias, -pw_max, pw_max)
 
-                # init fc (80 * 64 = 5120 from https://github.com/kssteven418/
+                # init fc (80 * 64 = 5120 from https://github.hyhy.fun/kssteven418/
                 # Squeezeformer/blob/13c97d6cf92f2844d2cb3142b4c5bfa9ad1a8951/
                 # src/models/conformer_encoder.py#L487
                 fc_scale = (self._feat_out * self._feat_in / self._sampling_num) ** -0.5
@@ -1432,7 +1432,7 @@ class NemoConvSubsampling(torch.nn.Module):
             cf = self.subsampling_conv_chunking_factor
         else:
             # avoiding a bug / feature limiting indexing of tensors to 2**31
-            # see https://github.com/pytorch/pytorch/issues/80020
+            # see https://github.hyhy.fun/pytorch/pytorch/issues/80020
             x_ceil = 2**31 / self._conv_channels * self._stride * self._stride
             p = math.ceil(math.log(torch.numel(x) / x_ceil, 2))
             cf = 2**p
@@ -1462,7 +1462,7 @@ class NemoConvSubsampling(torch.nn.Module):
             else:
                 # avoiding a bug / feature limiting indexing of tensors
                 # to 2**31
-                # see https://github.com/pytorch/pytorch/issues/80020
+                # see https://github.hyhy.fun/pytorch/pytorch/issues/80020
                 p = math.ceil(math.log(torch.numel(x) / 2**31, 2))
                 cf = 2**p
 

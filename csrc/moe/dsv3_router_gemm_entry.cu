@@ -1,7 +1,7 @@
 /*
  * Adapted from SGLang's sgl-kernel implementation, which was adapted from
- * https://github.com/NVIDIA/TensorRT-LLM/blob/main/cpp/tensorrt_llm/kernels/dsv3MinLatencyKernels/dsv3RouterGemm.cu
- * https://github.com/NVIDIA/TensorRT-LLM/blob/main/cpp/tensorrt_llm/thop/dsv3RouterGemmOp.cpp
+ * https://github.hyhy.fun/NVIDIA/TensorRT-LLM/blob/main/cpp/tensorrt_llm/kernels/dsv3MinLatencyKernels/dsv3RouterGemm.cu
+ * https://github.hyhy.fun/NVIDIA/TensorRT-LLM/blob/main/cpp/tensorrt_llm/thop/dsv3RouterGemmOp.cpp
  *
  * Copyright (c) 2019-2023, NVIDIA CORPORATION.  All rights reserved.
  *

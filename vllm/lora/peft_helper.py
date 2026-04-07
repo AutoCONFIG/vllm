@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: Apache-2.0
 # SPDX-FileCopyrightText: Copyright contributors to the vLLM project
 
-# Adapted from: https://github.com/huggingface/peft/blob/main/src/peft/tuners/lora/config.py
+# Adapted from: https://github.hyhy.fun/huggingface/peft/blob/main/src/peft/tuners/lora/config.py
 
 import json
 import math

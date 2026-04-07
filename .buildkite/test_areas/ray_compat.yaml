@@ -6,7 +6,7 @@ steps:
   # Informational only — does not block the pipeline.
   # If this fails, it means the PR introduces a dependency that
   # conflicts with Ray's dependency constraints.
-  # See https://github.com/vllm-project/vllm/issues/33599
+  # See https://github.hyhy.fun/vllm-project/vllm/issues/33599
   soft_fail: true
   timeout_in_minutes: 10
   source_file_dependencies:

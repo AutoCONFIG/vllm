@@ -7,7 +7,7 @@
 # dependency resolution with the installed vllm's constraints to see if
 # a valid lock file can be produced.
 #
-# See: https://github.com/vllm-project/vllm/issues/33599
+# See: https://github.hyhy.fun/vllm-project/vllm/issues/33599
 
 set -eo pipefail
 
@@ -173,7 +173,7 @@ fi
 echo "FAILURE: Ray cannot generate lock files compatible with this vllm."
 echo "This means a fundamental dependency conflict exists that Ray"
 echo "cannot resolve by regenerating its lock files."
-echo "See: https://github.com/vllm-project/vllm/issues/33599"
+echo "See: https://github.hyhy.fun/vllm-project/vllm/issues/33599"
 echo "=========================================="
 
 # Buildkite annotation
@@ -184,7 +184,7 @@ This PR introduces dependencies that **cannot** be resolved with Ray's requireme
 Ray would not be able to regenerate its lock files to accommodate this vllm version.
 
 Please check the **Ray Dependency Compatibility Check** step logs for details.
-See [issue #33599](https://github.com/vllm-project/vllm/issues/33599) for context.
+See [issue #33599](https://github.hyhy.fun/vllm-project/vllm/issues/33599) for context.
 EOF
 fi
 

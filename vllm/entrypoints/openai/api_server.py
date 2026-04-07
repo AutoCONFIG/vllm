@@ -68,7 +68,7 @@ from vllm.version import __version__ as VLLM_VERSION
 
 prometheus_multiproc_dir: tempfile.TemporaryDirectory
 
-# Cannot use __name__ (https://github.com/vllm-project/vllm/pull/4765)
+# Cannot use __name__ (https://github.hyhy.fun/vllm-project/vllm/pull/4765)
 logger = init_logger("vllm.entrypoints.openai.api_server")
 
 _FALLBACK_SUPPORTED_TASKS: tuple[SupportedTask, ...] = ("generate",)
@@ -540,7 +540,7 @@ def setup_server(args):
 
     # workaround to make sure that we bind the port before the engine is set up.
     # This avoids race conditions with ray.
-    # see https://github.com/vllm-project/vllm/issues/8204
+    # see https://github.hyhy.fun/vllm-project/vllm/issues/8204
     if args.uds:
         sock = create_server_unix_socket(args.uds)
     else:

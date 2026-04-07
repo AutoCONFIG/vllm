@@ -2,7 +2,7 @@
 # SPDX-FileCopyrightText: Copyright contributors to the vLLM project
 
 # Adapted from
-# https://github.com/huggingface/transformers/blob/v4.28.0/src/transformers/models/llama/modeling_llama.py
+# https://github.hyhy.fun/huggingface/transformers/blob/v4.28.0/src/transformers/models/llama/modeling_llama.py
 # Copyright 2023 The vLLM team.
 # Copyright 2022 EleutherAI and the HuggingFace Inc. team. All rights reserved.
 #
@@ -545,7 +545,7 @@ class MiniCPMVProcessingInfo(BaseProcessingInfo):
         hf_processor = self.ctx.get_hf_processor(**kwargs)
 
         # NumPy arrays are considered as Iterable but not Sequence in
-        # https://github.com/huggingface/transformers/blob/main/src/transformers/image_transforms.py#L428
+        # https://github.hyhy.fun/huggingface/transformers/blob/main/src/transformers/image_transforms.py#L428
         image_processor = hf_processor.image_processor  # type: ignore
         for attr in ("mean", "std"):
             val = getattr(image_processor, attr)
